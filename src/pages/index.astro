@@ -1,17 +1,25 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import IdentityControl from "../components/IdentityControl.astro"
+import ServicesOverview from "../components/ServicesOverview.astro"
+import SolutionsOverview from "../components/SolutionsOverview.astro"
+import TechnologyEcosystem from "../components/TechnologyEcosystem.astro"
+import HowWeWork from "../components/HowWeWork.astro"
+import WhyBloomingSystems from "../components/WhyBloomingSystems.astro"
+import InsightsOverview from "../components/InsightsOverview.astro"
+import FinalCTA from "../components/FinalCTA.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+ <Hero />
+ <IdentityControl />
+ <ServicesOverview />
+ <SolutionsOverview />
+ <TechnologyEcosystem />
+ <HowWeWork />
+ <WhyBloomingSystems />
+ <InsightsOverview />
+ <FinalCTA />
+</Layout>
+

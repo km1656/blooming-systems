@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #07152f;
+  --color-blue: #1769d1;
+  --color-teal: #16a6a0;
+
+  --color-text: #536074;
+  --color-muted: #697386;
+
+  --color-border: #dce1e8;
+  --color-surface: #f7f9fc;
+  --color-white: #ffffff;
+
+  --container: 1440px;
+  --gutter: 32px;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Typography */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 17px;
+
+  --tracking-label: 0.16em;
+  --tracking-tight: -0.025em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+
+  background: var(--color-white);
+  color: var(--color-text);
+
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 20px;
+  }
+}
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 0 0 26px;
+
+  color: var(--color-blue);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+}
+
+.section-eyebrow::before {
+  content: "";
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--color-blue);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding-bottom: 5px;
+
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-ink);
+
+  font-size: var(--text-sm);
+  font-weight: 650;
+  text-decoration: none;
+
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.text-link:hover {
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.text-link span {
+  font-size: 16px;
+}

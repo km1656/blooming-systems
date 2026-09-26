@@ -1,0 +1,479 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow">
+        IDENTITY & ACCESS MANAGEMENT
+      </p>
+
+      <h1>
+        Secure identities.<br />
+        Control access.<br />
+        <span>Modernize your enterprise.</span>
+      </h1>
+
+      <p class="hero-description">
+        Blooming Systems helps organizations design, implement, and
+        operate identity and access infrastructure across cloud,
+        hybrid, and on-premises environments.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/contact/" class="button button-primary">
+          Talk to an IAM Expert
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <a href="/services/" class="button button-secondary">
+          Explore IAM Services
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <strong>IAM</strong>
+          <span>Strategy & Engineering</span>
+        </div>
+
+        <div>
+          <strong>Cloud</strong>
+          <span>Hybrid & On-Premises</span>
+        </div>
+
+        <div>
+          <strong>Enterprise</strong>
+          <span>Identity Infrastructure</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="visual-grid"></div>
+
+      <div class="shield">
+        <div class="shield-inner">
+          <svg
+            viewBox="0 0 160 190"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M80 7L148 31V84C148 130 122 164 80 183C38 164 12 130 12 84V31L80 7Z"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+
+            <path
+              d="M48 91C48 69 62 51 80 51C98 51 112 69 112 91"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M39 91C39 63 57 40 80 40C103 40 121 63 121 91"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M57 91C57 76 67 64 80 64C93 64 103 76 103 91C103 116 94 135 80 149"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M68 91C68 82 73 75 80 75C87 75 92 82 92 91C92 108 88 120 80 130"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M80 91V105"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: calc(100vh - 82px);
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+
+  .hero-grid {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    min-height: calc(100vh - 82px);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.05fr)
+      minmax(420px, 0.95fr);
+
+    align-items: center;
+    gap: 80px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 90px 0;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 28px;
+
+    color: var(--color-blue);
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .eyebrow::before {
+    content: "";
+
+    width: 32px;
+    height: 1px;
+
+    background: var(--color-blue);
+  }
+
+  h1 {
+    max-width: 780px;
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(52px, 5.7vw, 88px);
+    font-weight: 650;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  h1 span {
+    color: var(--color-blue);
+  }
+
+  .hero-description {
+    max-width: 590px;
+    margin: 34px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 38px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 50px;
+    padding: 0 20px;
+
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+      transform 160ms ease,
+      background 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+  }
+
+  .button-primary {
+    color: var(--color-white);
+    background: var(--color-ink);
+  }
+
+  .button-primary:hover {
+    background: var(--color-blue);
+  }
+
+  .button-primary span {
+    font-size: 17px;
+  }
+
+  .button-secondary {
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+    background: transparent;
+  }
+
+  .button-secondary:hover {
+    background: var(--color-white);
+    border-color: var(--color-ink);
+  }
+
+  .hero-meta {
+    display: flex;
+    max-width: 650px;
+
+    margin-top: 72px;
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .hero-meta > div {
+    flex: 1;
+    padding: 18px 20px 0 0;
+  }
+
+  .hero-meta > div + div {
+    padding-left: 20px;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .hero-meta strong,
+  .hero-meta span {
+    display: block;
+  }
+
+  .hero-meta strong {
+    color: var(--color-ink);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-meta span {
+    margin-top: 6px;
+
+    color: var(--color-muted);
+
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  /* Visual */
+
+  .hero-visual {
+    position: relative;
+
+    height: min(680px, 75vh);
+    min-height: 500px;
+  }
+
+  .visual-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+      linear-gradient(
+        var(--color-border) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        var(--color-border) 1px,
+        transparent 1px
+      );
+
+    background-size: 56px 56px;
+
+    mask-image: radial-gradient(
+      ellipse at center,
+      black 20%,
+      transparent 75%
+    );
+
+    opacity: 0.55;
+  }
+
+  .shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: min(380px, 60%);
+    aspect-ratio: 0.84;
+
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    place-items: center;
+
+    color: var(--color-blue);
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(23, 105, 209, 0.08),
+        rgba(22, 166, 160, 0.035)
+      );
+
+    border: 1px solid rgba(23, 105, 209, 0.18);
+
+    clip-path: polygon(
+      50% 0%,
+      92% 15%,
+      92% 52%,
+      82% 73%,
+      67% 88%,
+      50% 100%,
+      33% 88%,
+      18% 73%,
+      8% 52%,
+      8% 15%
+    );
+  }
+
+  .shield-inner {
+    width: 58%;
+    color: var(--color-blue);
+  }
+
+  .shield-inner svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .visual-label {
+    position: absolute;
+
+    color: var(--color-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .label-top {
+    top: 22%;
+    right: 4%;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .label-top span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: var(--color-teal);
+  }
+
+  .label-bottom {
+    bottom: 20%;
+    left: 3%;
+  }
+
+  @media (max-width: 1000px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .hero-content {
+      padding-bottom: 30px;
+    }
+
+    .hero-visual {
+      height: 500px;
+      min-height: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-grid {
+      width: calc(100% - (var(--gutter) * 2));
+    }
+
+    .hero-content {
+      padding: 65px 0 20px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .hero-description {
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .button {
+      justify-content: center;
+    }
+
+    .hero-meta {
+      margin-top: 50px;
+    }
+
+    .hero-meta > div {
+      padding-right: 10px;
+    }
+
+    .hero-meta > div + div {
+      padding-left: 10px;
+    }
+
+    .hero-meta span {
+      font-size: 9px;
+    }
+
+    .hero-visual {
+      height: 400px;
+    }
+
+    .shield {
+      width: 280px;
+    }
+
+    .label-top {
+      right: 0;
+    }
+
+    .label-bottom {
+      left: 0;
+    }
+  }
+</style>

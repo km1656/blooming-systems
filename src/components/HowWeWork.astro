@@ -1,0 +1,449 @@
+<section class="how-we-work">
+  <div class="work-container">
+    <div class="section-header">
+      <div class="section-heading">
+        <p class="section-eyebrow">HOW WE WORK</p>
+
+        <h2>
+          From identity<br />
+          <span>strategy to operation.</span>
+        </h2>
+      </div>
+
+      <div class="section-intro">
+        <p>
+          We combine IAM strategy, architecture, engineering, and
+          operational expertise to move identity programs from current
+          state to measurable outcomes.
+        </p>
+      </div>
+    </div>
+
+    <div class="process">
+      <div class="process-line"></div>
+
+      <div class="process-step">
+        <div class="step-marker">
+          <span>01</span>
+        </div>
+
+        <div class="step-content">
+          <p class="step-label">DISCOVER</p>
+
+          <h3>Assess</h3>
+
+          <p>
+            Establish a clear view of your current identity environment,
+            applications, access patterns, risks, and operational
+            challenges.
+          </p>
+
+          <ul>
+            <li>Current-state assessment</li>
+            <li>IAM maturity analysis</li>
+            <li>Security & compliance review</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-marker">
+          <span>02</span>
+        </div>
+
+        <div class="step-content">
+          <p class="step-label">DESIGN</p>
+
+          <h3>Architect</h3>
+
+          <p>
+            Translate business and security requirements into a target
+            identity architecture, implementation roadmap, and
+            governance model.
+          </p>
+
+          <ul>
+            <li>Target-state architecture</li>
+            <li>IAM roadmap</li>
+            <li>Solution design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-marker">
+          <span>03</span>
+        </div>
+
+        <div class="step-content">
+          <p class="step-label">ENGINEER</p>
+
+          <h3>Implement</h3>
+
+          <p>
+            Integrate identity platforms, directories, applications,
+            authentication services, and governance capabilities into
+            the enterprise environment.
+          </p>
+
+          <ul>
+            <li>Platform implementation</li>
+            <li>Application integration</li>
+            <li>Migration & modernization</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-marker">
+          <span>04</span>
+        </div>
+
+        <div class="step-content">
+          <p class="step-label">OPTIMIZE</p>
+
+          <h3>Operate</h3>
+
+          <p>
+            Keep identity infrastructure secure and effective through
+            ongoing administration, governance, optimization, and
+            operational support.
+          </p>
+
+          <ul>
+            <li>IAM operations</li>
+            <li>Access governance</li>
+            <li>Performance optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-footer">
+      <span>01 — ASSESS</span>
+      <span>02 — ARCHITECT</span>
+      <span>03 — IMPLEMENT</span>
+      <span>04 — OPERATE</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-we-work {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .work-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    margin: 0 auto;
+    padding: 140px 0 110px;
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.7fr);
+
+    gap: 100px;
+    align-items: end;
+
+    margin-bottom: 95px;
+  }
+
+  .section-heading {
+    max-width: 760px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 26px;
+
+    color: var(--color-blue);
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: var(--color-blue);
+  }
+
+  h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(48px, 5vw, 76px);
+    font-weight: 620;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  h2 span {
+    color: var(--color-blue);
+  }
+
+  .section-intro {
+    max-width: 440px;
+    padding-bottom: 4px;
+  }
+
+  .section-intro p {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* Process */
+
+  .process {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 0;
+  }
+
+  .process-line {
+    position: absolute;
+    top: 23px;
+    right: 0;
+    left: 0;
+
+    height: 1px;
+
+    background: var(--color-border);
+  }
+
+  .process-step {
+    position: relative;
+
+    padding-right: 38px;
+  }
+
+  .process-step:not(:first-of-type) {
+    padding-left: 28px;
+  }
+
+  .step-marker {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+  }
+
+  .step-marker::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--color-blue);
+    border-radius: 50%;
+  }
+
+  .step-marker span {
+    position: absolute;
+    top: -18px;
+    left: 0;
+
+    color: var(--color-muted);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .step-content {
+    padding-top: 42px;
+  }
+
+  .step-label {
+    margin: 0 0 12px;
+
+    color: var(--color-blue);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .step-content h3 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: 28px;
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  .step-content > p:not(.step-label) {
+    max-width: 260px;
+    margin: 18px 0 0;
+
+    color: var(--color-muted);
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .step-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    margin: 25px 0 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .step-content li {
+    position: relative;
+
+    padding-left: 14px;
+
+    color: var(--color-text);
+
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .step-content li::before {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+    width: 4px;
+    height: 4px;
+
+    background: var(--color-blue);
+  }
+
+  .work-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 85px;
+    padding-top: 16px;
+
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  @media (max-width: 1000px) {
+    .section-header {
+      grid-template-columns: 1fr;
+
+      gap: 35px;
+      margin-bottom: 70px;
+    }
+
+    .section-intro {
+      max-width: 600px;
+    }
+
+    .process {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      row-gap: 65px;
+    }
+
+    .process-line {
+      display: none;
+    }
+
+    .process-step {
+      padding-right: 35px;
+    }
+
+    .process-step:nth-child(odd) {
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .work-container {
+      width: calc(100% - (var(--gutter) * 2));
+      padding: 90px 0 80px;
+    }
+
+    h2 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .section-intro p {
+      font-size: 15px;
+    }
+
+    .process {
+      grid-template-columns: 1fr;
+      row-gap: 55px;
+    }
+
+    .process-step,
+    .process-step:not(:first-of-type) {
+      padding: 0;
+    }
+
+    .step-content {
+      padding-top: 30px;
+    }
+
+    .step-content h3 {
+      font-size: 25px;
+    }
+
+    .step-content > p:not(.step-label) {
+      max-width: 100%;
+    }
+
+    .work-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+
+      margin-top: 65px;
+      font-size: 7px;
+    }
+  }
+</style>

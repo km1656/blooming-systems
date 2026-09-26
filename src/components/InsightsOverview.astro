@@ -1,0 +1,401 @@
+---
+const insights = [
+  {
+    category: "IAM STRATEGY",
+    title: "Building an identity roadmap for a hybrid enterprise",
+    description:
+      "How organizations can assess their current identity environment and establish a practical path toward a modern IAM architecture.",
+    date: "Insights",
+    href: "/blog/",
+  },
+  {
+    category: "CLOUD IDENTITY",
+    title: "Connecting cloud and on-premises identity",
+    description:
+      "Key architectural considerations for organizations operating across cloud platforms, enterprise directories, and legacy environments.",
+    date: "Insights",
+    href: "/blog/",
+  },
+  {
+    category: "IDENTITY GOVERNANCE",
+    title: "From access management to identity governance",
+    description:
+      "Why lifecycle, access reviews, role management, and policy need to work together as part of a broader identity strategy.",
+    date: "Insights",
+    href: "/blog/",
+  },
+];
+---
+
+<section class="insights-overview">
+  <div class="insights-container">
+    <div class="section-header">
+      <div class="section-heading">
+        <p class="section-eyebrow">INSIGHTS</p>
+
+        <h2>
+          Thinking about<br />
+          <span>identity differently.</span>
+        </h2>
+      </div>
+
+      <div class="section-intro">
+        <p>
+          Perspectives on identity architecture, access management,
+          security, governance, and the technologies shaping modern
+          enterprise IAM.
+        </p>
+
+        <a href="/blog/" class="text-link">
+          Visit the IAM insights
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="insights-grid">
+      {
+        insights.map((insight, index) => (
+          <a href={insight.href} class="insight-card">
+            <div class="card-top">
+              <span class="card-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <span class="card-category">{insight.category}</span>
+            </div>
+
+            <div class="card-content">
+              <h3>{insight.title}</h3>
+
+              <p>{insight.description}</p>
+            </div>
+
+            <div class="card-footer">
+              <span>{insight.date}</span>
+
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    
+  </div>
+</section>
+
+<style>
+  .insights-overview {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .insights-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    margin: 0 auto;
+    padding: 140px 0 110px;
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.7fr);
+
+    gap: 100px;
+    align-items: end;
+
+    margin-bottom: 80px;
+  }
+
+  .section-heading {
+    max-width: 760px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 26px;
+
+    color: var(--color-blue);
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: var(--color-blue);
+  }
+
+  h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(48px, 5vw, 76px);
+    font-weight: 620;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  h2 span {
+    color: var(--color-blue);
+  }
+
+  .section-intro {
+    max-width: 440px;
+    padding-bottom: 4px;
+  }
+
+  .section-intro p {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+    padding-bottom: 5px;
+
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .text-link span {
+    font-size: 16px;
+  }
+
+  /* Cards */
+
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    border-top: 1px solid var(--color-ink);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .insight-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 410px;
+    padding: 28px;
+
+    color: inherit;
+    text-decoration: none;
+
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+      background 180ms ease,
+      transform 180ms ease;
+  }
+
+  .insight-card:hover {
+    background: var(--color-white);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-number {
+    color: var(--color-blue);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .card-category {
+    color: var(--color-muted);
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .card-content {
+    margin-top: auto;
+    padding-top: 70px;
+  }
+
+  .card-content h3 {
+    max-width: 360px;
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: 25px;
+    font-weight: 620;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .card-content p {
+    max-width: 370px;
+    margin: 18px 0 0;
+
+    color: var(--color-muted);
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 35px;
+    padding-top: 18px;
+
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .card-arrow {
+    display: grid;
+    place-items: center;
+
+    width: 28px;
+    height: 28px;
+
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+
+    font-size: 13px;
+
+    transition:
+      color 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .insight-card:hover .card-arrow {
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .insights-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+    padding-top: 16px;
+
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: var(--color-teal);
+  }
+
+  @media (max-width: 1000px) {
+    .section-header {
+      grid-template-columns: 1fr;
+
+      gap: 35px;
+      margin-bottom: 60px;
+    }
+
+    .section-intro {
+      max-width: 600px;
+    }
+
+    .insights-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .insight-card {
+      min-height: 330px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .insights-container {
+      width: calc(100% - (var(--gutter) * 2));
+      padding: 90px 0 80px;
+    }
+
+    h2 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .section-intro p {
+      font-size: 15px;
+    }
+
+    .insight-card {
+      min-height: 350px;
+      padding: 24px;
+    }
+
+    .card-content {
+      padding-top: 55px;
+    }
+
+    .card-content h3 {
+      font-size: 22px;
+    }
+
+    .card-content p {
+      font-size: 12px;
+    }
+  }
+</style>

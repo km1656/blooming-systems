@@ -1,0 +1,422 @@
+<section class="why-blooming">
+  <div class="why-container">
+    <div class="section-intro">
+      <p class="section-eyebrow">WHY BLOOMING SYSTEMS</p>
+
+      <h2>
+        Identity is our<br />
+        <span>area of focus.</span>
+      </h2>
+
+      <p class="intro-copy">
+        We focus on the identity layer that connects people,
+        applications, infrastructure, and security controls across
+        complex enterprise environments.
+      </p>
+    </div>
+
+    <div class="differentiators">
+      <article class="differentiator">
+        <div class="differentiator-top">
+          <span class="number">01</span>
+          <span class="line"></span>
+        </div>
+
+        <h3>IAM specialization</h3>
+
+        <p>
+          Identity and access management is the core of our practice,
+          spanning strategy, architecture, implementation, governance,
+          integration, and operations.
+        </p>
+
+        <div class="tag">IDENTITY FIRST</div>
+      </article>
+
+      <article class="differentiator">
+        <div class="differentiator-top">
+          <span class="number">02</span>
+          <span class="line"></span>
+        </div>
+
+        <h3>Enterprise engineering</h3>
+
+        <p>
+          We work with the realities of enterprise environments:
+          legacy directories, hybrid infrastructure, complex application
+          estates, regulatory requirements, and evolving security
+          architectures.
+        </p>
+
+        <div class="tag">ENGINEERING</div>
+      </article>
+
+      <article class="differentiator">
+        <div class="differentiator-top">
+          <span class="number">03</span>
+          <span class="line"></span>
+        </div>
+
+        <h3>Platform breadth</h3>
+
+        <p>
+          Our experience spans cloud identity, directories, workforce
+          IAM, identity governance, privileged access, and the protocols
+          that connect them.
+        </p>
+
+        <div class="tag">MULTI-PLATFORM</div>
+      </article>
+
+      <article class="differentiator">
+        <div class="differentiator-top">
+          <span class="number">04</span>
+          <span class="line"></span>
+        </div>
+
+        <h3>Built to operate</h3>
+
+        <p>
+          Identity platforms need to work beyond implementation. We
+          support ongoing administration, optimization, governance,
+          troubleshooting, and operational improvement.
+        </p>
+
+        <div class="tag">OPERATIONS</div>
+      </article>
+    </div>
+
+    
+  </div>
+</section>
+
+<style>
+  .why-blooming {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-ink);
+    color: var(--color-white);
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .why-container {
+    position: relative;
+
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    margin: 0 auto;
+    padding: 140px 0 110px;
+  }
+
+  .why-container::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 20%;
+    bottom: 0;
+
+    width: 1px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    pointer-events: none;
+  }
+
+  .section-intro {
+    position: relative;
+    z-index: 1;
+
+    max-width: 760px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 26px;
+
+    color: #69a9ed;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: #69a9ed;
+  }
+
+  .section-intro h2 {
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(48px, 5vw, 76px);
+    font-weight: 620;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  .section-intro h2 span {
+    color: #69a9ed;
+  }
+
+  .intro-copy {
+    max-width: 610px;
+    margin: 32px 0 0;
+
+    color: #aebbd0;
+
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* Differentiators */
+
+  .differentiators {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin-top: 100px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .differentiator {
+    position: relative;
+
+    min-height: 320px;
+
+    padding: 34px 38px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+
+    transition: background 180ms ease;
+  }
+
+  .differentiator:hover {
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  .differentiator-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .number {
+    color: #69a9ed;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .line {
+    width: 36px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .differentiator h3 {
+    margin: 48px 0 0;
+
+    color: var(--color-white);
+
+    font-size: 28px;
+    font-weight: 620;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .differentiator p {
+    max-width: 470px;
+
+    margin: 18px 0 0;
+
+    color: #9eacc1;
+
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .tag {
+    position: absolute;
+    right: 38px;
+    bottom: 34px;
+
+    color: #687e9d;
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+  }
+
+  /* Footer */
+
+  .why-footer {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+
+    gap: 50px;
+
+    margin-top: 70px;
+    padding-top: 26px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .footer-statement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #7f94b1;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+
+    background: var(--color-teal);
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px rgba(22, 166, 160, 0.45);
+  }
+
+  .why-footer p {
+    margin: 0;
+
+    color: #8d9eb6;
+
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding-bottom: 5px;
+
+    color: var(--color-white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+    font-size: 11px;
+    font-weight: 650;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .footer-link:hover {
+    color: #69a9ed;
+    border-color: #69a9ed;
+  }
+
+  .footer-link span {
+    font-size: 15px;
+  }
+
+  @media (max-width: 900px) {
+    .differentiators {
+      grid-template-columns: 1fr;
+    }
+
+    .differentiator {
+      min-height: 280px;
+    }
+
+    .why-footer {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-link {
+      grid-column: 1 / -1;
+      justify-self: start;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .why-container {
+      width: calc(100% - (var(--gutter) * 2));
+      padding: 90px 0 80px;
+    }
+
+    .why-container::before {
+      display: none;
+    }
+
+    .section-intro h2 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .intro-copy {
+      font-size: 15px;
+    }
+
+    .differentiators {
+      margin-top: 70px;
+    }
+
+    .differentiator {
+      min-height: 270px;
+      padding: 28px 24px;
+    }
+
+    .differentiator h3 {
+      margin-top: 38px;
+      font-size: 24px;
+    }
+
+    .differentiator p {
+      font-size: 12px;
+    }
+
+    .tag {
+      right: 24px;
+      bottom: 28px;
+    }
+
+    .why-footer {
+      grid-template-columns: 1fr;
+      gap: 25px;
+
+      margin-top: 55px;
+    }
+
+    .footer-link {
+      grid-column: auto;
+    }
+  }
+</style>

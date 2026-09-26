@@ -1,0 +1,296 @@
+---
+const navItems = [
+  { label: "Services", href: "/services/" },
+  { label: "Solutions", href: "/solutions/" },
+  { label: "Technologies", href: "/technologies/" },
+  { label: "Industries", href: "/industries/" },
+  { label: "Insights", href: "/blog/" },
+
+];
+import Logo from "./Logo.astro";
+
+---
+
+<header class="site-header">
+  <div class="header-inner">
+   <Logo />
+
+    <!-- Desktop navigation -->
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+
+    <!-- CTA -->
+    <a href="/contact/" class="header-cta">
+      Talk to an IAM Expert
+      <span aria-hidden="true">↗</span>
+    </a>
+
+    <!-- Mobile menu button -->
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      data-menu-button
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile navigation -->
+  <div class="mobile-nav" data-mobile-nav>
+    <nav aria-label="Mobile navigation">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+
+      <a href="/contact/" class="mobile-cta">
+        Talk to an IAM Expert
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector("[data-menu-button]");
+  const mobileNav = document.querySelector("[data-mobile-nav]");
+
+  button?.addEventListener("click", () => {
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+
+    button.setAttribute("aria-expanded", String(!isOpen));
+    mobileNav?.classList.toggle("is-open", !isOpen);
+  });
+</script>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid #e7e9ed;
+    backdrop-filter: blur(12px);
+  }
+
+  .header-inner {
+    width: min(1440px, calc(100% - 64px));
+    height: 82px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #07152f;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 40px;
+    display: block;
+    color: #0d63d8;
+  }
+
+  .brand-mark svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .brand-name {
+    font-size: 18px;
+    font-weight: 750;
+    letter-spacing: 0.045em;
+  }
+
+  .brand-subtitle {
+    margin-top: 5px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #697386;
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-left: auto;
+  }
+
+  .desktop-nav a {
+    position: relative;
+    color: #39445a;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+
+  .desktop-nav a:hover {
+    color: #0d63d8;
+  }
+
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 18px;
+    border: 1px solid #07152f;
+
+    color: #07152f;
+    background: transparent;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+      background 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .header-cta span {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .header-cta:hover {
+    color: white;
+    background: #07152f;
+    border-color: #07152f;
+  }
+
+  .menu-button {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    margin: 6px auto;
+    background: #07152f;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  @media (max-width: 1050px) {
+    .desktop-nav {
+      gap: 20px;
+    }
+
+    .header-inner {
+      width: min(100% - 40px, 1440px);
+      gap: 24px;
+    }
+
+    .header-cta {
+      padding: 11px 14px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .header-inner {
+      height: 72px;
+    }
+
+    .desktop-nav,
+    .header-cta {
+      display: none;
+    }
+
+    .menu-button {
+      display: block;
+    }
+
+    .mobile-nav {
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      border-top: 0 solid #e7e9ed;
+      transition:
+        max-height 240ms ease,
+        border-color 240ms ease;
+    }
+
+    .mobile-nav.is-open {
+      max-height: 500px;
+      border-top-width: 1px;
+    }
+
+    .mobile-nav nav {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 20px 24px;
+    }
+
+    .mobile-nav a {
+      padding: 16px 0;
+      color: #07152f;
+      border-bottom: 1px solid #eceef2;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .mobile-nav .mobile-cta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding: 15px 17px;
+      border: 1px solid #07152f;
+      background: #07152f;
+      color: white;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-inner {
+      width: calc(100% - 32px);
+    }
+
+    .brand-name {
+      font-size: 16px;
+    }
+
+    .brand-subtitle {
+      font-size: 7px;
+    }
+
+    .brand-mark {
+      width: 29px;
+      height: 35px;
+    }
+  }
+</style>

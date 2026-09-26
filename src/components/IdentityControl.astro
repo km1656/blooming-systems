@@ -1,0 +1,595 @@
+<section class="identity-control">
+  <div class="identity-container">
+    <div class="identity-intro">
+      <p class="section-eyebrow">THE IDENTITY LAYER</p>
+
+      <h2>
+        Identity is the
+        <span>control plane.</span>
+      </h2>
+
+      <p class="intro-copy">
+        Every application, user, device, and privileged action depends
+        on identity. We help organizations build the identity foundation
+        that connects security, access, and business operations.
+      </p>
+
+      <a href="/solutions/" class="text-link">
+        Explore our identity solutions
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="identity-map">
+      <div class="map-label map-label-top">
+        <span class="status-dot"></span>
+        IDENTITY INFRASTRUCTURE
+      </div>
+
+      <div class="map-core">
+        <div class="core-ring ring-outer"></div>
+        <div class="core-ring ring-middle"></div>
+
+        <div class="core">
+          <span class="core-kicker">IDENTITY</span>
+          <strong>ACCESS</strong>
+          <span class="core-kicker">CONTROL</span>
+        </div>
+      </div>
+
+      <!-- Workforce -->
+      <div class="identity-node node-workforce">
+        <span class="node-number">01</span>
+        <strong>Workforce</strong>
+        <small>Employees & partners</small>
+      </div>
+
+      <!-- Customer -->
+      <div class="identity-node node-customer">
+        <span class="node-number">02</span>
+        <strong>Customer</strong>
+        <small>Digital identities</small>
+      </div>
+
+      <!-- Privileged -->
+      <div class="identity-node node-privileged">
+        <span class="node-number">03</span>
+        <strong>Privileged</strong>
+        <small>High-risk access</small>
+      </div>
+
+      <!-- Governance -->
+      <div class="identity-node node-governance">
+        <span class="node-number">04</span>
+        <strong>Governance</strong>
+        <small>Policy & compliance</small>
+      </div>
+
+      <!-- Connector lines -->
+      <svg
+        class="connection-lines"
+        viewBox="0 0 720 620"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M360 310 L155 150" />
+        <path d="M360 310 L565 150" />
+        <path d="M360 310 L155 470" />
+        <path d="M360 310 L565 470" />
+      </svg>
+
+      <div class="map-footer">
+        <span>AUTHENTICATION</span>
+        <span>AUTHORIZATION</span>
+        <span>GOVERNANCE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .identity-control {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .identity-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    margin: 0 auto;
+    padding: 140px 0;
+
+    display: grid;
+    grid-template-columns: minmax(300px, 0.8fr) minmax(500px, 1.2fr);
+    gap: 100px;
+    align-items: center;
+  }
+
+  /* Intro */
+
+  .identity-intro {
+    max-width: 520px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 26px;
+
+    color: var(--color-blue);
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: var(--color-blue);
+  }
+
+  h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(48px, 5vw, 76px);
+    font-weight: 620;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  h2 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .intro-copy {
+    max-width: 480px;
+    margin: 34px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 34px;
+
+    color: var(--color-ink);
+
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--color-ink);
+    padding-bottom: 5px;
+
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .text-link span {
+    font-size: 16px;
+  }
+
+  /* Identity map */
+
+  .identity-map {
+    position: relative;
+
+    min-height: 620px;
+
+    border: 1px solid var(--color-border);
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent 49.9%,
+        rgba(220, 225, 232, 0.65) 50%,
+        transparent 50.1%
+      ),
+      linear-gradient(
+        0deg,
+        transparent 49.9%,
+        rgba(220, 225, 232, 0.65) 50%,
+        transparent 50.1%
+      );
+
+    background-size: 100% 100%;
+
+    overflow: hidden;
+  }
+
+  .identity-map::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+      linear-gradient(
+        rgba(220, 225, 232, 0.45) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(220, 225, 232, 0.45) 1px,
+        transparent 1px
+      );
+
+    background-size: 48px 48px;
+
+    mask-image: radial-gradient(
+      circle at center,
+      black 20%,
+      transparent 72%
+    );
+  }
+
+  .map-label {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--color-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--color-teal);
+  }
+
+  /* Core */
+
+  .map-core {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 210px;
+    height: 210px;
+
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    place-items: center;
+  }
+
+  .core-ring {
+    position: absolute;
+
+    border: 1px solid rgba(23, 105, 209, 0.18);
+
+    border-radius: 50%;
+  }
+
+  .ring-outer {
+    width: 210px;
+    height: 210px;
+  }
+
+  .ring-middle {
+    width: 158px;
+    height: 158px;
+
+    border-color: rgba(23, 105, 209, 0.3);
+  }
+
+  .core {
+    position: relative;
+
+    width: 108px;
+    height: 108px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-ink);
+
+    border-radius: 50%;
+
+    box-shadow:
+      0 0 0 8px rgba(23, 105, 209, 0.05),
+      0 18px 45px rgba(7, 21, 47, 0.16);
+
+    color: var(--color-white);
+  }
+
+  .core strong {
+    margin: 2px 0;
+
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .core-kicker {
+    color: #9da9bb;
+
+    font-size: 6px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+
+  /* Nodes */
+
+  .identity-node {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 165px;
+    padding: 15px 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--color-border);
+
+    box-shadow: 0 10px 30px rgba(7, 21, 47, 0.05);
+
+    backdrop-filter: blur(8px);
+  }
+
+  .node-number {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--color-blue);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .identity-node strong {
+    display: block;
+
+    color: var(--color-ink);
+
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .identity-node small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--color-muted);
+
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .node-workforce {
+    top: 96px;
+    left: 52px;
+  }
+
+  .node-customer {
+    top: 96px;
+    right: 52px;
+  }
+
+  .node-privileged {
+    bottom: 96px;
+    left: 52px;
+  }
+
+  .node-governance {
+    right: 52px;
+    bottom: 96px;
+  }
+
+  /* Lines */
+
+  .connection-lines {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+  }
+
+  .connection-lines path {
+    fill: none;
+
+    stroke: rgba(23, 105, 209, 0.22);
+    stroke-width: 1;
+
+    stroke-dasharray: 4 5;
+  }
+
+  /* Footer */
+
+  .map-footer {
+    position: absolute;
+
+    right: 24px;
+    bottom: 22px;
+    left: 24px;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 14px;
+
+    border-top: 1px solid var(--color-border);
+
+    color: var(--color-muted);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+  }
+
+  @media (max-width: 1100px) {
+    .identity-container {
+      grid-template-columns: 1fr;
+      gap: 70px;
+    }
+
+    .identity-intro {
+      max-width: 680px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .identity-container {
+      width: calc(100% - (var(--gutter) * 2));
+      padding: 90px 0;
+    }
+
+    h2 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .intro-copy {
+      font-size: 16px;
+    }
+
+    .identity-map {
+      min-height: 560px;
+    }
+
+    .identity-node {
+      width: 135px;
+    }
+
+    .node-workforce {
+      top: 82px;
+      left: 20px;
+    }
+
+    .node-customer {
+      top: 82px;
+      right: 20px;
+    }
+
+    .node-privileged {
+      bottom: 82px;
+      left: 20px;
+    }
+
+    .node-governance {
+      right: 20px;
+      bottom: 82px;
+    }
+
+    .map-core {
+      width: 170px;
+      height: 170px;
+    }
+
+    .ring-outer {
+      width: 170px;
+      height: 170px;
+    }
+
+    .ring-middle {
+      width: 128px;
+      height: 128px;
+    }
+
+    .core {
+      width: 92px;
+      height: 92px;
+    }
+
+    .core strong {
+      font-size: 13px;
+    }
+
+    .map-footer {
+      font-size: 7px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .identity-map {
+      min-height: 500px;
+    }
+
+    .identity-node {
+      width: 118px;
+      padding: 11px 12px;
+    }
+
+    .identity-node strong {
+      font-size: 12px;
+    }
+
+    .identity-node small {
+      font-size: 9px;
+    }
+
+    .node-workforce {
+      top: 70px;
+      left: 12px;
+    }
+
+    .node-customer {
+      top: 70px;
+      right: 12px;
+    }
+
+    .node-privileged {
+      bottom: 70px;
+      left: 12px;
+    }
+
+    .node-governance {
+      right: 12px;
+      bottom: 70px;
+    }
+
+    .map-footer {
+      gap: 8px;
+      font-size: 6px;
+    }
+  }
+</style>

@@ -1,0 +1,792 @@
+<section class="solutions-overview">
+  <div class="solutions-container">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">IDENTITY SOLUTIONS</p>
+
+        <h2>
+          One identity strategy.<br />
+          <span>Multiple access domains.</span>
+        </h2>
+      </div>
+
+      <div class="section-intro">
+        <p>
+          Identity requirements differ across employees, customers,
+          privileged users, and hybrid environments. We design IAM
+          architectures around how your organization actually operates.
+        </p>
+
+        <a href="/solutions/" class="text-link">
+          Explore identity solutions
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="solution-feature">
+      <div class="feature-content">
+        <p class="feature-label">01 / WORKFORCE IDENTITY</p>
+
+        <h3>
+          Give the right people
+          <span>the right access.</span>
+        </h3>
+
+        <p class="feature-description">
+          Build secure workforce access across applications, cloud
+          platforms, directories, and enterprise systems with identity
+          at the center of the access experience.
+        </p>
+
+        <div class="feature-points">
+          <span>SSO</span>
+          <span>MFA</span>
+          <span>Lifecycle</span>
+          <span>Conditional Access</span>
+        </div>
+
+        <a href="/solutions/workforce-identity/" class="feature-link">
+          Explore Workforce Identity
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="identity-architecture" aria-hidden="true">
+        <div class="architecture-grid"></div>
+
+        <div class="architecture-line line-horizontal"></div>
+        <div class="architecture-line line-vertical"></div>
+
+        <div class="architecture-core">
+          <span>IDENTITY</span>
+          <strong>WORKFORCE</strong>
+        </div>
+
+        <div class="architecture-node node-user">
+          <span class="node-icon">01</span>
+          USER
+        </div>
+
+        <div class="architecture-node node-app">
+          <span class="node-icon">02</span>
+          APPLICATIONS
+        </div>
+
+        <div class="architecture-node node-cloud">
+          <span class="node-icon">03</span>
+          CLOUD
+        </div>
+
+        <div class="architecture-node node-directory">
+          <span class="node-icon">04</span>
+          DIRECTORY
+        </div>
+
+        <div class="architecture-status">
+          <span></span>
+          ACCESS FLOW ACTIVE
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-list">
+      <a href="/solutions/customer-identity/" class="solution-row">
+        <span class="solution-number">02</span>
+
+        <div class="solution-copy">
+          <h3>Customer Identity</h3>
+          <p>
+            Secure digital customer experiences with scalable
+            authentication, authorization, federation, and identity
+            lifecycle capabilities.
+          </p>
+        </div>
+
+        <span class="solution-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/solutions/privileged-access/" class="solution-row">
+        <span class="solution-number">03</span>
+
+        <div class="solution-copy">
+          <h3>Privileged Access</h3>
+          <p>
+            Protect high-value accounts and administrative access with
+            stronger controls, governance, monitoring, and least
+            privilege principles.
+          </p>
+        </div>
+
+        <span class="solution-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/solutions/identity-governance/" class="solution-row">
+        <span class="solution-number">04</span>
+
+        <div class="solution-copy">
+          <h3>Identity Governance</h3>
+          <p>
+            Connect identity lifecycle, access decisions, policy,
+            certification, and compliance into a consistent governance
+            framework.
+          </p>
+        </div>
+
+        <span class="solution-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/solutions/hybrid-identity/" class="solution-row">
+        <span class="solution-number">05</span>
+
+        <div class="solution-copy">
+          <h3>Hybrid Identity</h3>
+          <p>
+            Modernize identity across on-premises directories and cloud
+            platforms while maintaining secure connectivity and
+            operational continuity.
+          </p>
+        </div>
+
+        <span class="solution-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+  
+  </div>
+</section>
+
+<style>
+  .solutions-overview {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .solutions-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+    margin: 0 auto;
+    padding: 140px 0 110px;
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.7fr);
+    gap: 100px;
+    align-items: end;
+    margin-bottom: 75px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 26px;
+
+    color: var(--color-blue);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: var(--color-blue);
+  }
+
+  h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+    font-size: clamp(48px, 5vw, 76px);
+    font-weight: 620;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  h2 span {
+    color: var(--color-blue);
+  }
+
+  .section-intro {
+    max-width: 440px;
+    padding-bottom: 4px;
+  }
+
+  .section-intro p {
+    margin: 0;
+
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+    padding-bottom: 5px;
+
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .text-link span {
+    font-size: 16px;
+  }
+
+  /* Feature */
+
+  .solution-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(480px, 1.1fr);
+
+    min-height: 560px;
+
+    background: var(--color-ink);
+  }
+
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 70px 60px;
+  }
+
+  .feature-label {
+    margin: 0;
+
+    color: #8da4c6;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+  }
+
+  .feature-content h3 {
+    max-width: 540px;
+    margin: 55px 0 0;
+
+    color: var(--color-white);
+    font-size: clamp(38px, 4vw, 60px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .feature-content h3 span {
+    display: block;
+    color: #65a7ed;
+  }
+
+  .feature-description {
+    max-width: 500px;
+    margin: 30px 0 0;
+
+    color: #b8c3d4;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .feature-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 30px;
+  }
+
+  .feature-points span {
+    padding: 8px 11px;
+
+    color: #d6dfeb;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .feature-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: auto;
+    padding-bottom: 6px;
+
+    color: var(--color-white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+
+    font-size: 12px;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .feature-link:hover {
+    color: #65a7ed;
+    border-color: #65a7ed;
+  }
+
+  .feature-link span {
+    font-size: 16px;
+  }
+
+  /* Architecture visual */
+
+  .identity-architecture {
+    position: relative;
+    min-height: 560px;
+
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(23, 105, 209, 0.16),
+        transparent 48%
+      ),
+      #091b38;
+  }
+
+  .architecture-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+      linear-gradient(
+        rgba(120, 160, 210, 0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(120, 160, 210, 0.08) 1px,
+        transparent 1px
+      );
+
+    background-size: 46px 46px;
+
+    mask-image: radial-gradient(
+      circle at center,
+      black 15%,
+      transparent 78%
+    );
+  }
+
+  .architecture-line {
+    position: absolute;
+
+    background: rgba(93, 159, 225, 0.28);
+  }
+
+  .line-horizontal {
+    top: 50%;
+    left: 14%;
+    right: 14%;
+
+    height: 1px;
+  }
+
+  .line-vertical {
+    top: 19%;
+    bottom: 19%;
+    left: 50%;
+
+    width: 1px;
+  }
+
+  .architecture-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 155px;
+    height: 155px;
+
+    transform: translate(-50%, -50%);
+
+    background: #07152f;
+    border: 1px solid rgba(101, 167, 237, 0.5);
+    border-radius: 50%;
+
+    box-shadow:
+      0 0 0 20px rgba(23, 105, 209, 0.035),
+      0 0 0 45px rgba(23, 105, 209, 0.025),
+      0 25px 70px rgba(0, 0, 0, 0.3);
+  }
+
+  .architecture-core span {
+    color: #7f98bb;
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+
+  .architecture-core strong {
+    margin-top: 6px;
+
+    color: var(--color-white);
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .architecture-node {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 13px;
+
+    color: #cbd6e4;
+    background: rgba(7, 21, 47, 0.8);
+    border: 1px solid rgba(130, 165, 205, 0.2);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .node-icon {
+    color: #65a7ed;
+    font-size: 7px;
+  }
+
+  .node-user {
+    top: 22%;
+    left: 12%;
+  }
+
+  .node-app {
+    top: 22%;
+    right: 12%;
+  }
+
+  .node-cloud {
+    bottom: 22%;
+    left: 12%;
+  }
+
+  .node-directory {
+    right: 12%;
+    bottom: 22%;
+  }
+
+  .architecture-status {
+    position: absolute;
+    right: 28px;
+    bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #7891b3;
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .architecture-status span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--color-teal);
+    box-shadow: 0 0 10px rgba(22, 166, 160, 0.65);
+  }
+
+  /* Supporting solutions */
+
+  .solution-list {
+    border-top: 1px solid var(--color-ink);
+  }
+
+  .solution-row {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr) 40px;
+    gap: 32px;
+    align-items: start;
+
+    padding: 30px 8px 30px 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+      padding 180ms ease,
+      background 180ms ease;
+  }
+
+  .solution-row::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: var(--color-surface);
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    transition: transform 180ms ease;
+  }
+
+  .solution-row:hover {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .solution-row:hover::before {
+    transform: scaleY(1);
+  }
+
+  .solution-row > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .solution-number {
+    padding-top: 4px;
+
+    color: var(--color-blue);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .solution-copy {
+    max-width: 760px;
+  }
+
+  .solution-copy h3 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: 24px;
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .solution-copy p {
+    max-width: 680px;
+    margin: 10px 0 0;
+
+    color: var(--color-muted);
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .solution-arrow {
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    margin-top: 2px;
+
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+
+    font-size: 15px;
+
+    transition:
+      color 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .solution-row:hover .solution-arrow {
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+
+    transform: translate(2px, -2px);
+  }
+
+  .solutions-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 30px;
+    padding-top: 16px;
+
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  @media (max-width: 1000px) {
+    .section-header {
+      grid-template-columns: 1fr;
+      gap: 35px;
+      margin-bottom: 60px;
+    }
+
+    .section-intro {
+      max-width: 600px;
+    }
+
+    .solution-feature {
+      grid-template-columns: 1fr;
+    }
+
+    .identity-architecture {
+      min-height: 500px;
+    }
+
+    .feature-content {
+      min-height: 500px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .solutions-container {
+      width: calc(100% - (var(--gutter) * 2));
+      padding: 90px 0 80px;
+    }
+
+    h2 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .section-intro p {
+      font-size: 15px;
+    }
+
+    .feature-content {
+      min-height: 470px;
+      padding: 45px 28px;
+    }
+
+    .feature-content h3 {
+      margin-top: 40px;
+      font-size: 40px;
+    }
+
+    .feature-description {
+      font-size: 14px;
+    }
+
+    .identity-architecture {
+      min-height: 400px;
+    }
+
+    .architecture-core {
+      width: 125px;
+      height: 125px;
+    }
+
+    .architecture-core strong {
+      font-size: 12px;
+    }
+
+    .architecture-node {
+      padding: 8px 9px;
+      font-size: 6px;
+    }
+
+    .node-user {
+      top: 16%;
+      left: 5%;
+    }
+
+    .node-app {
+      top: 16%;
+      right: 5%;
+    }
+
+    .node-cloud {
+      bottom: 16%;
+      left: 5%;
+    }
+
+    .node-directory {
+      right: 5%;
+      bottom: 16%;
+    }
+
+    .solution-row {
+      grid-template-columns: 38px minmax(0, 1fr) 30px;
+      gap: 14px;
+      padding: 24px 0;
+    }
+
+    .solution-row:hover {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    .solution-copy h3 {
+      font-size: 19px;
+    }
+
+    .solution-copy p {
+      font-size: 13px;
+    }
+
+    .solution-arrow {
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+    }
+
+    .solutions-footer {
+      gap: 12px;
+      font-size: 6px;
+    }
+  }
+</style>

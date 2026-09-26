@@ -1,0 +1,464 @@
+<section class="final-cta">
+  <div class="cta-container">
+    <div class="cta-grid">
+      <div class="cta-content">
+        <p class="section-eyebrow">START A CONVERSATION</p>
+
+        <h2>
+          Make identity<br />
+          <span>work for your business.</span>
+        </h2>
+
+        <p class="cta-description">
+          Whether you're modernizing a legacy directory, implementing
+          cloud identity, strengthening access governance, or planning
+          an enterprise IAM strategy, let's talk about where you are
+          today and where you need to go.
+        </p>
+
+        <div class="cta-actions">
+          <a href="/contact/" class="cta-button">
+            Talk to an IAM Expert
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="mailto:info@bloomingsys.com" class="cta-email">
+            info@bloomingsys.com
+          </a>
+        </div>
+      </div>
+
+      <div class="cta-visual" aria-hidden="true">
+        <div class="visual-grid"></div>
+
+        <div class="visual-ring ring-one"></div>
+        <div class="visual-ring ring-two"></div>
+        <div class="visual-ring ring-three"></div>
+
+        <div class="visual-core">
+          <div class="core-shield">
+            <svg
+              viewBox="0 0 100 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M50 4L91 18V52C91 79 75 100 50 113C25 100 9 79 9 52V18L50 4Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+
+              <path
+                d="M32 56C32 42 40 31 50 31C60 31 68 42 68 56"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M27 56C27 38 37 25 50 25C63 25 73 38 73 56"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M38 56C38 47 43 40 50 40C57 40 62 47 62 56C62 69 58 79 50 87"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M45 56C45 51 47 47 50 47C53 47 55 51 55 56C55 65 53 71 50 76"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="visual-label label-top">
+          <span class="status-dot"></span>
+          IDENTITY
+        </div>
+
+        <div class="visual-label label-bottom">
+          ACCESS / TRUST / CONTROL
+        </div>
+      </div>
+    </div>
+
+ 
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-ink);
+    color: var(--color-white);
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    margin: 0 auto;
+    padding: 130px 0 35px;
+  }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(400px, 0.95fr);
+
+    gap: 90px;
+    align-items: center;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 28px;
+
+    color: #69a9ed;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: #69a9ed;
+  }
+
+  .cta-content h2 {
+    max-width: 760px;
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(50px, 5.5vw, 82px);
+    font-weight: 620;
+    line-height: 0.96;
+    letter-spacing: -0.055em;
+  }
+
+  .cta-content h2 span {
+    color: #69a9ed;
+  }
+
+  .cta-description {
+    max-width: 620px;
+    margin: 34px 0 0;
+
+    color: #aebbd0;
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    margin-top: 40px;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 52px;
+    padding: 0 22px;
+
+    color: var(--color-ink);
+    background: var(--color-white);
+
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .cta-button:hover {
+    color: var(--color-white);
+    background: var(--color-blue);
+
+    transform: translateY(-1px);
+  }
+
+  .cta-button span {
+    font-size: 17px;
+  }
+
+  .cta-email {
+    color: #9eacc1;
+
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 4px;
+
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .cta-email:hover {
+    color: var(--color-white);
+    border-color: var(--color-white);
+  }
+
+  /* Visual */
+
+  .cta-visual {
+    position: relative;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(23, 105, 209, 0.16),
+        transparent 55%
+      ),
+      #091b38;
+  }
+
+  .visual-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+      linear-gradient(
+        rgba(120, 160, 210, 0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(120, 160, 210, 0.08) 1px,
+        transparent 1px
+      );
+
+    background-size: 48px 48px;
+
+    mask-image: radial-gradient(
+      circle at center,
+      black 15%,
+      transparent 75%
+    );
+  }
+
+  .visual-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    border: 1px solid rgba(101, 167, 237, 0.14);
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .ring-one {
+    width: 210px;
+    height: 210px;
+  }
+
+  .ring-two {
+    width: 330px;
+    height: 330px;
+  }
+
+  .ring-three {
+    width: 460px;
+    height: 460px;
+  }
+
+  .visual-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: grid;
+    place-items: center;
+
+    width: 170px;
+    height: 170px;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(7, 21, 47, 0.82);
+    border: 1px solid rgba(101, 167, 237, 0.45);
+    border-radius: 50%;
+
+    box-shadow:
+      0 0 0 18px rgba(23, 105, 209, 0.035),
+      0 25px 70px rgba(0, 0, 0, 0.3);
+  }
+
+  .core-shield {
+    width: 62px;
+
+    color: #69a9ed;
+  }
+
+  .core-shield svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .visual-label {
+    position: absolute;
+
+    color: #7891b3;
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+  }
+
+  .label-top {
+    top: 28px;
+    right: 28px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .label-bottom {
+    bottom: 25px;
+    left: 28px;
+  }
+
+  .status-dot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--color-teal);
+
+    box-shadow: 0 0 10px rgba(22, 166, 160, 0.55);
+  }
+
+  /* Footer */
+
+  .cta-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 100px;
+    padding-top: 18px;
+
+    color: #657b99;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  @media (max-width: 1000px) {
+    .cta-grid {
+      grid-template-columns: 1fr;
+      gap: 70px;
+    }
+
+    .cta-visual {
+      min-height: 450px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .cta-container {
+      width: calc(100% - (var(--gutter) * 2));
+      padding: 90px 0 30px;
+    }
+
+    .cta-content h2 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .cta-description {
+      font-size: 15px;
+    }
+
+    .cta-actions {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .cta-visual {
+      min-height: 360px;
+    }
+
+    .ring-one {
+      width: 170px;
+      height: 170px;
+    }
+
+    .ring-two {
+      width: 270px;
+      height: 270px;
+    }
+
+    .ring-three {
+      width: 370px;
+      height: 370px;
+    }
+
+    .visual-core {
+      width: 135px;
+      height: 135px;
+    }
+
+    .core-shield {
+      width: 50px;
+    }
+
+    .cta-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+
+      margin-top: 65px;
+
+      font-size: 6px;
+    }
+  }
+</style>

@@ -1,0 +1,832 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="contact-page">
+    <div class="contact-container">
+      <div class="contact-intro">
+        <p class="eyebrow">CONTACT BLOOMING SYSTEMS</p>
+
+        <h1>Let's talk about your identity environment.</h1>
+
+        <p class="intro-copy">
+          Connect with Blooming Systems to discuss identity and access
+          management, enterprise security, cloud identity, directory services,
+          or IAM modernization.
+        </p>
+
+        <div class="contact-details">
+          <div class="detail-block">
+            <span class="detail-label">PHONE</span>
+            <a href="tel:+18587407673">858 740 7673</a>
+          </div>
+
+          <div class="detail-block">
+            <span class="detail-label">OFFICE</span>
+            <address>
+              <strong>Blooming Systems Inc.</strong>
+              <span>21951 Purebred Lane</span>
+              <span>Escondido, CA 92029</span>
+            </address>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="first-name">
+                First name <span aria-hidden="true">*</span>
+              </label>
+
+              <input
+                id="first-name"
+                name="firstName"
+                type="text"
+                autocomplete="given-name"
+                required
+                minlength="2"
+                maxlength="50"
+                placeholder="John"
+                aria-describedby="first-name-error"
+              />
+
+              <p
+                id="first-name-error"
+                class="field-error"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
+            <div class="form-field">
+              <label for="last-name">
+                Last name <span aria-hidden="true">*</span>
+              </label>
+
+              <input
+                id="last-name"
+                name="lastName"
+                type="text"
+                autocomplete="family-name"
+                required
+                minlength="2"
+                maxlength="50"
+                placeholder="Smith"
+                aria-describedby="last-name-error"
+              />
+
+              <p
+                id="last-name-error"
+                class="field-error"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="work-email">
+                Work email <span aria-hidden="true">*</span>
+              </label>
+
+              <input
+                id="work-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                maxlength="100"
+                placeholder="john@company.com"
+                aria-describedby="work-email-error"
+              />
+
+              <p
+                id="work-email-error"
+                class="field-error"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
+            <div class="form-field">
+              <label for="company">
+                Company <span aria-hidden="true">*</span>
+              </label>
+
+              <input
+                id="company"
+                name="company"
+                type="text"
+                autocomplete="organization"
+                required
+                minlength="2"
+                maxlength="100"
+                placeholder="Company name"
+                aria-describedby="company-error"
+              />
+
+              <p
+                id="company-error"
+                class="field-error"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone</label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                maxlength="25"
+                placeholder="(555) 555-5555"
+                aria-describedby="phone-error"
+              />
+
+              <p
+                id="phone-error"
+                class="field-error"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="help">
+                What can we help with? <span aria-hidden="true">*</span>
+              </label>
+
+              <select
+                id="help"
+                name="help"
+                required
+                aria-describedby="help-error"
+              >
+                <option value="">Select an area</option>
+                <option value="iam-consulting">IAM Consulting</option>
+                <option value="implementation-integration">
+                  Implementation & Integration
+                </option>
+                <option value="identity-governance">
+                  Identity Governance & Administration
+                </option>
+                <option value="directory-services">
+                  Directory Services
+                </option>
+                <option value="cloud-identity">Cloud Identity</option>
+                <option value="platform-services">IAM Platform Services</option>
+                <option value="managed-iam">Managed IAM Services</option>
+                <option value="other">Other</option>
+              </select>
+
+              <p
+                id="help-error"
+                class="field-error"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="project">
+                Tell us about your project
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <textarea
+                id="project"
+                name="project"
+                rows="7"
+                required
+                minlength="20"
+                maxlength="2000"
+                placeholder="Tell us about your current identity environment, goals, challenges, or project."
+                aria-describedby="project-error project-counter"
+              ></textarea>
+
+              <div class="textarea-meta">
+                <p
+                  id="project-error"
+                  class="field-error"
+                  role="alert"
+                  hidden
+                ></p>
+
+                <span id="project-counter" class="character-count">
+                  0 / 2000
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button">
+            <span class="button-text">Send inquiry</span>
+            <span class="button-loading" hidden>Sending...</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <p class="form-note">
+            We use the information you provide to respond to your inquiry.
+          </p>
+
+          <p
+            id="form-status"
+            class="form-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="contact-system">
+      <span>IAM CONSULTING</span>
+      <span>IDENTITY ENGINEERING</span>
+      <span>ACCESS MANAGEMENT</span>
+      <span>ENTERPRISE SECURITY</span>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+
+  if (form) {
+    const submitButton =
+      form.querySelector<HTMLButtonElement>(".submit-button");
+
+    const buttonText = form.querySelector<HTMLElement>(".button-text");
+    const buttonLoading = form.querySelector<HTMLElement>(".button-loading");
+
+    const formStatus =
+      form.querySelector<HTMLElement>("#form-status");
+
+    const project = form.querySelector<HTMLTextAreaElement>("#project");
+    const projectCounter =
+      form.querySelector<HTMLElement>("#project-counter");
+
+    const fields = Array.from(
+      form.querySelectorAll<
+        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >("input, select, textarea")
+    );
+
+    const setError = (
+      field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
+      message: string
+    ) => {
+      const errorElement = document.getElementById(
+        `${field.id}-error`
+      );
+
+      field.classList.add("has-error");
+      field.setAttribute("aria-invalid", "true");
+
+      if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.hidden = false;
+      }
+    };
+
+    const clearError = (
+      field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    ) => {
+      const errorElement = document.getElementById(
+        `${field.id}-error`
+      );
+
+      field.classList.remove("has-error");
+      field.removeAttribute("aria-invalid");
+
+      if (errorElement) {
+        errorElement.textContent = "";
+        errorElement.hidden = true;
+      }
+    };
+
+    const validateField = (
+      field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    ) => {
+      clearError(field);
+
+      const value = field.value.trim();
+
+      if (field.required && !value) {
+        setError(field, "This field is required.");
+        return false;
+      }
+
+      if (field instanceof HTMLInputElement) {
+        if (field.type === "email" && value) {
+          const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!emailPattern.test(value)) {
+            setError(field, "Enter a valid work email address.");
+            return false;
+          }
+        }
+
+        if (field.type === "tel" && value) {
+          const phoneDigits = value.replace(/\D/g, "");
+
+          if (phoneDigits.length < 7) {
+            setError(field, "Enter a valid phone number.");
+            return false;
+          }
+        }
+      }
+
+      if (field.minLength > 0 && value.length < field.minLength) {
+        const minimum = field.minLength;
+
+        setError(
+          field,
+          `Please enter at least ${minimum} characters.`
+        );
+
+        return false;
+      }
+
+      if (field.maxLength > 0 && value.length > field.maxLength) {
+        const maximum = field.maxLength;
+
+        setError(
+          field,
+          `Please keep this field under ${maximum} characters.`
+        );
+
+        return false;
+      }
+
+      return true;
+    };
+
+    const updateProjectCounter = () => {
+      if (!project || !projectCounter) return;
+
+      projectCounter.textContent =
+        `${project.value.length} / ${project.maxLength}`;
+    };
+
+    fields.forEach((field) => {
+      field.addEventListener("blur", () => {
+        validateField(field);
+      });
+
+      field.addEventListener("input", () => {
+        if (field.classList.contains("has-error")) {
+          validateField(field);
+        }
+
+        if (field === project) {
+          updateProjectCounter();
+        }
+      });
+
+      field.addEventListener("change", () => {
+        validateField(field);
+      });
+    });
+
+    updateProjectCounter();
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      formStatus.hidden = true;
+      formStatus.textContent = "";
+
+      let isValid = true;
+      let firstInvalidField:
+        | HTMLInputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement
+        | null = null;
+
+      fields.forEach((field) => {
+        const fieldIsValid = validateField(field);
+
+        if (!fieldIsValid) {
+          isValid = false;
+
+          if (!firstInvalidField) {
+            firstInvalidField = field;
+          }
+        }
+      });
+
+      if (!isValid) {
+        firstInvalidField?.focus();
+        return;
+      }
+
+      /*
+       * The form is currently UI-only.
+       * Connect this section to your API/form service later.
+       */
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      if (buttonText) {
+        buttonText.hidden = true;
+      }
+
+      if (buttonLoading) {
+        buttonLoading.hidden = false;
+      }
+
+      // Temporary success state until the backend is connected.
+      window.setTimeout(() => {
+        formStatus.textContent =
+          "Thank you. Your inquiry has been received.";
+
+        formStatus.classList.add("success");
+        formStatus.hidden = false;
+
+        form.reset();
+        updateProjectCounter();
+
+        fields.forEach(clearError);
+
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+
+        if (buttonText) {
+          buttonText.hidden = false;
+        }
+
+        if (buttonLoading) {
+          buttonLoading.hidden = true;
+        }
+      }, 700);
+    });
+  }
+</script>
+
+<style>
+  .contact-page {
+    background: var(--color-white);
+    padding: 112px 0 0;
+  }
+
+  .contact-container {
+    width: min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container)
+    );
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 96px;
+    align-items: start;
+  }
+
+  .contact-intro {
+    padding-top: 12px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 26px;
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--color-blue);
+  }
+
+  h1 {
+    max-width: 680px;
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 650;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  .intro-copy {
+    max-width: 570px;
+    margin: 30px 0 0;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .contact-details {
+    display: grid;
+    gap: 34px;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .detail-block {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .detail-label {
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .detail-block a {
+    width: fit-content;
+    color: var(--color-ink);
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .detail-block a:hover {
+    color: var(--color-blue);
+  }
+
+  address {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: var(--color-text);
+    font-size: 15px;
+    font-style: normal;
+    line-height: 1.6;
+  }
+
+  address strong {
+    margin-bottom: 3px;
+    color: var(--color-ink);
+    font-weight: 650;
+  }
+
+  .contact-form-wrapper {
+    padding: 42px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 20px;
+  }
+
+  .form-field {
+    min-width: 0;
+  }
+
+  .form-field-full {
+    grid-column: 1 / -1;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  label span {
+    color: var(--color-blue);
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-size: 15px;
+    line-height: 1.5;
+    outline: none;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  input,
+  select {
+    min-height: 52px;
+    padding: 0 15px;
+  }
+
+  textarea {
+    min-height: 170px;
+    padding: 14px 15px;
+    resize: vertical;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #9aa3b2;
+  }
+
+  select {
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, #697386 50%),
+      linear-gradient(135deg, #697386 50%, transparent 50%);
+    background-position:
+      calc(100% - 19px) 22px,
+      calc(100% - 14px) 22px;
+    background-size:
+      5px 5px,
+      5px 5px;
+    background-repeat: no-repeat;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 3px rgba(23, 105, 209, 0.08);
+  }
+
+  input.has-error,
+  select.has-error,
+  textarea.has-error {
+    border-color: #c53b3b;
+    box-shadow: 0 0 0 3px rgba(197, 59, 59, 0.06);
+  }
+
+  .field-error {
+    margin: 7px 0 0;
+    color: #b32f2f;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .textarea-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 24px;
+  }
+
+  .character-count {
+    margin-left: auto;
+    padding-top: 7px;
+    color: var(--color-muted);
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-width: 178px;
+    min-height: 54px;
+    margin-top: 34px;
+    padding: 0 24px;
+    border: 1px solid var(--color-ink);
+    background: var(--color-ink);
+    color: white;
+    font-size: 13px;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+    transition:
+      background 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .submit-button:hover:not(:disabled) {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    transform: translateY(-1px);
+  }
+
+  .submit-button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+  }
+
+  .button-arrow {
+    font-size: 17px;
+  }
+
+  .form-note {
+    max-width: 500px;
+    margin: 16px 0 0;
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .form-status {
+    margin: 18px 0 0;
+    padding: 12px 14px;
+    border: 1px solid #b9dccb;
+    background: #f3faf6;
+    color: #246342;
+    font-size: 13px;
+  }
+
+  .contact-system {
+    width: min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container)
+    );
+    margin: 100px auto 0;
+    padding: 18px 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px 28px;
+    color: var(--color-muted);
+    font-size: 10px;
+    font-weight: 650;
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: 1000px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 64px;
+    }
+
+    .contact-intro {
+      max-width: 760px;
+    }
+
+    .contact-details {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .contact-page {
+      padding-top: 72px;
+    }
+
+    .contact-container {
+      width: min(
+        calc(100% - (var(--gutter) * 2)),
+        var(--container)
+      );
+      gap: 48px;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    .intro-copy {
+      font-size: 16px;
+    }
+
+    .contact-details {
+      grid-template-columns: 1fr;
+      margin-top: 48px;
+    }
+
+    .contact-form-wrapper {
+      padding: 24px 20px;
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .form-field-full {
+      grid-column: auto;
+    }
+
+    .submit-button {
+      width: 100%;
+    }
+
+    .contact-system {
+      margin-top: 72px;
+    }
+  }
+</style>

@@ -1,0 +1,410 @@
+<section class="services-overview">
+  <div class="services-container">
+    <div class="section-header">
+      <div class="section-heading">
+        <p class="section-eyebrow">IAM SERVICES</p>
+
+        <h2>
+          Identity infrastructure<br />
+          <span>built for the enterprise.</span>
+        </h2>
+      </div>
+
+      <div class="section-intro">
+        <p>
+          From strategy and architecture to implementation and ongoing
+          operations, we help organizations build identity capabilities
+          that are secure, scalable, and designed for change.
+        </p>
+
+        <a href="/services/" class="text-link">
+          View all IAM services
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="services-list">
+      <a href="/services/iam-consulting/" class="service-row">
+        <span class="service-number">01</span>
+
+        <div class="service-main">
+          <h3>IAM Consulting</h3>
+          <p>
+            Strategy, maturity assessments, architecture, governance,
+            and identity roadmaps aligned to your business and security
+            objectives.
+          </p>
+        </div>
+
+        <span class="service-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/services/implementation-integration/" class="service-row">
+        <span class="service-number">02</span>
+
+        <div class="service-main">
+          <h3>Implementation & Integration</h3>
+          <p>
+            Workforce IAM, SSO, MFA, federation, application integration,
+            API security, and modern authentication architectures.
+          </p>
+        </div>
+
+        <span class="service-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/services/identity-governance/" class="service-row">
+        <span class="service-number">03</span>
+
+        <div class="service-main">
+          <h3>Identity Governance & Administration</h3>
+          <p>
+            Lifecycle automation, access requests, certifications,
+            role management, segregation of duties, and compliance
+            reporting.
+          </p>
+        </div>
+
+        <span class="service-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/services/directory-services/" class="service-row">
+        <span class="service-number">04</span>
+
+        <div class="service-main">
+          <h3>Directory Services</h3>
+          <p>
+            Active Directory, Entra ID, LDAP, OpenLDAP, directory
+            consolidation, synchronization, migration, and performance
+            optimization.
+          </p>
+        </div>
+
+        <span class="service-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/services/cloud-identity/" class="service-row">
+        <span class="service-number">05</span>
+
+        <div class="service-main">
+          <h3>Cloud Identity</h3>
+          <p>
+            Hybrid identity, cloud authentication, Conditional Access,
+            SSO, MFA, federation, and application provisioning across
+            modern cloud environments.
+          </p>
+        </div>
+
+        <span class="service-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a href="/services/platform-services/" class="service-row">
+        <span class="service-number">06</span>
+
+        <div class="service-main">
+          <h3>IAM Platform Services</h3>
+          <p>
+            Engineering and operational expertise across Microsoft
+            Entra ID, Okta, Ping Identity, ForgeRock, SailPoint,
+            CyberArk, Oracle IAM, and enterprise directory platforms.
+          </p>
+        </div>
+
+        <span class="service-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+   
+  </div>
+</section>
+
+<style>
+  .services-overview {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .services-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+    margin: 0 auto;
+    padding: 140px 0 110px;
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.7fr);
+    gap: 100px;
+    align-items: end;
+    margin-bottom: 80px;
+  }
+
+  .section-heading {
+    max-width: 760px;
+  }
+
+  .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 26px;
+
+    color: var(--color-blue);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  .section-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--color-blue);
+  }
+
+  h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+    font-size: clamp(48px, 5vw, 76px);
+    font-weight: 620;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  h2 span {
+    color: var(--color-blue);
+  }
+
+  .section-intro {
+    max-width: 440px;
+    padding-bottom: 4px;
+  }
+
+  .section-intro p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+    padding-bottom: 5px;
+
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .text-link span {
+    font-size: 16px;
+  }
+
+  .services-list {
+    border-top: 1px solid var(--color-ink);
+  }
+
+  .service-row {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr) 40px;
+    gap: 32px;
+    align-items: start;
+
+    padding: 30px 8px 30px 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+      padding 180ms ease,
+      background 180ms ease;
+  }
+
+  .service-row::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: var(--color-white);
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    transition: transform 180ms ease;
+
+    z-index: 0;
+  }
+
+  .service-row:hover {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .service-row:hover::before {
+    transform: scaleY(1);
+  }
+
+  .service-row > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-number {
+    padding-top: 4px;
+
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .service-main {
+    max-width: 760px;
+  }
+
+  .service-main h3 {
+    margin: 0;
+
+    color: var(--color-ink);
+    font-size: 25px;
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .service-main p {
+    max-width: 680px;
+    margin: 10px 0 0;
+
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .service-arrow {
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    margin-top: 2px;
+
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+
+    font-size: 15px;
+
+    transition:
+      color 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .service-row:hover .service-arrow {
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    transform: translate(2px, -2px);
+  }
+
+  .services-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 30px;
+    padding-top: 16px;
+
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  @media (max-width: 1000px) {
+    .section-header {
+      grid-template-columns: 1fr;
+      gap: 35px;
+      margin-bottom: 60px;
+    }
+
+    .section-intro {
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .services-container {
+      width: calc(100% - (var(--gutter) * 2));
+      padding: 90px 0 80px;
+    }
+
+    h2 {
+      font-size: clamp(44px, 13vw, 64px);
+    }
+
+    .section-intro p {
+      font-size: 15px;
+    }
+
+    .service-row {
+      grid-template-columns: 38px minmax(0, 1fr) 30px;
+      gap: 14px;
+      padding: 24px 0;
+    }
+
+    .service-row:hover {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    .service-main h3 {
+      font-size: 19px;
+    }
+
+    .service-main p {
+      font-size: 13px;
+    }
+
+    .service-arrow {
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+    }
+
+    .services-footer {
+      gap: 12px;
+      font-size: 6px;
+    }
+  }
+</style>

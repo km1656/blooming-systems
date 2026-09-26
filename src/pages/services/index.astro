@@ -1,0 +1,1151 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "IAM Consulting",
+    description:
+      "Define an identity strategy that aligns security, access, governance, and business requirements across your enterprise.",
+    capabilities: [
+      "IAM strategy & roadmap",
+      "Current-state assessment",
+      "IAM maturity assessment",
+      "Architecture & solution design",
+      "Identity lifecycle strategy",
+      "Access control strategy",
+      "IAM governance",
+      "Security & compliance assessment",
+    ],
+    href: "/services/iam-consulting/",
+  },
+  {
+    number: "02",
+    title: "IAM Implementation & Integration",
+    description:
+      "Design and implement identity capabilities across applications, platforms, directories, and enterprise environments.",
+    capabilities: [
+      "Workforce IAM",
+      "Customer IAM",
+      "SSO & MFA",
+      "Adaptive & passwordless authentication",
+      "RBAC",
+      "API security",
+      "Application integration",
+      "SAML, OAuth 2.0 & OpenID Connect",
+    ],
+    href: "/services/implementation-integration/",
+  },
+  {
+    number: "03",
+    title: "Identity Governance & Administration",
+    description:
+      "Bring structure and accountability to access with lifecycle automation, governance controls, and continuous oversight.",
+    capabilities: [
+      "Joiner-Mover-Leaver",
+      "Access requests & approvals",
+      "Access certification",
+      "Role management",
+      "Segregation of duties",
+      "Lifecycle automation",
+      "Privileged access governance",
+      "Compliance reporting",
+    ],
+    href: "/services/identity-governance/",
+  },
+  {
+    number: "04",
+    title: "Directory Services",
+    description:
+      "Modernize and operate the directory infrastructure that supports authentication, authorization, and enterprise identity.",
+    capabilities: [
+      "Active Directory",
+      "Microsoft Entra ID",
+      "LDAP",
+      "Oracle Unified Directory",
+      "OpenLDAP",
+      "PingDirectory",
+      "Directory migration & consolidation",
+      "Synchronization & replication",
+      "Performance optimization",
+    ],
+    href: "/services/directory-services/",
+  },
+  {
+    number: "05",
+    title: "Cloud Identity",
+    description:
+      "Extend identity securely into the cloud while maintaining the right balance between access, user experience, and control.",
+    capabilities: [
+      "Microsoft Entra ID",
+      "Hybrid identity",
+      "Cloud authentication",
+      "SSO & MFA",
+      "Conditional Access",
+      "Federation",
+      "Application provisioning",
+      "Cloud directory integration",
+    ],
+    href: "/services/cloud-identity/",
+  },
+  {
+    number: "06",
+    title: "IAM Platform Services",
+    description:
+      "Build, integrate, configure, and optimize the enterprise IAM platforms that support your identity ecosystem.",
+    capabilities: [
+      "Microsoft Entra ID",
+      "Okta",
+      "Ping Identity",
+      "ForgeRock",
+      "Oracle IAM",
+      "SailPoint",
+      "CyberArk",
+      "Active Directory & LDAP",
+    ],
+    href: "/services/platform-services/",
+  },
+];
+
+const delivery = [
+  {
+    number: "01",
+    title: "Assess",
+    description:
+      "Understand your existing identity environment, dependencies, risks, and business requirements.",
+  },
+  {
+    number: "02",
+    title: "Architect",
+    description:
+      "Define the target architecture, integration model, governance approach, and implementation roadmap.",
+  },
+  {
+    number: "03",
+    title: "Implement",
+    description:
+      "Configure platforms, integrate applications, automate identity processes, and move capabilities into production.",
+  },
+  {
+    number: "04",
+    title: "Operate",
+    description:
+      "Support the environment through optimization, troubleshooting, governance, upgrades, and ongoing engineering.",
+  },
+];
+---
+
+<Layout>
+  <main class="services-page">
+    <!-- Hero -->
+    <section class="services-hero">
+      <div class="page-container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">IDENTITY & ACCESS MANAGEMENT SERVICES</p>
+
+            <h1>
+              Identity expertise for complex enterprise environments.
+            </h1>
+
+            <p class="hero-description">
+              Blooming Systems helps organizations design, implement, govern,
+              and operate identity infrastructure across cloud, hybrid, and
+              on-premises environments.
+            </p>
+
+            <div class="hero-actions">
+              <a href="/contact/" class="primary-button">
+                Talk to an IAM Expert
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a href="#service-areas" class="secondary-link">
+                Explore services
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-frame">
+              <div class="visual-top">
+                <span>IDENTITY SERVICES</span>
+                <span>BS / IAM</span>
+              </div>
+
+              <div class="identity-diagram">
+                <div class="diagram-line line-one"></div>
+                <div class="diagram-line line-two"></div>
+                <div class="diagram-line line-three"></div>
+                <div class="diagram-line line-four"></div>
+
+                <div class="diagram-node central-node">
+                  <span class="node-label">IDENTITY</span>
+                  <span class="node-value">CONTROL</span>
+                </div>
+
+                <div class="diagram-node node-a">
+                  <span>CONSULT</span>
+                </div>
+
+                <div class="diagram-node node-b">
+                  <span>IMPLEMENT</span>
+                </div>
+
+                <div class="diagram-node node-c">
+                  <span>GOVERN</span>
+                </div>
+
+                <div class="diagram-node node-d">
+                  <span>OPERATE</span>
+                </div>
+              </div>
+
+              <div class="visual-bottom">
+                <span>IAM</span>
+                <span>SSO</span>
+                <span>MFA</span>
+                <span>IGA</span>
+                <span>DIRECTORY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section id="service-areas" class="service-section">
+      <div class="page-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">OUR SERVICES</p>
+            <h2>
+              From identity strategy to
+              <span>ongoing operations.</span>
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            Our services cover the identity lifecycle from strategy and
+            architecture through implementation, governance, and platform
+            operations.
+          </p>
+        </div>
+
+        <div class="service-list">
+          {services.map((service) => (
+            <article class="service-row">
+              <div class="service-number">{service.number}</div>
+
+              <div class="service-main">
+                <h3>{service.title}</h3>
+
+                <p>{service.description}</p>
+
+                <a href={service.href} class="service-link">
+                  Explore service
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+              <div class="service-capabilities">
+                {service.capabilities.map((capability) => (
+                  <span>{capability}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="coverage-section">
+      <div class="page-container">
+        <div class="coverage-grid">
+          <div class="coverage-heading">
+            <p class="eyebrow">IDENTITY COVERAGE</p>
+
+            <h2>
+              One identity strategy.
+              <span>Multiple environments.</span>
+            </h2>
+          </div>
+
+          <div class="coverage-content">
+            <p>
+              Enterprise identity rarely exists in one platform. We work
+              across directories, cloud identity providers, governance
+              platforms, applications, privileged access systems, and legacy
+              infrastructure.
+            </p>
+
+            <div class="coverage-list">
+              <div>
+                <strong>Workforce Identity</strong>
+                <span>Employees, contractors, partners</span>
+              </div>
+
+              <div>
+                <strong>Customer Identity</strong>
+                <span>Customers, consumers, external users</span>
+              </div>
+
+              <div>
+                <strong>Privileged Access</strong>
+                <span>Administrative and elevated access</span>
+              </div>
+
+              <div>
+                <strong>Identity Governance</strong>
+                <span>Lifecycle, roles, approvals, certification</span>
+              </div>
+
+              <div>
+                <strong>Hybrid Identity</strong>
+                <span>Cloud, on-premises, and distributed environments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Model -->
+    <section class="delivery-section">
+      <div class="page-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">HOW WE DELIVER</p>
+            <h2>
+              A practical path from
+              <span>identity complexity to control.</span>
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            Every engagement is different, but our delivery model keeps the
+            work structured, measurable, and aligned with your operating
+            environment.
+          </p>
+        </div>
+
+        <div class="delivery-grid">
+          {delivery.map((step) => (
+            <article class="delivery-card">
+              <span class="delivery-number">{step.number}</span>
+
+              <h3>{step.title}</h3>
+
+              <p>{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="technology-strip">
+      <div class="page-container">
+        <div class="technology-header">
+          <p class="eyebrow">TECHNOLOGY ECOSYSTEM</p>
+
+          <a href="/technologies/" class="text-link">
+            Explore technologies
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="technology-grid">
+          <span>Microsoft Entra ID</span>
+          <span>Okta</span>
+          <span>Ping Identity</span>
+          <span>ForgeRock</span>
+          <span>Oracle IAM</span>
+          <span>SailPoint</span>
+          <span>CyberArk</span>
+          <span>Active Directory</span>
+          <span>LDAP</span>
+          <span>OpenLDAP</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="services-cta">
+      <div class="page-container">
+        <div class="cta-inner">
+          <div>
+            <p class="eyebrow">START A CONVERSATION</p>
+
+            <h2>Have an identity challenge to solve?</h2>
+
+            <p>
+              Tell us where your identity environment stands and what you are
+              trying to accomplish. We can help define the path forward.
+            </p>
+          </div>
+
+          <a href="/contact/" class="cta-button">
+            Talk to an IAM Expert
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .services-page {
+    background: var(--color-white);
+  }
+
+  .page-container {
+    width: min(
+      calc(100% - (var(--gutter) * 2)),
+      var(--container)
+    );
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 26px;
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--color-blue);
+  }
+
+  /* Hero */
+
+  .services-hero {
+    padding: 116px 0 112px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.8fr);
+    gap: 90px;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    max-width: 800px;
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(48px, 5.8vw, 82px);
+    font-weight: 650;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-description {
+    max-width: 680px;
+    margin: 32px 0 0;
+    color: var(--color-text);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 42px;
+  }
+
+  .primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 52px;
+    padding: 0 22px;
+    background: var(--color-ink);
+    color: white;
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition:
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .primary-button:hover {
+    background: var(--color-blue);
+    transform: translateY(-1px);
+  }
+
+  .primary-button span {
+    font-size: 17px;
+  }
+
+  .secondary-link,
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .secondary-link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-ink);
+  }
+
+  .secondary-link:hover,
+  .text-link:hover {
+    color: var(--color-blue);
+  }
+
+  .hero-visual {
+    min-width: 0;
+  }
+
+  .visual-frame {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    background: #07152f;
+    color: white;
+  }
+
+  .visual-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.045) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.045) 1px,
+        transparent 1px
+      );
+    background-size: 44px 44px;
+  }
+
+  .visual-top,
+  .visual-bottom {
+    position: absolute;
+    left: 26px;
+    right: 26px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    color: #9daabd;
+    font-size: 9px;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+  }
+
+  .visual-top {
+    top: 24px;
+  }
+
+  .visual-bottom {
+    bottom: 24px;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .identity-diagram {
+    position: absolute;
+    inset: 75px 35px 70px;
+  }
+
+  .diagram-node {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(7, 21, 47, 0.88);
+    color: #dce5f2;
+    font-size: 9px;
+    font-weight: 650;
+    letter-spacing: 0.11em;
+  }
+
+  .central-node {
+    top: 50%;
+    left: 50%;
+    width: 132px;
+    height: 132px;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    gap: 5px;
+    border-color: rgba(22, 166, 160, 0.7);
+    border-radius: 50%;
+    background: #0d2847;
+  }
+
+  .central-node::after {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(22, 166, 160, 0.22);
+    border-radius: 50%;
+  }
+
+  .node-label {
+    color: #8ba8c7;
+  }
+
+  .node-value {
+    color: white;
+  }
+
+  .node-a {
+    top: 10%;
+    left: 8%;
+    width: 112px;
+    height: 42px;
+  }
+
+  .node-b {
+    top: 10%;
+    right: 8%;
+    width: 112px;
+    height: 42px;
+  }
+
+  .node-c {
+    bottom: 10%;
+    left: 8%;
+    width: 112px;
+    height: 42px;
+  }
+
+  .node-d {
+    right: 8%;
+    bottom: 10%;
+    width: 112px;
+    height: 42px;
+  }
+
+  .diagram-line {
+    position: absolute;
+    z-index: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(22, 166, 160, 0.65),
+      transparent
+    );
+    transform-origin: left center;
+  }
+
+  .line-one {
+    top: 26%;
+    left: 19%;
+    width: 30%;
+    transform: rotate(29deg);
+  }
+
+  .line-two {
+    top: 26%;
+    left: 51%;
+    width: 30%;
+    transform: rotate(-29deg);
+  }
+
+  .line-three {
+    top: 73%;
+    left: 19%;
+    width: 30%;
+    transform: rotate(-29deg);
+  }
+
+  .line-four {
+    top: 73%;
+    left: 51%;
+    width: 30%;
+    transform: rotate(29deg);
+  }
+
+  /* Service Areas */
+
+  .service-section {
+    padding: 120px 0;
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 70px;
+  }
+
+  .section-heading h2,
+  .coverage-heading h2,
+  .services-cta h2 {
+    max-width: 800px;
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(38px, 4.3vw, 60px);
+    font-weight: 650;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+
+  .section-heading h2 span,
+  .coverage-heading h2 span {
+    color: #8792a3;
+  }
+
+  .section-intro {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .service-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: 70px minmax(280px, 0.9fr) minmax(300px, 1fr);
+    gap: 45px;
+    padding: 42px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .service-number {
+    padding-top: 5px;
+    color: var(--color-blue);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .service-main h3 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: 25px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+  }
+
+  .service-main p {
+    max-width: 540px;
+    margin: 15px 0 22px;
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .service-link:hover {
+    color: var(--color-blue);
+  }
+
+  .service-link span {
+    font-size: 16px;
+  }
+
+  .service-capabilities {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .service-capabilities span {
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  /* Coverage */
+
+  .coverage-section {
+    padding: 120px 0;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    gap: 110px;
+  }
+
+  .coverage-content > p {
+    max-width: 680px;
+    margin: 0 0 46px;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .coverage-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .coverage-list div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .coverage-list strong {
+    color: var(--color-ink);
+    font-size: 14px;
+    font-weight: 650;
+  }
+
+  .coverage-list span {
+    color: var(--color-muted);
+    font-size: 13px;
+    text-align: right;
+  }
+
+  /* Delivery */
+
+  .delivery-section {
+    padding: 120px 0;
+  }
+
+  .delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .delivery-card {
+    min-height: 290px;
+    padding: 30px 28px 34px;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .delivery-card:last-child {
+    border-right: 0;
+  }
+
+  .delivery-number {
+    display: block;
+    margin-bottom: 70px;
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .delivery-card h3 {
+    margin: 0 0 14px;
+    color: var(--color-ink);
+    font-size: 23px;
+    font-weight: 650;
+  }
+
+  .delivery-card p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Technology */
+
+  .technology-strip {
+    padding: 80px 0;
+    background: #07152f;
+    color: white;
+  }
+
+  .technology-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 42px;
+  }
+
+  .technology-header .eyebrow {
+    margin-bottom: 0;
+  }
+
+  .technology-header .text-link {
+    color: white;
+  }
+
+  .technology-header .text-link:hover {
+    color: #8fb8ee;
+  }
+
+  .technology-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .technology-grid span {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    border-right: 1px solid rgba(255, 255, 255, 0.16);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    color: #c6d0df;
+    font-size: 13px;
+  }
+
+  /* CTA */
+
+  .services-cta {
+    padding: 110px 0;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 70px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .services-cta h2 {
+    max-width: 680px;
+  }
+
+  .services-cta .eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .services-cta p:not(.eyebrow) {
+    max-width: 620px;
+    margin: 24px 0 0;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 14px;
+    min-height: 54px;
+    padding: 0 24px;
+    background: var(--color-ink);
+    color: white;
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition:
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .cta-button:hover {
+    background: var(--color-blue);
+    transform: translateY(-1px);
+  }
+
+  .cta-button span {
+    font-size: 17px;
+  }
+
+  @media (max-width: 1100px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 70px;
+    }
+
+    .hero-visual {
+      max-width: 680px;
+    }
+
+    .service-row {
+      grid-template-columns: 55px minmax(260px, 1fr);
+    }
+
+    .service-capabilities {
+      grid-column: 2;
+    }
+
+    .coverage-grid {
+      gap: 70px;
+    }
+
+    .delivery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .delivery-card:nth-child(2) {
+      border-right: 0;
+    }
+
+    .delivery-card:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .services-hero,
+    .service-section,
+    .coverage-section,
+    .delivery-section {
+      padding: 80px 0;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+    }
+
+    .section-heading {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2,
+    .coverage-heading h2,
+    .services-cta h2 {
+      font-size: 40px;
+    }
+
+    .service-row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 34px 0;
+    }
+
+    .service-number {
+      padding-top: 0;
+    }
+
+    .service-capabilities {
+      grid-column: auto;
+      margin-top: 12px;
+    }
+
+    .coverage-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .coverage-list div {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .coverage-list span {
+      text-align: left;
+    }
+
+    .technology-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .technology-header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 40px 28px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .hero-actions {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .visual-frame {
+      min-height: 390px;
+    }
+
+    .identity-diagram {
+      inset: 65px 15px 60px;
+    }
+
+    .node-a,
+    .node-b,
+    .node-c,
+    .node-d {
+      width: 90px;
+    }
+
+    .central-node {
+      width: 108px;
+      height: 108px;
+    }
+
+    .delivery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .delivery-card {
+      min-height: auto;
+      padding: 28px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .delivery-card:last-child {
+      border-bottom: 0;
+    }
+
+    .delivery-number {
+      margin-bottom: 35px;
+    }
+
+    .technology-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .services-cta {
+      padding: 80px 0;
+    }
+  }
+</style>
