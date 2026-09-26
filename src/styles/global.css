@@ -1,23 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #07152f;
-  --color-blue: #1769d1;
-  --color-teal: #16a6a0;
+  /* Brand */
+  --color-blue: #0031ff;
+  --color-teal: #0031ff;
 
+  /* Core */
+  --color-ink: #07152f;
   --color-text: #536074;
   --color-muted: #697386;
 
+  /* Surfaces */
   --color-border: #dce1e8;
   --color-surface: #f7f9fc;
   --color-white: #ffffff;
 
+  /* Layout */
   --container: 1440px;
   --gutter: 32px;
 
+  /* Typography */
   --font-sans: "Inter", system-ui, sans-serif;
 
-  /* Typography */
   --text-xs: 11px;
   --text-sm: 13px;
   --text-base: 15px;
@@ -88,6 +92,7 @@ a {
     --gutter: 20px;
   }
 }
+
 .section-eyebrow {
   display: flex;
   align-items: center;
