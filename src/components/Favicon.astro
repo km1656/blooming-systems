@@ -1,0 +1,55 @@
+---
+const icons = {
+  favicon: "/icons/favicon.ico",
+  small: "/icons/favicon-16x16.png",
+  medium: "/icons/favicon-32x32.png",
+  apple: "/icons/apple-touch-icon.png",
+  android: "/icons/icon-192.png",
+  large: "/icons/icon-512.png",
+};
+---
+
+<link
+  rel="icon"
+  href={icons.favicon}
+  sizes="32x32"
+/>
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href={icons.small}
+/>
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href={icons.medium}
+/>
+
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href={icons.apple}
+/>
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href={icons.android}
+/>
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="512x512"
+  href={icons.large}
+/>
+
+<meta
+  name="theme-color"
+  content="#0031FF"
+/>
