@@ -1,0 +1,983 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const industries = [
+  {
+    number: "01",
+    title: "Financial Services",
+    description:
+      "Identity and access solutions for financial institutions managing highly regulated environments, distributed workforces, and sensitive customer information.",
+    capabilities: [
+      "Workforce identity and SSO",
+      "Privileged access management",
+      "Identity governance and access reviews",
+      "MFA and adaptive authentication",
+      "Hybrid directory modernization",
+    ],
+  },
+  {
+    number: "02",
+    title: "Healthcare",
+    description:
+      "Identity solutions that help healthcare organizations provide secure access across clinicians, employees, applications, facilities, and connected environments.",
+    capabilities: [
+      "Clinical workforce access",
+      "SSO and MFA",
+      "Identity lifecycle management",
+      "Role-based access",
+      "Directory and identity integration",
+    ],
+  },
+  {
+    number: "03",
+    title: "Technology",
+    description:
+      "Modern identity architectures for technology companies operating cloud-native environments, distributed teams, complex application ecosystems, and rapidly changing infrastructure.",
+    capabilities: [
+      "Cloud identity architecture",
+      "Developer and workforce access",
+      "Identity federation",
+      "Application integration",
+      "Privileged access controls",
+    ],
+  },
+  {
+    number: "04",
+    title: "Manufacturing",
+    description:
+      "Identity and access capabilities designed for organizations connecting corporate users, plant operations, contractors, applications, and operational environments.",
+    capabilities: [
+      "Workforce identity",
+      "Hybrid directory services",
+      "Contractor access",
+      "Privileged access",
+      "Identity integration",
+    ],
+  },
+  {
+    number: "05",
+    title: "Retail & Consumer",
+    description:
+      "Identity platforms that support secure employee access while enabling scalable customer and partner experiences across digital channels.",
+    capabilities: [
+      "Customer identity",
+      "Workforce SSO",
+      "MFA and authentication",
+      "Identity federation",
+      "Access lifecycle management",
+    ],
+  },
+  {
+    number: "06",
+    title: "Public Sector",
+    description:
+      "Identity and access services for organizations balancing security, compliance, operational continuity, and access requirements across diverse user populations.",
+    capabilities: [
+      "Workforce identity",
+      "Identity governance",
+      "MFA",
+      "Directory modernization",
+      "Privileged access management",
+    ],
+  },
+];
+
+const identityChallenges = [
+  {
+    title: "Complex User Populations",
+    description:
+      "Employees, contractors, partners, customers, and service accounts often require different authentication, authorization, and lifecycle controls.",
+  },
+  {
+    title: "Regulatory Requirements",
+    description:
+      "Industry regulations and internal controls require organizations to demonstrate appropriate access, governance, separation of duties, and auditability.",
+  },
+  {
+    title: "Hybrid Environments",
+    description:
+      "Legacy directories and applications increasingly coexist with cloud platforms, SaaS applications, and modern identity providers.",
+  },
+  {
+    title: "Privileged Access",
+    description:
+      "Administrative and elevated accounts require stronger controls, visibility, and governance to reduce unnecessary access and operational risk.",
+  },
+];
+
+const outcomes = [
+  "Simplify workforce access",
+  "Modernize legacy identity infrastructure",
+  "Strengthen authentication and authorization",
+  "Improve identity lifecycle management",
+  "Increase visibility into access",
+  "Support regulatory and audit requirements",
+];
+---
+
+<Layout
+  title="Industries | Blooming Systems Inc."
+  description="Identity and access management solutions tailored to the requirements of financial services, healthcare, technology, manufacturing, retail, public sector, and other complex environments."
+>
+  <main>
+
+    <!-- HERO -->
+    <section class="industry-hero">
+      <div class="page-container hero-grid">
+        <div class="hero-copy">
+          <p class="section-eyebrow">INDUSTRY EXPERTISE</p>
+
+          <h1>
+            Identity solutions built around
+            <span> your industry.</span>
+          </h1>
+
+          <p class="hero-description">
+            Identity and access requirements vary by industry. Blooming Systems
+            helps organizations design, modernize, and operate identity
+            environments around their workforce, customers, applications,
+            regulatory obligations, and technology landscape.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/contact/" class="primary-button">
+              Talk to our team
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a href="/solutions/" class="text-link">
+              Explore solutions
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-label">IDENTITY ACROSS THE ENTERPRISE</div>
+
+          <div class="identity-stack">
+            <div class="stack-item">
+              <span>01</span>
+              Workforce
+            </div>
+
+            <div class="stack-item">
+              <span>02</span>
+              Customers
+            </div>
+
+            <div class="stack-item">
+              <span>03</span>
+              Partners
+            </div>
+
+            <div class="stack-item">
+              <span>04</span>
+              Privileged Users
+            </div>
+
+            <div class="stack-item">
+              <span>05</span>
+              Applications
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- INDUSTRIES -->
+    <section class="industries-section">
+      <div class="page-container">
+
+        <div class="section-intro">
+          <div>
+            <p class="section-eyebrow">INDUSTRIES WE SERVE</p>
+
+            <h2>
+              Identity challenges are
+              <span> industry-specific.</span>
+            </h2>
+          </div>
+
+          <p>
+            We bring identity expertise together with an understanding of the
+            operational and technology environments in which our clients work.
+          </p>
+        </div>
+
+
+        <div class="industry-grid">
+          {industries.map((industry) => (
+            <article class="industry-card">
+              <div class="card-number">{industry.number}</div>
+
+              <h3>{industry.title}</h3>
+
+              <p>{industry.description}</p>
+
+              <div class="capability-label">COMMON FOCUS AREAS</div>
+
+              <ul>
+                {industry.capabilities.map((capability) => (
+                  <li>
+                    <span aria-hidden="true">+</span>
+                    {capability}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CHALLENGES -->
+    <section class="challenges-section">
+      <div class="page-container">
+
+        <div class="section-heading">
+          <p class="section-eyebrow">THE IDENTITY CHALLENGE</p>
+
+          <h2>
+            Different environments.
+            <span>Common identity challenges.</span>
+          </h2>
+
+          <p>
+            While every organization has its own requirements, complex
+            environments frequently share the same fundamental identity
+            challenges.
+          </p>
+        </div>
+
+        <div class="challenge-grid">
+          {identityChallenges.map((challenge, index) => (
+            <article class="challenge-item">
+              <span class="challenge-number">
+                0{index + 1}
+              </span>
+
+              <div>
+                <h3>{challenge.title}</h3>
+                <p>{challenge.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- APPROACH -->
+    <section class="approach-section">
+      <div class="page-container approach-grid">
+
+        <div>
+          <p class="section-eyebrow">OUR APPROACH</p>
+
+          <h2>
+            Start with the
+            <span> business context.</span>
+          </h2>
+        </div>
+
+        <div class="approach-copy">
+          <p>
+            Identity is not an isolated technology function. It sits at the
+            intersection of people, applications, infrastructure, security,
+            compliance, and business operations.
+          </p>
+
+          <p>
+            Our approach begins by understanding how your organization works,
+            how users interact with technology, and where identity creates
+            friction or exposure. We then align architecture, platforms, and
+            operating processes around those requirements.
+          </p>
+
+          <p>
+            The result is an identity environment designed to support the
+            organization—not force the organization to work around the
+            technology.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- OUTCOMES -->
+    <section class="outcomes-section">
+      <div class="page-container">
+
+        <div class="section-heading centered">
+          <p class="section-eyebrow">BUSINESS OUTCOMES</p>
+
+          <h2>
+            Identity that supports
+            <span> the business.</span>
+          </h2>
+
+          <p>
+            Our work is focused on creating identity capabilities that are
+            secure, manageable, scalable, and aligned with business objectives.
+          </p>
+        </div>
+
+        <div class="outcome-grid">
+          {outcomes.map((outcome, index) => (
+            <div class="outcome-item">
+              <span>0{index + 1}</span>
+              <strong>{outcome}</strong>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="industry-cta">
+      <div class="page-container">
+
+        <div class="cta-inner">
+          <div>
+            <p class="section-eyebrow">LET'S TALK</p>
+
+            <h2>
+              Have an identity
+              <span>challenge to solve?</span>
+            </h2>
+
+            <p>
+              Tell us about your environment, your objectives, and where you
+              need identity to work better.
+            </p>
+          </div>
+
+          <a href="/contact/" class="primary-button">
+            Start a conversation
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+
+<style>
+  .page-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    margin-inline: auto;
+  }
+  .section-eyebrow{
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  /* HERO */
+
+  .industry-hero {
+    padding: 105px 0 110px;
+    background: var(--color-blue-200);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(360px, 0.75fr);
+    gap: 100px;
+    align-items: center;
+  }
+
+  .hero-copy {
+    max-width: 780px;
+  }
+
+  .hero-copy h1 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(46px, 5vw, 76px);
+    font-weight: 650;
+    line-height: 0.98;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .hero-copy h1 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .hero-description {
+    max-width: 680px;
+    margin: 34px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 15px 21px;
+
+    background: var(--color-ink);
+    color: var(--color-white);
+
+    font-size: var(--text-sm);
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .primary-button:hover {
+    background: var(--color-blue);
+    transform: translateY(-2px);
+  }
+
+  .primary-button span {
+    font-size: 17px;
+  }
+
+  .hero-panel {
+    padding: 34px;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .panel-label {
+    margin-bottom: 25px;
+
+    color: var(--color-muted);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .identity-stack {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stack-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--color-border);
+
+    color: var(--color-ink);
+
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .stack-item span {
+    min-width: 25px;
+
+    color: var(--color-blue);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+
+  /* INDUSTRIES */
+
+  .industries-section {
+    padding: 115px 0;
+
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 100px;
+    align-items: end;
+
+    margin-bottom: 65px;
+  }
+
+  .section-intro h2,
+  .section-heading h2,
+  .approach-grid h2,
+  .cta-inner h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .section-intro h2 span,
+  .section-heading h2 span,
+  .approach-grid h2 span,
+  .cta-inner h2 span {
+    color: var(--color-blue);
+  }
+
+  .section-intro > p {
+    margin: 0;
+
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+
+    background: var(--color-border);
+    border: 1px solid var(--color-border);
+  }
+
+  .industry-card {
+    min-height: 420px;
+    padding: 38px 34px;
+
+    background: var(--color-white);
+  }
+
+  .card-number {
+    margin-bottom: 55px;
+
+    color: var(--color-blue);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .industry-card h3 {
+    margin: 0 0 16px;
+
+    color: var(--color-ink);
+
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .industry-card > p {
+    min-height: 105px;
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .capability-label {
+    margin: 28px 0 12px;
+
+    color: var(--color-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .industry-card ul {
+    display: grid;
+    gap: 7px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .industry-card li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--color-ink);
+
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .industry-card li span {
+    color: var(--color-blue);
+    font-weight: 700;
+  }
+
+
+  /* CHALLENGES */
+
+  .challenges-section {
+    padding: 120px 0;
+  }
+
+  .section-heading {
+    max-width: 850px;
+  }
+
+  .section-heading > p:last-child {
+    max-width: 700px;
+    margin: 28px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+
+    margin-top: 70px;
+
+    background: var(--color-border);
+    border: 1px solid var(--color-border);
+  }
+
+  .challenge-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 25px;
+
+    min-height: 220px;
+    padding: 38px;
+
+    background: var(--color-white);
+  }
+
+  .challenge-number {
+    color: var(--color-blue);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .challenge-item h3 {
+    margin: 0 0 12px;
+
+    color: var(--color-ink);
+
+    font-size: 21px;
+    font-weight: 600;
+  }
+
+  .challenge-item p {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+
+  /* APPROACH */
+
+  .approach-section {
+    padding: 115px 0;
+
+    background: var(--color-ink);
+    color: var(--color-white);
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 130px;
+  }
+
+  .approach-grid .section-eyebrow {
+    color: #6f91ff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .approach-grid .section-eyebrow::before {
+    background: #6f91ff;
+  }
+
+  .approach-grid h2 {
+    color: var(--color-white);
+  }
+
+  .approach-copy {
+    max-width: 700px;
+  }
+
+  .approach-copy p {
+    margin: 0 0 25px;
+
+    color: #c7cfdd;
+
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .approach-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+
+  /* OUTCOMES */
+
+  .outcomes-section {
+    padding: 120px 0;
+  }
+
+  .centered {
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .centered .section-eyebrow {
+    justify-content: center;
+  }
+
+  .centered > p:last-child {
+    margin: 28px auto 0;
+    max-width: 680px;
+
+    color: var(--color-text);
+
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 65px;
+
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .outcome-item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    min-height: 170px;
+    padding: 30px;
+
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .outcome-item span {
+    color: var(--color-blue);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .outcome-item strong {
+    color: var(--color-ink);
+
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+
+  /* CTA */
+
+  .industry-cta {
+    padding: 90px 0;
+
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .cta-inner > div {
+    max-width: 760px;
+  }
+
+  .cta-inner p:last-child {
+    max-width: 620px;
+    margin: 25px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+
+  /* RESPONSIVE */
+
+  @media (max-width: 1100px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .hero-panel {
+      max-width: 650px;
+    }
+
+    .industry-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-intro {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .approach-grid {
+      gap: 70px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .industry-hero,
+    .industries-section,
+    .challenges-section,
+    .outcomes-section {
+      padding: 80px 0;
+    }
+
+    .challenge-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .approach-section {
+      padding: 80px 0;
+    }
+
+    .approach-grid {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+
+    .outcome-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-inner {
+      align-items: start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .industry-hero {
+      padding: 65px 0 75px;
+    }
+
+    .hero-copy h1 {
+      font-size: 43px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .hero-panel {
+      padding: 25px;
+    }
+
+    .industries-section,
+    .challenges-section,
+    .outcomes-section {
+      padding: 70px 0;
+    }
+
+    .industry-grid,
+    .outcome-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .industry-card {
+      min-height: auto;
+      padding: 30px 25px;
+    }
+
+    .card-number {
+      margin-bottom: 35px;
+    }
+
+    .industry-card > p {
+      min-height: auto;
+    }
+
+    .challenge-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+
+      padding: 30px 25px;
+    }
+
+    .approach-section {
+      padding: 70px 0;
+    }
+
+    .cta-inner {
+      gap: 35px;
+    }
+
+    .industry-cta {
+      padding: 70px 0;
+    }
+  }
+</style>
