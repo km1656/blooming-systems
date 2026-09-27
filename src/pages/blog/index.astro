@@ -1,0 +1,1023 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const featuredPost = {
+  category: "Identity Strategy",
+  date: "September 2026",
+  readTime: "6 min read",
+  title: "Building an Identity Strategy for the Modern Enterprise",
+  description:
+    "Identity has become a foundational layer of enterprise security and access. Here's how organizations can approach identity modernization across cloud, hybrid, and on-premises environments.",
+};
+
+const posts = [
+  {
+    category: "IAM",
+    date: "September 2026",
+    readTime: "5 min read",
+    title: "Why Identity Has Become the Enterprise Control Plane",
+    description:
+      "Identity connects users, applications, devices, privileged access, and business processes. Understanding that relationship is critical to building a modern access strategy.",
+  },
+  {
+    category: "Cloud Identity",
+    date: "August 2026",
+    readTime: "7 min read",
+    title: "From Active Directory to Modern Cloud Identity",
+    description:
+      "Hybrid identity is becoming the norm. Explore the architectural considerations involved in modernizing directory services while maintaining critical legacy integrations.",
+  },
+  {
+    category: "Zero Trust",
+    date: "August 2026",
+    readTime: "6 min read",
+    title: "Identity as a Foundation for Zero Trust",
+    description:
+      "Zero Trust depends on knowing who is requesting access, what they are accessing, and whether that access should be permitted at that moment.",
+  },
+  {
+    category: "Identity Governance",
+    date: "July 2026",
+    readTime: "5 min read",
+    title: "Making Identity Governance Operational",
+    description:
+      "Effective governance goes beyond periodic access reviews. Organizations need lifecycle processes, ownership, policy, and visibility that work continuously.",
+  },
+  {
+    category: "Privileged Access",
+    date: "July 2026",
+    readTime: "6 min read",
+    title: "Rethinking Privileged Access in Hybrid Environments",
+    description:
+      "Administrative access spans cloud platforms, infrastructure, applications, databases, and legacy systems. A modern PAM strategy must account for the entire environment.",
+  },
+  {
+    category: "IAM Engineering",
+    date: "June 2026",
+    readTime: "5 min read",
+    title: "The Integration Challenge Behind Identity Modernization",
+    description:
+      "Identity platforms rarely operate in isolation. Successful implementations depend on thoughtful integration across directories, applications, HR systems, security platforms, and infrastructure.",
+  },
+];
+
+const topics = [
+  "Identity & Access Management",
+  "Cloud Identity",
+  "Identity Governance",
+  "Privileged Access",
+  "Zero Trust",
+  "Directory Services",
+];
+---
+
+<Layout
+  title="Insights | Blooming Systems Inc."
+  description="Insights and perspectives on identity and access management, cloud identity, governance, privileged access, zero trust, and enterprise identity architecture."
+>
+  <main>
+
+    <!-- HERO -->
+    <section class="blog-hero">
+      <div class="page-container">
+
+        <div class="hero-copy">
+          <p class="section-eyebrow">INSIGHTS &amp; PERSPECTIVES</p>
+
+          <h1>
+            Ideas for the
+            <span> identity-driven enterprise.</span>
+          </h1>
+
+          <p>
+            Perspectives on identity, access, security, architecture, and the
+            technologies shaping how organizations connect people to the
+            systems they depend on.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FEATURED -->
+    <section class="featured-section">
+      <div class="page-container">
+
+        <article class="featured-post">
+
+          <div class="featured-visual" aria-hidden="true">
+            <div class="visual-grid"></div>
+
+            <div class="visual-core">
+              <span>IAM</span>
+              <strong>CONTROL</strong>
+            </div>
+
+            <div class="visual-node node-one">
+              <span></span>
+              Workforce
+            </div>
+
+            <div class="visual-node node-two">
+              <span></span>
+              Applications
+            </div>
+
+            <div class="visual-node node-three">
+              <span></span>
+              Governance
+            </div>
+
+            <div class="visual-node node-four">
+              <span></span>
+              Privileged
+            </div>
+
+            <div class="visual-line line-one"></div>
+            <div class="visual-line line-two"></div>
+            <div class="visual-line line-three"></div>
+            <div class="visual-line line-four"></div>
+          </div>
+
+          <div class="featured-content">
+
+            <div class="post-meta">
+              <span>{featuredPost.category}</span>
+              <span>{featuredPost.date}</span>
+              <span>{featuredPost.readTime}</span>
+            </div>
+
+            <h2>{featuredPost.title}</h2>
+
+            <p>
+              {featuredPost.description}
+            </p>
+
+            <a href="#" class="text-link">
+              Read the article
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- TOPICS -->
+    <section class="topics-section">
+      <div class="page-container">
+
+        <div class="topics-heading">
+          <p class="section-eyebrow">EXPLORE TOPICS</p>
+
+          <h2>
+            Focused thinking across
+            <span> identity and access.</span>
+          </h2>
+        </div>
+
+        <div class="topic-list">
+          {topics.map((topic, index) => (
+            <a href="#" class="topic-item">
+              <span>0{index + 1}</span>
+              <strong>{topic}</strong>
+              <span class="topic-arrow" aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ARTICLES -->
+    <section class="articles-section">
+      <div class="page-container">
+
+        <div class="articles-header">
+          <div>
+            <p class="section-eyebrow">LATEST INSIGHTS</p>
+
+            <h2>
+              From the
+              <span> IAM practice.</span>
+            </h2>
+          </div>
+
+          <p>
+            Practical perspectives on the technologies, architecture, and
+            operational decisions behind modern identity programs.
+          </p>
+        </div>
+
+
+        <div class="article-grid">
+
+          {posts.map((post, index) => (
+            <article class="article-card">
+
+              <div class="article-number">
+                0{index + 1}
+              </div>
+
+              <div class="post-meta">
+                <span>{post.category}</span>
+                <span>{post.date}</span>
+              </div>
+
+              <h3>
+                {post.title}
+              </h3>
+
+              <p>
+                {post.description}
+              </p>
+
+              <div class="article-footer">
+                <span>{post.readTime}</span>
+
+                <a href="#" aria-label={`Read ${post.title}`}>
+                  Read article
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+            </article>
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- NEWSLETTER / CTA -->
+    <section class="insight-cta">
+      <div class="page-container">
+
+        <div class="cta-inner">
+
+          <div>
+            <p class="section-eyebrow">STAY INFORMED</p>
+
+            <h2>
+              Keep up with
+              <span> identity.</span>
+            </h2>
+
+            <p>
+              Follow Blooming Systems for practical perspectives on IAM
+              architecture, implementation, security, and emerging identity
+              technologies.
+            </p>
+          </div>
+
+          <a href="/contact/" class="primary-button">
+            Talk to our team
+            <span aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+
+<style>
+  .page-container {
+    width: min(
+      var(--container),
+      calc(100% - (var(--gutter) * 2))
+    );
+
+    margin-inline: auto;
+  }
+
+
+  /* ---------------------------------
+     HERO
+  --------------------------------- */
+
+  .blog-hero {
+    padding: 115px 0 110px;
+
+    background: var(--color-white);
+  }
+
+  .hero-copy {
+    max-width: 900px;
+  }
+
+  .hero-copy h1 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(50px, 6vw, 84px);
+    font-weight: 620;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-copy h1 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .hero-copy > p:last-child {
+    max-width: 700px;
+    margin: 35px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+
+  /* ---------------------------------
+     FEATURED
+  --------------------------------- */
+
+  .featured-section {
+    padding: 0 0 120px;
+  }
+
+  .featured-post {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    min-height: 560px;
+
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .featured-visual {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 560px;
+
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(0, 49, 255, 0.08),
+        transparent 48%
+      ),
+      #f4f7fc;
+  }
+
+  .visual-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+      linear-gradient(
+        rgba(220, 225, 232, 0.6) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(220, 225, 232, 0.6) 1px,
+        transparent 1px
+      );
+
+    background-size: 48px 48px;
+
+    mask-image: radial-gradient(
+      ellipse at center,
+      black 15%,
+      transparent 75%
+    );
+  }
+
+  .visual-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 190px;
+    height: 190px;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-ink);
+    border-radius: 50%;
+
+    color: var(--color-white);
+
+    box-shadow:
+      0 0 0 20px rgba(0, 49, 255, 0.035),
+      0 0 0 55px rgba(0, 49, 255, 0.025),
+      0 25px 55px rgba(7, 21, 47, 0.16);
+  }
+
+  .visual-core span {
+    color: #a9b8d1;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+  }
+
+  .visual-core strong {
+    margin-top: 5px;
+
+    font-size: 20px;
+    font-weight: 650;
+    letter-spacing: 0.1em;
+  }
+
+  .visual-node {
+    position: absolute;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 12px;
+
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--color-border);
+
+    color: var(--color-ink);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+
+    box-shadow: 0 8px 25px rgba(7, 21, 47, 0.05);
+  }
+
+  .visual-node span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--color-blue);
+  }
+
+  .node-one {
+    top: 22%;
+    left: 12%;
+  }
+
+  .node-two {
+    top: 25%;
+    right: 10%;
+  }
+
+  .node-three {
+    bottom: 22%;
+    left: 10%;
+  }
+
+  .node-four {
+    right: 11%;
+    bottom: 24%;
+  }
+
+  .visual-line {
+    position: absolute;
+    z-index: 1;
+
+    height: 1px;
+
+    background: rgba(0, 49, 255, 0.2);
+
+    transform-origin: left center;
+  }
+
+  .line-one {
+    top: 38%;
+    left: 24%;
+    width: 170px;
+    transform: rotate(27deg);
+  }
+
+  .line-two {
+    top: 39%;
+    right: 20%;
+    width: 155px;
+    transform: rotate(148deg);
+  }
+
+  .line-three {
+    bottom: 37%;
+    left: 22%;
+    width: 180px;
+    transform: rotate(-27deg);
+  }
+
+  .line-four {
+    right: 20%;
+    bottom: 39%;
+    width: 155px;
+    transform: rotate(-150deg);
+  }
+
+  .featured-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 65px;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    color: var(--color-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .post-meta span + span::before {
+    content: "·";
+    margin-right: 12px;
+  }
+
+  .featured-content h2 {
+    max-width: 600px;
+    margin: 25px 0 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(34px, 3.5vw, 54px);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+  }
+
+  .featured-content > p {
+    max-width: 570px;
+    margin: 25px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .featured-content .text-link {
+    align-self: flex-start;
+
+    margin-top: 35px;
+  }
+
+
+  /* ---------------------------------
+     TOPICS
+  --------------------------------- */
+
+  .topics-section {
+    padding: 115px 0;
+
+    background: var(--color-ink);
+    color: var(--color-white);
+  }
+
+  .topics-heading {
+    max-width: 760px;
+  }
+  .section-eyebrow{
+    font-size: 15px;
+  }
+
+  .topics-heading .section-eyebrow {
+    color: #6f91ff;
+  }
+
+  .topics-heading .section-eyebrow::before {
+    background: #6f91ff;
+  }
+
+  .topics-heading h2 {
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size: clamp(40px, 4.5vw, 62px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .topics-heading h2 span {
+    color: #6f91ff;
+  }
+
+  .topic-list {
+    margin-top: 70px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .topic-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    align-items: center;
+    gap: 25px;
+
+    padding: 24px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+    color: var(--color-white);
+
+    text-decoration: none;
+
+    transition:
+      padding-left 180ms ease,
+      color 180ms ease;
+  }
+
+  .topic-item:hover {
+    padding-left: 10px;
+    color: #6f91ff;
+  }
+
+  .topic-item > span:first-child {
+    color: #718099;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .topic-item strong {
+    font-size: 17px;
+    font-weight: 550;
+  }
+
+  .topic-arrow {
+    font-size: 18px;
+    color: #718099;
+  }
+
+
+  /* ---------------------------------
+     ARTICLES
+  --------------------------------- */
+
+  .articles-section {
+    padding: 120px 0;
+  }
+
+  .articles-header {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 100px;
+    align-items: end;
+  }
+
+  .articles-header h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(40px, 4.5vw, 62px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .articles-header h2 span {
+    color: var(--color-blue);
+  }
+
+  .articles-header > p {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 70px;
+
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .article-card {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 390px;
+    padding: 30px;
+
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+
+    background: var(--color-white);
+  }
+
+  .article-number {
+    color: var(--color-blue);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .article-card .post-meta {
+    margin-top: 42px;
+  }
+
+  .article-card h3 {
+    margin: 20px 0 0;
+
+    color: var(--color-ink);
+
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  .article-card > p {
+    margin: 18px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .article-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: auto;
+    padding-top: 30px;
+  }
+
+  .article-footer > span {
+    color: var(--color-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .article-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--color-ink);
+
+    font-size: 11px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .article-footer a:hover {
+    color: var(--color-blue);
+  }
+
+  .article-footer a span {
+    font-size: 14px;
+  }
+
+
+  /* ---------------------------------
+     CTA
+  --------------------------------- */
+
+  .insight-cta {
+    padding: 90px 0;
+
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .cta-inner > div {
+    max-width: 760px;
+  }
+
+  .cta-inner h2 {
+    margin: 0;
+
+    color: var(--color-ink);
+
+    font-size: clamp(40px, 4vw, 58px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .cta-inner h2 span {
+    color: var(--color-blue);
+  }
+
+  .cta-inner p:last-child {
+    max-width: 620px;
+    margin: 25px 0 0;
+
+    color: var(--color-text);
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    flex-shrink: 0;
+
+    padding: 15px 21px;
+
+    background: var(--color-ink);
+    color: var(--color-white);
+
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition:
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .primary-button:hover {
+    background: var(--color-blue);
+    transform: translateY(-2px);
+  }
+
+  .primary-button span {
+    font-size: 17px;
+  }
+
+
+  /* ---------------------------------
+     RESPONSIVE
+  --------------------------------- */
+
+  @media (max-width: 1050px) {
+    .featured-post {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-visual {
+      min-height: 480px;
+    }
+
+    .featured-content {
+      padding: 55px;
+    }
+
+    .articles-header {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .article-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 800px) {
+    .blog-hero {
+      padding: 85px 0 80px;
+    }
+
+    .featured-section {
+      padding-bottom: 80px;
+    }
+
+    .topics-section,
+    .articles-section {
+      padding: 85px 0;
+    }
+
+    .cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog-hero {
+      padding: 65px 0 70px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(44px, 12vw, 62px);
+    }
+
+    .hero-copy > p:last-child {
+      font-size: 16px;
+    }
+
+    .featured-visual {
+      min-height: 380px;
+    }
+
+    .featured-content {
+      padding: 40px 25px;
+    }
+
+    .featured-content h2 {
+      font-size: 34px;
+    }
+
+    .visual-core {
+      width: 145px;
+      height: 145px;
+    }
+
+    .visual-core strong {
+      font-size: 16px;
+    }
+
+    .visual-node {
+      font-size: 8px;
+    }
+
+    .node-one {
+      left: 5%;
+    }
+
+    .node-two {
+      right: 5%;
+    }
+
+    .node-three {
+      left: 4%;
+    }
+
+    .node-four {
+      right: 4%;
+    }
+
+    .topics-section,
+    .articles-section {
+      padding: 70px 0;
+    }
+
+    .topic-list {
+      margin-top: 50px;
+    }
+
+    .topic-item {
+      grid-template-columns: 35px 1fr auto;
+      gap: 12px;
+    }
+
+    .topic-item strong {
+      font-size: 14px;
+    }
+
+    .article-grid {
+      grid-template-columns: 1fr;
+      margin-top: 50px;
+    }
+
+    .article-card {
+      min-height: 350px;
+      padding: 25px;
+    }
+
+    .insight-cta {
+      padding: 70px 0;
+    }
+  }
+</style>
