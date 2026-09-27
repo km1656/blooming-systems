@@ -2,7 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout
+  title="Contact | Blooming Systems Inc."
+  description="Contact Blooming Systems Inc. to discuss identity and access management, enterprise security, cloud identity, directory services, and IAM modernization."
+>
   <section class="contact-page">
     <div class="contact-container">
       <div class="contact-intro">
@@ -19,11 +22,13 @@ import Layout from "../../layouts/Layout.astro";
         <div class="contact-details">
           <div class="detail-block">
             <span class="detail-label">PHONE</span>
+
             <a href="tel:+18587407673">858 740 7673</a>
           </div>
 
           <div class="detail-block">
             <span class="detail-label">OFFICE</span>
+
             <address>
               <strong>Blooming Systems Inc.</strong>
               <span>21951 Purebred Lane</span>
@@ -35,6 +40,18 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="contact-form-wrapper">
         <form id="contact-form" class="contact-form" novalidate>
+          <!-- Honeypot: intentionally hidden from legitimate users -->
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
           <div class="form-grid">
             <div class="form-field">
               <label for="first-name">
@@ -170,16 +187,18 @@ import Layout from "../../layouts/Layout.astro";
                 <option value="">Select an area</option>
                 <option value="iam-consulting">IAM Consulting</option>
                 <option value="implementation-integration">
-                  Implementation & Integration
+                  Implementation &amp; Integration
                 </option>
                 <option value="identity-governance">
-                  Identity Governance & Administration
+                  Identity Governance &amp; Administration
                 </option>
                 <option value="directory-services">
                   Directory Services
                 </option>
                 <option value="cloud-identity">Cloud Identity</option>
-                <option value="platform-services">IAM Platform Services</option>
+                <option value="platform-services">
+                  IAM Platform Services
+                </option>
                 <option value="managed-iam">Managed IAM Services</option>
                 <option value="other">Other</option>
               </select>
@@ -224,6 +243,15 @@ import Layout from "../../layouts/Layout.astro";
             </div>
           </div>
 
+          <!-- Cloudflare Turnstile -->
+          <div class="turnstile-wrapper">
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAAFFQt9lf8xJXNoF5"
+              data-action="contact"
+            ></div>
+          </div>
+
           <button type="submit" class="submit-button">
             <span class="button-text">Send inquiry</span>
             <span class="button-loading" hidden>Sending...</span>
@@ -242,16 +270,6 @@ import Layout from "../../layouts/Layout.astro";
             hidden
           ></p>
         </form>
-        <div class="honeypot" aria-hidden="true">
-  <label for="website">Website</label>
-  <input
-    id="website"
-    name="website"
-    type="text"
-    tabindex="-1"
-    autocomplete="off"
-  />
-</div>
       </div>
     </div>
 
@@ -271,24 +289,46 @@ import Layout from "../../layouts/Layout.astro";
     const submitButton =
       form.querySelector<HTMLButtonElement>(".submit-button");
 
-    const buttonText = form.querySelector<HTMLElement>(".button-text");
-    const buttonLoading = form.querySelector<HTMLElement>(".button-loading");
+    const buttonText =
+      form.querySelector<HTMLElement>(".button-text");
+
+    const buttonLoading =
+      form.querySelector<HTMLElement>(".button-loading");
 
     const formStatus =
       form.querySelector<HTMLElement>("#form-status");
 
-    const project = form.querySelector<HTMLTextAreaElement>("#project");
+    const project =
+      form.querySelector<HTMLTextAreaElement>("#project");
+
     const projectCounter =
       form.querySelector<HTMLElement>("#project-counter");
 
     const fields = Array.from(
       form.querySelectorAll<
         HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-      >("input, select, textarea")
+      >(
+        "input:not(#website), select, textarea"
+      )
     );
 
+    const resetTurnstile = () => {
+      const turnstile = (
+        window as typeof window & {
+          turnstile?: {
+            reset: () => void;
+          };
+        }
+      ).turnstile;
+
+      turnstile?.reset();
+    };
+
     const setError = (
-      field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
+      field:
+        | HTMLInputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement,
       message: string
     ) => {
       const errorElement = document.getElementById(
@@ -305,7 +345,10 @@ import Layout from "../../layouts/Layout.astro";
     };
 
     const clearError = (
-      field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      field:
+        | HTMLInputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement
     ) => {
       const errorElement = document.getElementById(
         `${field.id}-error`
@@ -321,7 +364,10 @@ import Layout from "../../layouts/Layout.astro";
     };
 
     const validateField = (
-      field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      field:
+        | HTMLInputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement
     ) => {
       clearError(field);
 
@@ -334,10 +380,15 @@ import Layout from "../../layouts/Layout.astro";
 
       if (field instanceof HTMLInputElement) {
         if (field.type === "email" && value) {
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
           if (!emailPattern.test(value)) {
-            setError(field, "Enter a valid work email address.");
+            setError(
+              field,
+              "Enter a valid work email address."
+            );
+
             return false;
           }
         }
@@ -346,7 +397,11 @@ import Layout from "../../layouts/Layout.astro";
           const phoneDigits = value.replace(/\D/g, "");
 
           if (phoneDigits.length < 7) {
-            setError(field, "Enter a valid phone number.");
+            setError(
+              field,
+              "Enter a valid phone number."
+            );
+
             return false;
           }
         }
@@ -407,113 +462,137 @@ import Layout from "../../layouts/Layout.astro";
     updateProjectCounter();
 
     form.addEventListener("submit", async (event) => {
-  event.preventDefault();
+      event.preventDefault();
 
-  formStatus.hidden = true;
-  formStatus.textContent = "";
-  formStatus.classList.remove("success", "error");
+      if (!formStatus) return;
 
-  let isValid = true;
+      formStatus.hidden = true;
+      formStatus.textContent = "";
+      formStatus.classList.remove("success", "error");
 
-  let firstInvalidField:
-    | HTMLInputElement
-    | HTMLSelectElement
-    | HTMLTextAreaElement
-    | null = null;
+      let isValid = true;
 
-  fields.forEach((field) => {
-    const fieldIsValid = validateField(field);
+      let firstInvalidField:
+        | HTMLInputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement
+        | null = null;
 
-    if (!fieldIsValid) {
-      isValid = false;
+      fields.forEach((field) => {
+        const fieldIsValid = validateField(field);
 
-      if (!firstInvalidField) {
-        firstInvalidField = field;
+        if (!fieldIsValid) {
+          isValid = false;
+
+          if (!firstInvalidField) {
+            firstInvalidField = field;
+          }
+        }
+      });
+
+      if (!isValid) {
+        firstInvalidField?.focus();
+        return;
       }
-    }
-  });
 
-  if (!isValid) {
-    firstInvalidField?.focus();
-    return;
-  }
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
 
-  if (submitButton) {
-    submitButton.disabled = true;
-  }
+      if (buttonText) {
+        buttonText.hidden = true;
+      }
 
-  if (buttonText) {
-    buttonText.hidden = true;
-  }
+      if (buttonLoading) {
+        buttonLoading.hidden = false;
+      }
 
-  if (buttonLoading) {
-    buttonLoading.hidden = false;
-  }
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      body: new FormData(form),
-      headers: {
-        Accept: "application/json",
-      },
+        let result: {
+          success?: boolean;
+          message?: string;
+        } = {};
+
+        try {
+          result = await response.json();
+        } catch {
+          result = {};
+        }
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message ||
+              "We could not send your inquiry right now. Please try again."
+          );
+        }
+
+        formStatus.textContent =
+          result.message ||
+          "Thank you. Your inquiry has been received.";
+
+        formStatus.classList.add("success");
+        formStatus.hidden = false;
+
+        form.reset();
+        updateProjectCounter();
+
+        fields.forEach(clearError);
+
+        /*
+         * Turnstile tokens are single-use.
+         * Reset the widget after a successful submission so
+         * the form can be submitted again.
+         */
+        resetTurnstile();
+      } catch (error) {
+        console.error(
+          "Contact form submission failed:",
+          error
+        );
+
+        formStatus.textContent =
+          error instanceof Error
+            ? error.message
+            : "Something went wrong while sending your inquiry. Please try again.";
+
+        formStatus.classList.add("error");
+        formStatus.hidden = false;
+
+        /*
+         * The Turnstile token may already have been consumed
+         * by the server, so reset it before allowing retry.
+         */
+        resetTurnstile();
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+
+        if (buttonText) {
+          buttonText.hidden = false;
+        }
+
+        if (buttonLoading) {
+          buttonLoading.hidden = true;
+        }
+      }
     });
-
-    let result: {
-      success?: boolean;
-      message?: string;
-    } = {};
-
-    try {
-      result = await response.json();
-    } catch {
-      result = {};
-    }
-
-    if (!response.ok || !result.success) {
-      throw new Error(
-        result.message ||
-          "We could not send your inquiry right now. Please try again."
-      );
-    }
-
-    formStatus.textContent =
-      result.message ||
-      "Thank you. Your inquiry has been received.";
-
-    formStatus.classList.add("success");
-    formStatus.hidden = false;
-
-    form.reset();
-    updateProjectCounter();
-
-    fields.forEach(clearError);
-  } catch (error) {
-    console.error("Contact form submission failed:", error);
-
-    formStatus.textContent =
-      error instanceof Error
-        ? error.message
-        : "Something went wrong while sending your inquiry. Please try again.";
-
-    formStatus.classList.add("error");
-    formStatus.hidden = false;
-  } finally {
-    if (submitButton) {
-      submitButton.disabled = false;
-    }
-
-    if (buttonText) {
-      buttonText.hidden = false;
-    }
-
-    if (buttonLoading) {
-      buttonLoading.hidden = true;
-    }
-  }
-});
   }
 </script>
+
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+></script>
 
 <style>
   .contact-page {
@@ -624,7 +703,7 @@ import Layout from "../../layouts/Layout.astro";
 
   .contact-form-wrapper {
     padding: 42px;
-    background: var(--color-blue-200);
+    background: #eef4ff;
     border: 1px solid var(--color-border);
   }
 
@@ -705,7 +784,7 @@ import Layout from "../../layouts/Layout.astro";
   select:focus,
   textarea:focus {
     border-color: var(--color-blue);
-    box-shadow: 0 0 0 3px rgba(23, 105, 209, 0.08);
+    box-shadow: 0 0 0 3px rgba(0, 49, 255, 0.08);
   }
 
   input.has-error,
@@ -737,6 +816,11 @@ import Layout from "../../layouts/Layout.astro";
     white-space: nowrap;
   }
 
+  .turnstile-wrapper {
+    margin: 26px 0 4px;
+    min-height: 65px;
+  }
+
   .submit-button {
     display: inline-flex;
     align-items: center;
@@ -744,7 +828,7 @@ import Layout from "../../layouts/Layout.astro";
     gap: 14px;
     min-width: 178px;
     min-height: 54px;
-    margin-top: 34px;
+    margin-top: 24px;
     padding: 0 24px;
     border: 1px solid var(--color-ink);
     background: var(--color-ink);
@@ -788,6 +872,35 @@ import Layout from "../../layouts/Layout.astro";
     background: #f3faf6;
     color: #246342;
     font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .form-status.error {
+    border-color: #e0b4b4;
+    background: #fff7f7;
+    color: #9f3030;
+  }
+
+  .form-status.success {
+    border-color: #b9dccb;
+    background: #f3faf6;
+    color: #246342;
+  }
+
+  /*
+   * Honeypot field.
+   * It remains in the form for bots but is visually hidden.
+   */
+  .honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .contact-system {
@@ -863,6 +976,10 @@ import Layout from "../../layouts/Layout.astro";
       grid-column: auto;
     }
 
+    .turnstile-wrapper {
+      margin-top: 22px;
+    }
+
     .submit-button {
       width: 100%;
     }
@@ -871,15 +988,4 @@ import Layout from "../../layouts/Layout.astro";
       margin-top: 72px;
     }
   }
-  .honeypot {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 </style>

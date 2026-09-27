@@ -1,6 +1,7 @@
 interface Env {
   RESEND_API_KEY: string;
   CONTACT_TO_EMAIL: string;
+  TURNSTILE_SECRET: string;
 }
 
 const MAX_LENGTHS = {
@@ -37,6 +38,9 @@ const HELP_LABELS: Record<string, string> = {
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const TURNSTILE_VERIFY_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
 function clean(value: FormDataEntryValue | null): string {
   return typeof value === "string" ? value.trim() : "";
 }
@@ -63,6 +67,68 @@ function jsonResponse(
   });
 }
 
+async function verifyTurnstile(
+  token: string,
+  secret: string,
+  remoteIp?: string
+): Promise<boolean> {
+  if (!token || !secret) {
+    return false;
+  }
+
+  const body = new URLSearchParams({
+    secret,
+    response: token,
+  });
+
+  if (remoteIp) {
+    body.set("remoteip", remoteIp);
+  }
+
+  const response = await fetch(TURNSTILE_VERIFY_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body,
+  });
+
+  if (!response.ok) {
+    console.error(
+      "Turnstile verification request failed:",
+      response.status
+    );
+
+    return false;
+  }
+
+  const result = (await response.json()) as {
+    success?: boolean;
+    hostname?: string;
+    action?: string;
+    "error-codes"?: string[];
+  };
+
+  if (!result.success) {
+    console.warn("Turnstile verification failed:", result["error-codes"]);
+    return false;
+  }
+
+  // Verify that the token belongs to this website.
+  if (result.hostname && result.hostname !== "www.bloomingsys.com") {
+    console.warn("Unexpected Turnstile hostname:", result.hostname);
+    return false;
+  }
+
+  // Verify that the token was issued for the contact form.
+  if (result.action && result.action !== "contact") {
+    console.warn("Unexpected Turnstile action:", result.action);
+    return false;
+  }
+
+  return true;
+}
+
 export const onRequestPost = async ({
   request,
   env,
@@ -71,18 +137,87 @@ export const onRequestPost = async ({
   env: Env;
 }): Promise<Response> => {
   try {
+    if (!env.TURNSTILE_SECRET) {
+      console.error("Missing TURNSTILE_SECRET");
+
+      return jsonResponse(
+        {
+          success: false,
+          message: "The contact service is not configured.",
+        },
+        500
+      );
+    }
+
+    if (!env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY");
+
+      return jsonResponse(
+        {
+          success: false,
+          message: "The contact service is not configured.",
+        },
+        500
+      );
+    }
+
+    if (!env.CONTACT_TO_EMAIL) {
+      console.error("Missing CONTACT_TO_EMAIL");
+
+      return jsonResponse(
+        {
+          success: false,
+          message: "The contact service is not configured.",
+        },
+        500
+      );
+    }
+
     const formData = await request.formData();
 
-    // Honeypot field.
-    // Real users never see this field.
+    /*
+     * Honeypot.
+     *
+     * Real users never see this field.
+     * If a bot fills it, quietly accept the request without
+     * sending an email.
+     */
     const website = clean(formData.get("website"));
 
     if (website) {
-      // Silently accept spam submissions without sending them.
       return jsonResponse({
         success: true,
         message: "Thank you. Your inquiry has been received.",
       });
+    }
+
+    /*
+     * Turnstile verification.
+     *
+     * This MUST happen server-side before Resend is called.
+     */
+    const turnstileToken = clean(
+      formData.get("cf-turnstile-response")
+    );
+
+    const remoteIp =
+      request.headers.get("CF-Connecting-IP") || undefined;
+
+    const turnstileValid = await verifyTurnstile(
+      turnstileToken,
+      env.TURNSTILE_SECRET,
+      remoteIp
+    );
+
+    if (!turnstileValid) {
+      return jsonResponse(
+        {
+          success: false,
+          message:
+            "Security verification failed. Please refresh the page and try again.",
+        },
+        400
+      );
     }
 
     const firstName = clean(formData.get("firstName"));
@@ -93,8 +228,17 @@ export const onRequestPost = async ({
     const help = clean(formData.get("help"));
     const project = clean(formData.get("project"));
 
-    // Required-field validation.
-    if (!firstName || !lastName || !email || !company || !help || !project) {
+    /*
+     * Required-field validation.
+     */
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !company ||
+      !help ||
+      !project
+    ) {
       return jsonResponse(
         {
           success: false,
@@ -104,7 +248,9 @@ export const onRequestPost = async ({
       );
     }
 
-    // Length validation.
+    /*
+     * Length validation.
+     */
     if (
       firstName.length > MAX_LENGTHS.firstName ||
       lastName.length > MAX_LENGTHS.lastName ||
@@ -147,7 +293,8 @@ export const onRequestPost = async ({
       return jsonResponse(
         {
           success: false,
-          message: "Please provide a little more information about your project.",
+          message:
+            "Please provide a little more information about your project.",
         },
         400
       );
@@ -187,30 +334,11 @@ export const onRequestPost = async ({
       );
     }
 
-    if (!env.RESEND_API_KEY) {
-      console.error("Missing RESEND_API_KEY");
-      return jsonResponse(
-        {
-          success: false,
-          message: "The contact service is not configured.",
-        },
-        500
-      );
-    }
-
-    if (!env.CONTACT_TO_EMAIL) {
-      console.error("Missing CONTACT_TO_EMAIL");
-      return jsonResponse(
-        {
-          success: false,
-          message: "The contact service is not configured.",
-        },
-        500
-      );
-    }
-
     const helpLabel = HELP_LABELS[help] ?? help;
 
+    /*
+     * Escape all user-controlled content before putting it into HTML.
+     */
     const safeFirstName = escapeHtml(firstName);
     const safeLastName = escapeHtml(lastName);
     const safeEmail = escapeHtml(email);
@@ -238,10 +366,12 @@ export const onRequestPost = async ({
         <body style="margin:0;padding:0;background:#f7f9fc;color:#07152f;font-family:Arial,Helvetica,sans-serif;">
           <div style="max-width:680px;margin:0 auto;padding:40px 20px;">
             <div style="background:#ffffff;border:1px solid #dce1e8;">
+
               <div style="padding:28px 32px;border-bottom:1px solid #dce1e8;">
                 <div style="font-size:12px;font-weight:700;letter-spacing:.12em;color:#0031ff;">
                   BLOOMING SYSTEMS INC.
                 </div>
+
                 <h1 style="margin:12px 0 0;font-size:24px;line-height:1.3;color:#07152f;">
                   New website inquiry
                 </h1>
@@ -250,24 +380,48 @@ export const onRequestPost = async ({
               <div style="padding:32px;">
                 <table style="width:100%;border-collapse:collapse;">
                   <tr>
-                    <td style="padding:8px 0;font-weight:700;width:140px;">Name</td>
-                    <td style="padding:8px 0;">${safeFirstName} ${safeLastName}</td>
+                    <td style="padding:8px 0;font-weight:700;width:140px;">
+                      Name
+                    </td>
+                    <td style="padding:8px 0;">
+                      ${safeFirstName} ${safeLastName}
+                    </td>
                   </tr>
+
                   <tr>
-                    <td style="padding:8px 0;font-weight:700;">Email</td>
-                    <td style="padding:8px 0;">${safeEmail}</td>
+                    <td style="padding:8px 0;font-weight:700;">
+                      Email
+                    </td>
+                    <td style="padding:8px 0;">
+                      ${safeEmail}
+                    </td>
                   </tr>
+
                   <tr>
-                    <td style="padding:8px 0;font-weight:700;">Company</td>
-                    <td style="padding:8px 0;">${safeCompany}</td>
+                    <td style="padding:8px 0;font-weight:700;">
+                      Company
+                    </td>
+                    <td style="padding:8px 0;">
+                      ${safeCompany}
+                    </td>
                   </tr>
+
                   <tr>
-                    <td style="padding:8px 0;font-weight:700;">Phone</td>
-                    <td style="padding:8px 0;">${safePhone}</td>
+                    <td style="padding:8px 0;font-weight:700;">
+                      Phone
+                    </td>
+                    <td style="padding:8px 0;">
+                      ${safePhone}
+                    </td>
                   </tr>
+
                   <tr>
-                    <td style="padding:8px 0;font-weight:700;">Area</td>
-                    <td style="padding:8px 0;">${safeHelp}</td>
+                    <td style="padding:8px 0;font-weight:700;">
+                      Area
+                    </td>
+                    <td style="padding:8px 0;">
+                      ${safeHelp}
+                    </td>
                   </tr>
                 </table>
 
@@ -285,27 +439,34 @@ export const onRequestPost = async ({
               <div style="padding:20px 32px;background:#f7f9fc;color:#697386;font-size:12px;">
                 Submitted through the Blooming Systems website contact form.
               </div>
+
             </div>
           </div>
         </body>
       </html>
     `;
 
-    const resendResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: "Blooming Systems Website <website@bloomingsys.com>",
-        to: [env.CONTACT_TO_EMAIL],
-        reply_to: email,
-        subject: `Website Contact: ${firstName} ${lastName}`,
-        text: textBody,
-        html: htmlBody,
-      }),
-    });
+    /*
+     * Send through Resend.
+     */
+    const resendResponse = await fetch(
+      "https://api.resend.com/emails",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Blooming Systems Website <website@bloomingsys.com>",
+          to: [env.CONTACT_TO_EMAIL],
+          reply_to: email,
+          subject: `Website Contact: ${firstName} ${lastName}`,
+          text: textBody,
+          html: htmlBody,
+        }),
+      }
+    );
 
     if (!resendResponse.ok) {
       const errorText = await resendResponse.text();
@@ -346,28 +507,6 @@ export const onRequestPost = async ({
 export const onRequestOptions = async (): Promise<Response> => {
   return new Response(null, {
     status: 204,
-    headers: {
-      Allow: "POST, OPTIONS",
-    },
-  });
-};
-
-export const onRequest = async ({
-  request,
-}: {
-  request: Request;
-}): Promise<Response> => {
-  if (request.method === "POST") {
-    return new Response(null, {
-      status: 405,
-      headers: {
-        Allow: "POST, OPTIONS",
-      },
-    });
-  }
-
-  return new Response("Method Not Allowed", {
-    status: 405,
     headers: {
       Allow: "POST, OPTIONS",
     },
