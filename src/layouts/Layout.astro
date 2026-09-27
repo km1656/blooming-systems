@@ -4,14 +4,71 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Favicon from "../components/Favicon.astro";
 
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  type?: "website" | "article";
+}
+
+const {
+  title = "Blooming Systems Inc. | Identity & Technology Services",
+  description = "Blooming Systems Inc. helps organizations design, integrate, modernize, and operate enterprise identity and technology environments.",
+  canonical,
+  ogImage = "/images/og-image.png",
+  noindex = false,
+  type = "website",
+} = Astro.props;
+
+const siteUrl = "https://www.bloomingsys.com";
+
+const canonicalUrl = canonical
+  ? new URL(canonical, siteUrl).href
+  : new URL(Astro.url.pathname, siteUrl).href;
+
+const ogImageUrl = new URL(ogImage, siteUrl).href;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <Favicon />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Blooming Systems Inc.</title>
+
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta
+      name="robots"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Blooming Systems Inc." />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta
+      property="og:image:alt"
+      content="Blooming Systems Inc."
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <meta name="theme-color" content="#0031FF" />
   </head>
 
   <body>
