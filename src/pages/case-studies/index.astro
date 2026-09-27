@@ -1,0 +1,1004 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Case Studies | Blooming Systems Inc."
+  description="Explore identity and technology case studies covering hybrid identity, automated joiner-mover-leaver lifecycle management, identity governance, and enterprise access management."
+>
+  <main>
+    <!-- HERO -->
+    <section class="case-hero">
+      <div class="page-container">
+        <p class="section-eyebrow">CASE STUDIES</p>
+
+        <div class="hero-grid">
+          <div>
+            <h1>
+              Identity and technology
+              <span>in practice.</span>
+            </h1>
+          </div>
+
+          <div class="hero-copy">
+            <p>
+              Enterprise identity environments require more than
+              authentication alone. The right architecture connects
+              access management, identity governance, lifecycle
+              automation, and compliance across the entire technology
+              estate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED CASE STUDY -->
+    <section class="case-study">
+      <div class="page-container">
+        <div class="case-label">
+          <span>FEATURED CASE STUDY</span>
+          <span>HYBRID IDENTITY</span>
+        </div>
+
+        <div class="case-heading">
+          <p class="section-eyebrow">MICROSOFT ENTRA ID + SAILPOINT</p>
+
+          <h2>
+            Hybrid Identity &amp; Automated
+            <span>JML Lifecycle Management</span>
+          </h2>
+
+          <p class="case-intro">
+            A representative enterprise identity architecture in which
+            Microsoft Entra ID provides the primary access and identity
+            provider layer while SailPoint operates as the identity
+            governance and administration engine.
+          </p>
+        </div>
+
+        <!-- CONTEXT -->
+        <div class="content-section">
+          <div class="content-label">
+            <span>01</span>
+            <strong>EXECUTIVE CONTEXT</strong>
+          </div>
+
+          <div class="content-body">
+            <div class="context-grid">
+              <div class="context-card">
+                <span>INDUSTRY</span>
+                <strong>
+                  Financial Services / Enterprise Healthcare /
+                  Global Manufacturing
+                </strong>
+              </div>
+
+              <div class="context-card">
+                <span>ORGANIZATION SIZE</span>
+                <strong>10,000–50,000+ employees and contractors</strong>
+              </div>
+
+              <div class="context-card context-card-wide">
+                <span>CORE CHALLENGE</span>
+                <p>
+                  The organization relies on Microsoft Entra ID for
+                  Single Sign-On and conditional access, but requires
+                  deeper governance across cloud, on-premises, SaaS,
+                  ERP, database, and legacy application environments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARCHITECTURE -->
+        <div class="content-section architecture-section">
+          <div class="content-label">
+            <span>02</span>
+            <strong>CORE ARCHITECTURE</strong>
+          </div>
+
+          <div class="content-body">
+            <p class="section-description">
+              Rather than competing for the same role, Entra ID and
+              SailPoint operate as complementary tiers within the
+              identity architecture.
+            </p>
+
+            <div class="architecture">
+              <div class="architecture-source">
+                <span class="architecture-kicker">AUTHORITATIVE SOURCE</span>
+                <strong>HR System</strong>
+                <small>Workday / SAP SuccessFactors</small>
+              </div>
+
+              <div class="architecture-connector"></div>
+
+              <div class="architecture-hub">
+                <span class="architecture-kicker">IGA HUB</span>
+                <strong>SailPoint</strong>
+                <small>
+                  Governance · Approvals · SoD · Provisioning
+                </small>
+              </div>
+
+              <div class="architecture-branches">
+                <div class="architecture-target">
+                  <span>ACCESS &amp; IDENTITY</span>
+                  <strong>Microsoft Entra ID</strong>
+                  <small>
+                    SSO · MFA · Conditional Access · Group Sync
+                  </small>
+                </div>
+
+                <div class="architecture-target">
+                  <span>ENTERPRISE ESTATE</span>
+                  <strong>Legacy / On-Prem / SaaS</strong>
+                  <small>
+                    SAP · Database · Epic · AD · Other Applications
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="division-table">
+              <div class="table-row table-header">
+                <span>DOMAIN</span>
+                <span>MICROSOFT ENTRA ID</span>
+                <span>SAILPOINT</span>
+              </div>
+
+              <div class="table-row">
+                <span>Primary Role</span>
+                <span>
+                  Authentication, SSO, Conditional Access, MFA
+                </span>
+                <span>
+                  Access Requests, Entitlement Management, SoD
+                </span>
+              </div>
+
+              <div class="table-row">
+                <span>Scope</span>
+                <span>
+                  Cloud applications, SaaS, Azure resources, AD Sync
+                </span>
+                <span>
+                  Enterprise-wide cloud, on-premises, ERP and legacy
+                  systems
+                </span>
+              </div>
+
+              <div class="table-row">
+                <span>User Lifecycle</span>
+                <span>
+                  Real-time authentication and access enforcement
+                </span>
+                <span>
+                  Onboarding, role changes, approvals and
+                  de-provisioning workflows
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JML -->
+        <div class="content-section">
+          <div class="content-label">
+            <span>03</span>
+            <strong>JOINER · MOVER · LEAVER</strong>
+          </div>
+
+          <div class="content-body">
+            <p class="section-description">
+              Automated lifecycle management connects authoritative HR
+              events to identity governance and downstream access
+              controls.
+            </p>
+
+            <div class="lifecycle-grid">
+              <!-- JOINER -->
+              <article class="lifecycle-card">
+                <div class="lifecycle-number">01</div>
+
+                <p class="lifecycle-label">JOINER</p>
+
+                <h3>Automated onboarding</h3>
+
+                <ol>
+                  <li>
+                    A new employee is added to the authoritative HR
+                    system.
+                  </li>
+                  <li>
+                    SailPoint evaluates attributes such as department,
+                    title, and location.
+                  </li>
+                  <li>
+                    Identity and role-based access rules determine
+                    appropriate birthright access.
+                  </li>
+                  <li>
+                    The required account is provisioned into Entra ID
+                    and other enterprise applications.
+                  </li>
+                  <li>
+                    Entra ID applies the organization's authentication
+                    and access policies.
+                  </li>
+                </ol>
+              </article>
+
+              <!-- MOVER -->
+              <article class="lifecycle-card">
+                <div class="lifecycle-number">02</div>
+
+                <p class="lifecycle-label">MOVER</p>
+
+                <h3>Controlled role transitions</h3>
+
+                <ol>
+                  <li>
+                    A change in department, title, or role is detected
+                    from the HR system.
+                  </li>
+                  <li>
+                    SailPoint evaluates the user's new access profile.
+                  </li>
+                  <li>
+                    Separation-of-Duties rules identify conflicting
+                    combinations of access.
+                  </li>
+                  <li>
+                    Existing entitlements are revoked while new
+                    access is provisioned.
+                  </li>
+                  <li>
+                    Higher-risk access can be routed through manager
+                    approval workflows.
+                  </li>
+                </ol>
+              </article>
+
+              <!-- LEAVER -->
+              <article class="lifecycle-card">
+                <div class="lifecycle-number">03</div>
+
+                <p class="lifecycle-label">LEAVER</p>
+
+                <h3>Rapid offboarding</h3>
+
+                <ol>
+                  <li>
+                    A termination or separation event is received from
+                    the HR system.
+                  </li>
+                  <li>
+                    SailPoint initiates downstream de-provisioning.
+                  </li>
+                  <li>
+                    Entra ID access is disabled and active access
+                    sessions can be revoked.
+                  </li>
+                  <li>
+                    Access to SaaS, cloud, legacy, and on-premises
+                    applications is removed.
+                  </li>
+                  <li>
+                    The resulting activity is available for governance
+                    and audit purposes.
+                  </li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACCESS CERTIFICATION -->
+        <div class="content-section certification-section">
+          <div class="content-label">
+            <span>04</span>
+            <strong>ACCESS CERTIFICATION</strong>
+          </div>
+
+          <div class="content-body">
+            <div class="split-content">
+              <div>
+                <h3>
+                  Continuous governance across
+                  <span>the identity estate.</span>
+                </h3>
+              </div>
+
+              <div>
+                <p>
+                  SailPoint can aggregate identity, group membership,
+                  directory roles, and entitlement information from
+                  Entra ID and other connected systems.
+                </p>
+
+                <p>
+                  Automated access certification campaigns can then
+                  route reviews to managers and resource owners.
+                  Decisions to remove access can trigger downstream
+                  changes, while the governance platform maintains an
+                  audit trail.
+                </p>
+
+                <ul class="feature-list">
+                  <li>Manager and resource-owner certifications</li>
+                  <li>Entitlement and group membership reviews</li>
+                  <li>Separation-of-Duties controls</li>
+                  <li>Automated remediation workflows</li>
+                  <li>Audit-ready governance records</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OUTCOMES -->
+        <div class="outcomes-section">
+          <div class="content-label">
+            <span>05</span>
+            <strong>MEASURED OUTCOMES</strong>
+          </div>
+
+          <div class="outcomes-grid">
+            <div class="outcome">
+              <strong>80%+</strong>
+              <span>Potential reduction in onboarding time</span>
+            </div>
+
+            <div class="outcome">
+              <strong>Zero-Day</strong>
+              <span>De-provisioning objective following termination</span>
+            </div>
+
+            <div class="outcome">
+              <strong>70%</strong>
+              <span>
+                Potential reduction in audit preparation time
+              </span>
+            </div>
+          </div>
+
+          <p class="outcome-note">
+            Outcomes shown are representative targets from the
+            described enterprise scenario and are dependent on
+            implementation scope, integration maturity, and operating
+            model.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="case-cta">
+      <div class="page-container">
+        <div>
+          <p class="section-eyebrow">HAVE A SIMILAR CHALLENGE?</p>
+
+          <h2>
+            Let's build the identity
+            <span>foundation together.</span>
+          </h2>
+        </div>
+
+        <a href="/contact/" class="cta-button">
+          Start a conversation
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page-container {
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: 0 auto;
+  }
+
+  /* HERO */
+
+  .case-hero {
+    padding: 180px 0 130px;
+    background: #eef4ff;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: 100px;
+    align-items: end;
+  }
+
+  .case-hero h1 {
+    max-width: 850px;
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(52px, 6vw, 88px);
+    font-weight: 650;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .case-hero h1 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .hero-copy {
+    max-width: 500px;
+  }
+
+  .hero-copy p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* CASE STUDY */
+
+  .case-study {
+    padding: 130px 0 0;
+    background: var(--color-white);
+  }
+
+  .case-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .case-heading {
+    max-width: 950px;
+    padding: 85px 0 115px;
+  }
+
+  .case-heading h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(44px, 5vw, 72px);
+    font-weight: 650;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  .case-heading h2 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .case-intro {
+    max-width: 720px;
+    margin: 34px 0 0;
+    color: var(--color-text);
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  /* CONTENT SECTIONS */
+
+  .content-section {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 70px;
+    padding: 90px 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .content-label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--color-ink);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .content-label span {
+    color: var(--color-blue);
+  }
+
+  .content-body {
+    min-width: 0;
+  }
+
+  .context-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--color-border);
+    border: 1px solid var(--color-border);
+  }
+
+  .context-card {
+    min-height: 190px;
+    padding: 32px;
+    background: var(--color-surface);
+  }
+
+  .context-card-wide {
+    grid-column: 1 / -1;
+    min-height: auto;
+  }
+
+  .context-card span {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .context-card strong {
+    display: block;
+    max-width: 430px;
+    color: var(--color-ink);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .context-card p {
+    max-width: 800px;
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.75;
+  }
+
+  /* ARCHITECTURE */
+
+  .architecture-section {
+    background: var(--color-surface);
+  }
+
+  .section-description {
+    max-width: 760px;
+    margin: 0 0 50px;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .architecture {
+    padding: 45px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+  }
+
+  .architecture-source,
+  .architecture-hub,
+  .architecture-target {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 26px;
+    border: 1px solid var(--color-border);
+  }
+
+  .architecture-source {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .architecture-hub {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border-color: rgba(0, 49, 255, 0.3);
+    background: #eef4ff;
+  }
+
+  .architecture-kicker,
+  .architecture-target span {
+    color: var(--color-blue);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .architecture strong {
+    color: var(--color-ink);
+    font-size: 21px;
+    font-weight: 650;
+  }
+
+  .architecture small {
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .architecture-connector {
+    width: 1px;
+    height: 45px;
+    margin: 0 auto;
+    background: var(--color-blue);
+  }
+
+  .architecture-branches {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 45px;
+  }
+
+  .architecture-target {
+    background: var(--color-surface);
+  }
+
+  /* TABLE */
+
+  .division-table {
+    margin-top: 45px;
+    border: 1px solid var(--color-border);
+  }
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 1fr;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .table-row:first-child {
+    border-top: 0;
+  }
+
+  .table-row span {
+    padding: 22px;
+    border-left: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .table-row span:first-child {
+    border-left: 0;
+    color: var(--color-ink);
+    font-weight: 650;
+  }
+
+  .table-header span {
+    color: var(--color-blue);
+    background: var(--color-surface);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  /* LIFECYCLE */
+
+  .lifecycle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .lifecycle-card {
+    padding: 34px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .lifecycle-number {
+    margin-bottom: 45px;
+    color: var(--color-blue);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .lifecycle-label {
+    margin: 0 0 12px;
+    color: var(--color-blue);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .lifecycle-card h3 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .lifecycle-card ol {
+    margin: 28px 0 0;
+    padding-left: 20px;
+  }
+
+  .lifecycle-card li {
+    margin-bottom: 14px;
+    padding-left: 4px;
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* CERTIFICATION */
+
+  .split-content {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 80px;
+  }
+
+  .split-content h3 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(30px, 3vw, 46px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  .split-content h3 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .split-content p {
+    margin: 0 0 24px;
+    color: var(--color-text);
+    line-height: 1.75;
+  }
+
+  .feature-list {
+    margin: 32px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .feature-list li {
+    padding: 15px 0 15px 25px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-ink);
+    font-size: 14px;
+    position: relative;
+  }
+
+  .feature-list li::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    background: var(--color-blue);
+  }
+
+  /* OUTCOMES */
+
+  .outcomes-section {
+    padding: 90px 0 130px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 50px;
+    background: var(--color-border);
+    border: 1px solid var(--color-border);
+  }
+
+  .outcome {
+    min-height: 230px;
+    padding: 38px;
+    background: var(--color-ink);
+  }
+
+  .outcome strong {
+    display: block;
+    color: var(--color-blue);
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .outcome span {
+    display: block;
+    max-width: 220px;
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .outcome-note {
+    max-width: 760px;
+    margin: 28px 0 0;
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* CTA */
+
+  .case-cta {
+    padding: 110px 0;
+    background: #eef4ff;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .case-cta .page-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .case-cta h2 {
+    max-width: 750px;
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .case-cta h2 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    min-height: 52px;
+    padding: 0 24px;
+    color: var(--color-white);
+    background: var(--color-blue);
+    border: 1px solid var(--color-blue);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: 650;
+    transition:
+      background 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  @media (max-width: 1000px) {
+    .case-hero {
+      padding: 150px 0 100px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .content-section {
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 45px;
+    }
+
+    .lifecycle-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .split-content {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+
+    .case-cta .page-container {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .case-hero {
+      padding: 125px 0 80px;
+    }
+
+    .case-hero h1 {
+      font-size: clamp(46px, 13vw, 68px);
+    }
+
+    .case-study {
+      padding-top: 90px;
+    }
+
+    .case-label {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .case-heading {
+      padding: 60px 0 80px;
+    }
+
+    .case-heading h2 {
+      font-size: clamp(40px, 11vw, 58px);
+    }
+
+    .content-section {
+      display: block;
+      padding: 70px 0;
+    }
+
+    .content-label {
+      margin-bottom: 40px;
+    }
+
+    .context-grid,
+    .architecture-branches,
+    .outcomes-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .context-card-wide {
+      grid-column: auto;
+    }
+
+    .architecture {
+      padding: 24px;
+    }
+
+    .table-row {
+      grid-template-columns: 1fr;
+    }
+
+    .table-row span {
+      border-left: 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .table-row span:first-child {
+      border-top: 0;
+    }
+
+    .table-header {
+      display: none;
+    }
+
+    .outcomes-section {
+      padding: 70px 0 90px;
+    }
+
+    .case-cta {
+      padding: 80px 0;
+    }
+
+    .case-cta h2 {
+      font-size: clamp(40px, 11vw, 58px);
+    }
+
+    .cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
