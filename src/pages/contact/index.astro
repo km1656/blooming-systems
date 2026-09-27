@@ -242,6 +242,16 @@ import Layout from "../../layouts/Layout.astro";
             hidden
           ></p>
         </form>
+        <div class="honeypot" aria-hidden="true">
+  <label for="website">Website</label>
+  <input
+    id="website"
+    name="website"
+    type="text"
+    tabindex="-1"
+    autocomplete="off"
+  />
+</div>
       </div>
     </div>
 
@@ -324,8 +334,7 @@ import Layout from "../../layouts/Layout.astro";
 
       if (field instanceof HTMLInputElement) {
         if (field.type === "email" && value) {
-          const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
           if (!emailPattern.test(value)) {
             setError(field, "Enter a valid work email address.");
@@ -397,79 +406,112 @@ import Layout from "../../layouts/Layout.astro";
 
     updateProjectCounter();
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+    form.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
-      formStatus.hidden = true;
-      formStatus.textContent = "";
+  formStatus.hidden = true;
+  formStatus.textContent = "";
+  formStatus.classList.remove("success", "error");
 
-      let isValid = true;
-      let firstInvalidField:
-        | HTMLInputElement
-        | HTMLSelectElement
-        | HTMLTextAreaElement
-        | null = null;
+  let isValid = true;
 
-      fields.forEach((field) => {
-        const fieldIsValid = validateField(field);
+  let firstInvalidField:
+    | HTMLInputElement
+    | HTMLSelectElement
+    | HTMLTextAreaElement
+    | null = null;
 
-        if (!fieldIsValid) {
-          isValid = false;
+  fields.forEach((field) => {
+    const fieldIsValid = validateField(field);
 
-          if (!firstInvalidField) {
-            firstInvalidField = field;
-          }
-        }
-      });
+    if (!fieldIsValid) {
+      isValid = false;
 
-      if (!isValid) {
-        firstInvalidField?.focus();
-        return;
+      if (!firstInvalidField) {
+        firstInvalidField = field;
       }
+    }
+  });
 
-      /*
-       * The form is currently UI-only.
-       * Connect this section to your API/form service later.
-       */
+  if (!isValid) {
+    firstInvalidField?.focus();
+    return;
+  }
 
-      if (submitButton) {
-        submitButton.disabled = true;
-      }
+  if (submitButton) {
+    submitButton.disabled = true;
+  }
 
-      if (buttonText) {
-        buttonText.hidden = true;
-      }
+  if (buttonText) {
+    buttonText.hidden = true;
+  }
 
-      if (buttonLoading) {
-        buttonLoading.hidden = false;
-      }
+  if (buttonLoading) {
+    buttonLoading.hidden = false;
+  }
 
-      // Temporary success state until the backend is connected.
-      window.setTimeout(() => {
-        formStatus.textContent =
-          "Thank you. Your inquiry has been received.";
-
-        formStatus.classList.add("success");
-        formStatus.hidden = false;
-
-        form.reset();
-        updateProjectCounter();
-
-        fields.forEach(clearError);
-
-        if (submitButton) {
-          submitButton.disabled = false;
-        }
-
-        if (buttonText) {
-          buttonText.hidden = false;
-        }
-
-        if (buttonLoading) {
-          buttonLoading.hidden = true;
-        }
-      }, 700);
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
     });
+
+    let result: {
+      success?: boolean;
+      message?: string;
+    } = {};
+
+    try {
+      result = await response.json();
+    } catch {
+      result = {};
+    }
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message ||
+          "We could not send your inquiry right now. Please try again."
+      );
+    }
+
+    formStatus.textContent =
+      result.message ||
+      "Thank you. Your inquiry has been received.";
+
+    formStatus.classList.add("success");
+    formStatus.hidden = false;
+
+    form.reset();
+    updateProjectCounter();
+
+    fields.forEach(clearError);
+  } catch (error) {
+    console.error("Contact form submission failed:", error);
+
+    formStatus.textContent =
+      error instanceof Error
+        ? error.message
+        : "Something went wrong while sending your inquiry. Please try again.";
+
+    formStatus.classList.add("error");
+    formStatus.hidden = false;
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+    }
+
+    if (buttonText) {
+      buttonText.hidden = false;
+    }
+
+    if (buttonLoading) {
+      buttonLoading.hidden = true;
+    }
+  }
+});
   }
 </script>
 
@@ -829,4 +871,15 @@ import Layout from "../../layouts/Layout.astro";
       margin-top: 72px;
     }
   }
+  .honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 </style>
