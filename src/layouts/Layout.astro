@@ -29,6 +29,8 @@ const canonicalUrl = canonical
   : new URL(Astro.url.pathname, siteUrl).href;
 
 const ogImageUrl = new URL(ogImage, siteUrl).href;
+
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -69,6 +71,27 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
     <meta name="twitter:image" content={ogImageUrl} />
 
     <meta name="theme-color" content="#0031FF" />
+
+    <!-- Google Analytics 4 -->
+    {gaMeasurementId && (
+      <>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+        ></script>
+
+        <script is:inline define:vars={{ gaMeasurementId }}>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+            window.dataLayer.push(arguments);
+          }
+
+          gtag("js", new Date());
+          gtag("config", gaMeasurementId);
+        </script>
+      </>
+    )}
   </head>
 
   <body>
