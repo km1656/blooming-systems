@@ -1,0 +1,654 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const capabilities = [
+  {
+    number: "01",
+    title: "Privileged Accounts",
+    text: "Establish appropriate controls around administrative and other high-impact identities.",
+  },
+  {
+    number: "02",
+    title: "Elevated Access",
+    text: "Control when and how users receive elevated permissions to sensitive systems and resources.",
+  },
+  {
+    number: "03",
+    title: "Credential Controls",
+    text: "Apply stronger controls to privileged credentials and reduce unnecessary exposure of sensitive authentication material.",
+  },
+  {
+    number: "04",
+    title: "Access Monitoring",
+    text: "Improve visibility into privileged activity across critical infrastructure and applications.",
+  },
+  {
+    number: "05",
+    title: "Privileged Workflows",
+    text: "Create repeatable processes for requesting, approving, using, and removing elevated access.",
+  },
+  {
+    number: "06",
+    title: "Policy Enforcement",
+    text: "Align privileged access with organizational policies, security requirements, and operational practices.",
+  },
+];
+
+const controls = [
+  {
+    number: "01",
+    title: "Identify",
+    text: "Locate privileged accounts, administrators, service identities, and elevated access paths.",
+  },
+  {
+    number: "02",
+    title: "Control",
+    text: "Establish appropriate access boundaries, authentication requirements, and privileged workflows.",
+  },
+  {
+    number: "03",
+    title: "Authorize",
+    text: "Require appropriate approval and context before elevated access is granted.",
+  },
+  {
+    number: "04",
+    title: "Monitor",
+    text: "Maintain visibility into privileged activity and changes across sensitive environments.",
+  },
+  {
+    number: "05",
+    title: "Review",
+    text: "Continuously evaluate privileged access against current responsibilities and requirements.",
+  },
+];
+---
+
+<Layout
+  title="Privileged Access | Blooming Systems Inc."
+  description="Privileged access solutions from Blooming Systems Inc. for administrative identities, elevated access, credential controls, monitoring, workflows, and policy enforcement."
+>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="section-eyebrow">PRIVILEGED ACCESS</p>
+
+          <h1>
+            Protect the identities
+            <span>behind critical access.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Privileged identities can access the systems and resources that
+            matter most. We help organizations establish stronger controls
+            around administrative access, elevated permissions, credentials,
+            and privileged activity.
+          </p>
+
+          <a href="/contact/" class="primary-link">
+            Talk to an IAM Expert
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="privileged-visual">
+            <div class="shield">
+              <div class="shield-inner">
+                <span>PRIVILEGED</span>
+                <strong>ACCESS</strong>
+              </div>
+            </div>
+
+            <div class="access-node access-one">ADMIN</div>
+            <div class="access-node access-two">SYSTEM</div>
+            <div class="access-node access-three">CREDENTIAL</div>
+            <div class="access-node access-four">MONITOR</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="container intro-grid">
+        <div>
+          <p class="section-eyebrow">THE CHALLENGE</p>
+
+          <h2>
+            Elevated access requires
+            <span>elevated controls.</span>
+          </h2>
+        </div>
+
+        <div class="intro-copy">
+          <p>
+            Administrative identities often have broad permissions across
+            infrastructure, applications, data, and security controls.
+            Traditional identity controls may not provide sufficient
+            separation, visibility, or control over these access paths.
+          </p>
+
+          <p>
+            A privileged access strategy establishes stronger controls around
+            who can elevate access, when access is permitted, what actions are
+            performed, and how those activities are reviewed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">CAPABILITIES</p>
+
+          <h2>
+            Control privileged access
+            <span>at every layer.</span>
+          </h2>
+        </div>
+
+        <div class="capability-grid">
+          {
+            capabilities.map((item) => (
+              <article class="capability-card">
+                <span class="number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="controls-section">
+      <div class="container controls-grid">
+        <div>
+          <p class="section-eyebrow">PRIVILEGED ACCESS MODEL</p>
+
+          <h2>
+            From privileged identity
+            <span>to controlled action.</span>
+          </h2>
+
+          <p class="controls-copy">
+            Privileged access is most effective when identity, policy,
+            authorization, and monitoring work together rather than operating
+            as separate controls.
+          </p>
+
+          <a href="/services/iam-consulting/" class="text-link">
+            Explore IAM consulting
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="controls-list">
+          {
+            controls.map((item) => (
+              <div class="control-item">
+                <span>{item.number}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <div>
+          <p class="section-eyebrow">PRIVILEGED ACCESS</p>
+
+          <h2>
+            Strengthen control over
+            <span>your most sensitive access.</span>
+          </h2>
+        </div>
+
+        <a href="/contact/" class="cta-button">
+          Talk to an IAM Expert
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: 0 auto;
+  }
+
+  .hero {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    background: #eef4ff;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 85px 0;
+  }
+
+  .hero h1 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(48px, 5.3vw, 76px);
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  h1 span,
+  h2 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .hero-copy {
+    max-width: 570px;
+    margin: 32px 0 38px;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .primary-link,
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 19px;
+    color: var(--color-white);
+    background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .primary-link:hover,
+  .cta-button:hover {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .hero-visual {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .privileged-visual {
+    position: relative;
+    width: min(100%, 550px);
+    aspect-ratio: 1;
+  }
+
+  .shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 235px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-ink);
+    clip-path: polygon(
+      50% 0%,
+      90% 16%,
+      90% 55%,
+      76% 78%,
+      50% 100%,
+      24% 78%,
+      10% 55%,
+      10% 16%
+    );
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 25px 30px rgba(7, 21, 47, 0.15));
+  }
+
+  .shield-inner {
+    width: 185px;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    background: var(--color-blue);
+    clip-path: inherit;
+  }
+
+  .shield-inner span {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .shield-inner strong {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 650;
+  }
+
+  .access-node {
+    position: absolute;
+    z-index: 3;
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border: 1px solid #ccd7eb;
+    border-radius: 50%;
+    box-shadow: 0 12px 30px rgba(7, 21, 47, 0.08);
+    font-size: 8px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .access-one {
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .access-two {
+    top: 32%;
+    right: 0;
+  }
+
+  .access-three {
+    bottom: 5%;
+    right: 12%;
+  }
+
+  .access-four {
+    bottom: 5%;
+    left: 12%;
+  }
+
+  .intro-section,
+  .controls-section {
+    padding: 135px 0;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .intro-grid,
+  .controls-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 620;
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+  }
+
+  .intro-copy {
+    max-width: 650px;
+  }
+
+  .intro-copy p,
+  .controls-copy {
+    margin: 0 0 24px;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .capabilities-section {
+    padding: 135px 0;
+    background: var(--color-ink);
+  }
+
+  .capabilities-section .section-eyebrow {
+    color: #aeb9cc;
+  }
+
+  .capabilities-section .section-eyebrow::before {
+    background: #aeb9cc;
+  }
+
+  .capabilities-section h2 {
+    color: var(--color-white);
+  }
+
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 65px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .capability-card {
+    min-height: 250px;
+    padding: 30px;
+    background: var(--color-ink);
+  }
+
+  .capability-card .number {
+    color: #6d86ff;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.15em;
+  }
+
+  .capability-card h3 {
+    margin: 42px 0 12px;
+    color: var(--color-white);
+    font-size: 21px;
+    font-weight: 620;
+  }
+
+  .capability-card p {
+    margin: 0;
+    color: #aeb9cc;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .controls-copy {
+    max-width: 550px;
+    margin-top: 30px;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .controls-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .control-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .control-item > span {
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+  }
+
+  .control-item h3 {
+    margin: 0 0 6px;
+    color: var(--color-ink);
+    font-size: 19px;
+    font-weight: 620;
+  }
+
+  .control-item p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .cta-section {
+    padding: 105px 0;
+    background: var(--color-blue);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .cta-section .section-eyebrow {
+    color: var(--color-white);
+  }
+
+  .cta-section .section-eyebrow::before {
+    background: var(--color-white);
+  }
+
+  .cta-section h2 {
+    max-width: 800px;
+    color: var(--color-white);
+  }
+
+  .cta-section h2 span {
+    color: var(--color-white);
+    opacity: 0.72;
+  }
+
+  .cta-button {
+    flex-shrink: 0;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border-color: var(--color-white);
+  }
+
+  .cta-button:hover {
+    color: var(--color-white);
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  @media (max-width: 1050px) {
+    .hero-grid,
+    .intro-grid,
+    .controls-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .hero-visual {
+      min-height: 470px;
+    }
+
+    .capability-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      min-height: calc(100vh - 72px);
+    }
+
+    .hero-grid {
+      padding: 65px 0 75px;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 12vw, 62px);
+    }
+
+    .hero-visual {
+      min-height: 350px;
+    }
+
+    .privileged-visual {
+      width: 108%;
+      margin-left: -4%;
+    }
+
+    .shield {
+      width: 190px;
+      height: 220px;
+    }
+
+    .shield-inner {
+      width: 150px;
+      height: 175px;
+    }
+
+    .access-node {
+      width: 82px;
+      height: 82px;
+    }
+
+    .intro-section,
+    .capabilities-section,
+    .controls-section {
+      padding: 95px 0;
+    }
+
+    .capability-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .capability-card {
+      min-height: auto;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+    }
+  }
+</style>

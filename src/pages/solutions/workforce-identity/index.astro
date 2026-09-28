@@ -1,0 +1,667 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const capabilities = [
+  {
+    number: "01",
+    title: "Single Sign-On",
+    text: "Give employees a consistent authentication experience across enterprise applications and services.",
+  },
+  {
+    number: "02",
+    title: "Multi-Factor Authentication",
+    text: "Strengthen workforce authentication with policies that respond to identity, application, device, and access context.",
+  },
+  {
+    number: "03",
+    title: "Joiner / Mover / Leaver",
+    text: "Connect workforce lifecycle events to identity creation, access changes, and timely deprovisioning.",
+  },
+  {
+    number: "04",
+    title: "Application Access",
+    text: "Establish consistent patterns for requesting, approving, provisioning, and removing application access.",
+  },
+  {
+    number: "05",
+    title: "Workforce Provisioning",
+    text: "Automate identity and account provisioning across directories, cloud platforms, and enterprise applications.",
+  },
+  {
+    number: "06",
+    title: "Access Policies",
+    text: "Apply identity and access policies consistently across users, applications, devices, and environments.",
+  },
+];
+
+const lifecycle = [
+  {
+    number: "01",
+    title: "Join",
+    text: "Create the identity and establish the baseline access required for a new worker.",
+  },
+  {
+    number: "02",
+    title: "Move",
+    text: "Adjust access as responsibilities, departments, locations, or roles change.",
+  },
+  {
+    number: "03",
+    title: "Access",
+    text: "Provide secure authentication and application access throughout the workforce lifecycle.",
+  },
+  {
+    number: "04",
+    title: "Review",
+    text: "Evaluate access against current responsibilities and organizational requirements.",
+  },
+  {
+    number: "05",
+    title: "Leave",
+    text: "Remove access and disable identities when the workforce relationship ends.",
+  },
+];
+---
+
+<Layout
+  title="Workforce Identity | Blooming Systems Inc."
+  description="Workforce identity solutions from Blooming Systems Inc. for SSO, MFA, lifecycle management, application access, provisioning, and workforce identity controls."
+>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="section-eyebrow">WORKFORCE IDENTITY</p>
+
+          <h1>
+            Give every worker
+            <span>the right access.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Workforce identity connects employees and contractors to the
+            applications, systems, and resources they need. We help
+            organizations build secure and manageable workforce access across
+            the enterprise.
+          </p>
+
+          <a href="/contact/" class="primary-link">
+            Talk to an IAM Expert
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="identity-orbit">
+            <div class="orbit-ring ring-one"></div>
+            <div class="orbit-ring ring-two"></div>
+            <div class="orbit-ring ring-three"></div>
+
+            <div class="center-node">
+              <span>WORKFORCE</span>
+              <strong>IDENTITY</strong>
+            </div>
+
+            <div class="orbit-node node-one">EMPLOYEE</div>
+            <div class="orbit-node node-two">CONTRACTOR</div>
+            <div class="orbit-node node-three">APPLICATION</div>
+            <div class="orbit-node node-four">DEVICE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="container intro-grid">
+        <div>
+          <p class="section-eyebrow">THE CHALLENGE</p>
+
+          <h2>
+            Workforce access should be
+            <span>simple for people and controlled for the business.</span>
+          </h2>
+        </div>
+
+        <div class="intro-copy">
+          <p>
+            Employees interact with dozens or hundreds of applications during
+            their lifecycle. Access requirements change as people join teams,
+            change roles, move between departments, or leave the organization.
+          </p>
+
+          <p>
+            A workforce identity strategy creates consistent patterns for
+            authentication, application access, provisioning, and lifecycle
+            management while supporting the organization's security and
+            operational requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">CAPABILITIES</p>
+
+          <h2>
+            The workforce identity
+            <span>foundation.</span>
+          </h2>
+        </div>
+
+        <div class="capability-grid">
+          {
+            capabilities.map((item) => (
+              <article class="capability-card">
+                <span class="number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="lifecycle-section">
+      <div class="container lifecycle-grid">
+        <div>
+          <p class="section-eyebrow">WORKFORCE LIFECYCLE</p>
+
+          <h2>
+            Identity follows
+            <span>the worker.</span>
+          </h2>
+
+          <p class="lifecycle-copy">
+            Workforce identity is not a one-time provisioning event. It is an
+            ongoing lifecycle that needs to respond to changes in employment,
+            responsibilities, access requirements, and organizational structure.
+          </p>
+
+          <a href="/services/identity-governance/" class="text-link">
+            Explore identity governance
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="lifecycle-list">
+          {
+            lifecycle.map((item) => (
+              <div class="lifecycle-item">
+                <span>{item.number}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <div>
+          <p class="section-eyebrow">WORKFORCE IDENTITY</p>
+
+          <h2>
+            Build a workforce identity
+            <span>environment that scales.</span>
+          </h2>
+        </div>
+
+        <a href="/contact/" class="cta-button">
+          Talk to an IAM Expert
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: 0 auto;
+  }
+
+  .hero {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    background: #eef4ff;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 85px 0;
+  }
+
+  .hero h1 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(48px, 5.4vw, 76px);
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  h1 span,
+  h2 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .hero-copy {
+    max-width: 570px;
+    margin: 32px 0 38px;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .primary-link,
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 19px;
+    color: var(--color-white);
+    background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .primary-link:hover,
+  .cta-button:hover {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .hero-visual {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .identity-orbit {
+    position: relative;
+    width: min(100%, 540px);
+    aspect-ratio: 1;
+  }
+
+  .orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(0, 49, 255, 0.18);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ring-one {
+    width: 42%;
+    height: 42%;
+  }
+
+  .ring-two {
+    width: 68%;
+    height: 68%;
+  }
+
+  .ring-three {
+    width: 94%;
+    height: 94%;
+    border-color: rgba(0, 49, 255, 0.1);
+  }
+
+  .center-node {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 145px;
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    background: var(--color-ink);
+    border: 8px solid #dce7ff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 20px 45px rgba(7, 21, 47, 0.18);
+  }
+
+  .center-node span {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .center-node strong {
+    margin-top: 5px;
+    font-size: 17px;
+  }
+
+  .orbit-node {
+    position: absolute;
+    z-index: 3;
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border: 1px solid #ccd7eb;
+    border-radius: 50%;
+    box-shadow: 0 12px 30px rgba(7, 21, 47, 0.08);
+    font-size: 8px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .node-one {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .node-two {
+    top: 25%;
+    right: 0;
+  }
+
+  .node-three {
+    bottom: 3%;
+    right: 18%;
+  }
+
+  .node-four {
+    bottom: 3%;
+    left: 18%;
+  }
+
+  .intro-section,
+  .lifecycle-section {
+    padding: 135px 0;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 620;
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+  }
+
+  .intro-copy {
+    max-width: 650px;
+    padding-top: 5px;
+  }
+
+  .intro-copy p,
+  .lifecycle-copy {
+    margin: 0 0 24px;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .capabilities-section {
+    padding: 135px 0;
+    background: var(--color-ink);
+  }
+
+  .capabilities-section .section-eyebrow {
+    color: #aeb9cc;
+  }
+
+  .capabilities-section .section-eyebrow::before {
+    background: #aeb9cc;
+  }
+
+  .capabilities-section h2 {
+    color: var(--color-white);
+    max-width: 650px;
+  }
+
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 65px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .capability-card {
+    min-height: 250px;
+    padding: 30px;
+    background: var(--color-ink);
+  }
+
+  .capability-card .number {
+    color: #6d86ff;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.15em;
+  }
+
+  .capability-card h3 {
+    margin: 42px 0 12px;
+    color: var(--color-white);
+    font-size: 21px;
+    font-weight: 620;
+  }
+
+  .capability-card p {
+    margin: 0;
+    color: #aeb9cc;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .lifecycle-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .lifecycle-copy {
+    max-width: 550px;
+    margin-top: 30px;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .lifecycle-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .lifecycle-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lifecycle-item > span {
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+  }
+
+  .lifecycle-item h3 {
+    margin: 0 0 6px;
+    color: var(--color-ink);
+    font-size: 19px;
+    font-weight: 620;
+  }
+
+  .lifecycle-item p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .cta-section {
+    padding: 105px 0;
+    background: var(--color-blue);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .cta-section .section-eyebrow {
+    color: var(--color-white);
+  }
+
+  .cta-section .section-eyebrow::before {
+    background: var(--color-white);
+  }
+
+  .cta-section h2 {
+    max-width: 800px;
+    color: var(--color-white);
+  }
+
+  .cta-section h2 span {
+    color: var(--color-white);
+    opacity: 0.72;
+  }
+
+  .cta-button {
+    flex-shrink: 0;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border-color: var(--color-white);
+  }
+
+  .cta-button:hover {
+    color: var(--color-white);
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  @media (max-width: 1050px) {
+    .hero-grid,
+    .intro-grid,
+    .lifecycle-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .hero-visual {
+      min-height: 470px;
+    }
+
+    .capability-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      min-height: calc(100vh - 72px);
+    }
+
+    .hero-grid {
+      padding: 65px 0 75px;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 12vw, 62px);
+    }
+
+    .hero-visual {
+      min-height: 360px;
+    }
+
+    .identity-orbit {
+      width: 108%;
+      margin-left: -4%;
+    }
+
+    .center-node {
+      width: 120px;
+      height: 120px;
+    }
+
+    .orbit-node {
+      width: 82px;
+      height: 82px;
+    }
+
+    .intro-section,
+    .capabilities-section,
+    .lifecycle-section {
+      padding: 95px 0;
+    }
+
+    .capability-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .capability-card {
+      min-height: auto;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+    }
+  }
+</style>

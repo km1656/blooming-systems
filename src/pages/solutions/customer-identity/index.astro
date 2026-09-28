@@ -1,0 +1,654 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const capabilities = [
+  {
+    number: "01",
+    title: "Customer Registration",
+    text: "Create registration experiences that establish customer identities while keeping the digital journey straightforward.",
+  },
+  {
+    number: "02",
+    title: "Authentication",
+    text: "Support secure authentication patterns appropriate to customer applications, channels, and risk requirements.",
+  },
+  {
+    number: "03",
+    title: "Identity Profiles",
+    text: "Maintain consistent customer identity information across digital experiences and connected systems.",
+  },
+  {
+    number: "04",
+    title: "Digital Experiences",
+    text: "Connect identity capabilities to customer-facing applications without making authentication an obstacle.",
+  },
+  {
+    number: "05",
+    title: "Access Policies",
+    text: "Apply policies based on customer identity, application, context, and defined business requirements.",
+  },
+  {
+    number: "06",
+    title: "Identity Integration",
+    text: "Connect customer identity capabilities with applications, APIs, directories, and supporting enterprise systems.",
+  },
+];
+
+const journey = [
+  {
+    number: "01",
+    title: "Discover",
+    text: "Understand the customer journey, applications, identity requirements, and existing technology landscape.",
+  },
+  {
+    number: "02",
+    title: "Register",
+    text: "Establish a customer identity through a secure and appropriate registration experience.",
+  },
+  {
+    number: "03",
+    title: "Authenticate",
+    text: "Provide secure authentication across the channels and applications customers use.",
+  },
+  {
+    number: "04",
+    title: "Access",
+    text: "Connect authenticated customers to the applications, services, and experiences they are entitled to use.",
+  },
+  {
+    number: "05",
+    title: "Evolve",
+    text: "Adapt identity experiences as digital products, customer requirements, and security needs change.",
+  },
+];
+---
+
+<Layout
+  title="Customer Identity | Blooming Systems Inc."
+  description="Customer identity solutions from Blooming Systems Inc. for registration, authentication, identity profiles, digital experiences, access policies, and identity integration."
+>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="section-eyebrow">CUSTOMER IDENTITY</p>
+
+          <h1>
+            Make identity part of
+            <span>a better digital experience.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Customer identity sits at the intersection of security and digital
+            experience. We help organizations build customer identity
+            environments that support secure, connected interactions across
+            channels.
+          </p>
+
+          <a href="/contact/" class="primary-link">
+            Talk to an IAM Expert
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="customer-visual">
+            <div class="customer-center">
+              <span>CUSTOMER</span>
+              <strong>ID</strong>
+            </div>
+
+            <div class="customer-node customer-one">REGISTER</div>
+            <div class="customer-node customer-two">AUTHENTICATE</div>
+            <div class="customer-node customer-three">EXPERIENCE</div>
+            <div class="customer-node customer-four">ACCESS</div>
+
+            <div class="customer-ring ring-one"></div>
+            <div class="customer-ring ring-two"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="container intro-grid">
+        <div>
+          <p class="section-eyebrow">THE CHALLENGE</p>
+
+          <h2>
+            Customer identity has to balance
+            <span>security and experience.</span>
+          </h2>
+        </div>
+
+        <div class="intro-copy">
+          <p>
+            Customers expect digital experiences to be fast, consistent, and
+            easy to navigate. At the same time, organizations need to protect
+            accounts, applications, customer information, and digital
+            transactions.
+          </p>
+
+          <p>
+            A customer identity strategy creates the identity layer connecting
+            registration, authentication, authorization, customer profiles,
+            and digital experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">CAPABILITIES</p>
+
+          <h2>
+            Identity for the
+            <span>customer journey.</span>
+          </h2>
+        </div>
+
+        <div class="capability-grid">
+          {
+            capabilities.map((item) => (
+              <article class="capability-card">
+                <span class="number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="journey-section">
+      <div class="container journey-grid">
+        <div>
+          <p class="section-eyebrow">CUSTOMER JOURNEY</p>
+
+          <h2>
+            Identity across
+            <span>every interaction.</span>
+          </h2>
+
+          <p class="journey-copy">
+            Customer identity should provide a consistent foundation across
+            registration, authentication, application access, and ongoing
+            digital engagement.
+          </p>
+
+          <a href="/services/implementation-integration/" class="text-link">
+            Explore implementation & integration
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="journey-list">
+          {
+            journey.map((item) => (
+              <div class="journey-item">
+                <span>{item.number}</span>
+
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <div>
+          <p class="section-eyebrow">CUSTOMER IDENTITY</p>
+
+          <h2>
+            Build secure digital experiences
+            <span>around identity.</span>
+          </h2>
+        </div>
+
+        <a href="/contact/" class="cta-button">
+          Talk to an IAM Expert
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: 0 auto;
+  }
+
+  .hero {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    background: #eef4ff;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 85px 0;
+  }
+
+  .hero h1 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(48px, 5.3vw, 76px);
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  h1 span,
+  h2 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .hero-copy {
+    max-width: 570px;
+    margin: 32px 0 38px;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .primary-link,
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 19px;
+    color: var(--color-white);
+    background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .primary-link:hover,
+  .cta-button:hover {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .hero-visual {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customer-visual {
+    position: relative;
+    width: min(100%, 550px);
+    aspect-ratio: 1;
+  }
+
+  .customer-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(0, 49, 255, 0.16);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ring-one {
+    width: 55%;
+    height: 55%;
+  }
+
+  .ring-two {
+    width: 90%;
+    height: 90%;
+    border-color: rgba(0, 49, 255, 0.09);
+  }
+
+  .customer-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 155px;
+    height: 155px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    background: var(--color-blue);
+    border: 8px solid #dce7ff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 20px 45px rgba(0, 49, 255, 0.2);
+  }
+
+  .customer-center span {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .customer-center strong {
+    margin-top: 3px;
+    font-size: 30px;
+    font-weight: 650;
+  }
+
+  .customer-node {
+    position: absolute;
+    z-index: 4;
+    width: 112px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border: 1px solid #ccd7eb;
+    border-radius: 50%;
+    box-shadow: 0 12px 30px rgba(7, 21, 47, 0.08);
+    font-size: 8px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .customer-one {
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .customer-two {
+    top: 30%;
+    right: 0;
+  }
+
+  .customer-three {
+    bottom: 8%;
+    right: 15%;
+  }
+
+  .customer-four {
+    bottom: 8%;
+    left: 15%;
+  }
+
+  .intro-section,
+  .journey-section {
+    padding: 135px 0;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .intro-grid,
+  .journey-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 620;
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+  }
+
+  .intro-copy {
+    max-width: 650px;
+  }
+
+  .intro-copy p,
+  .journey-copy {
+    margin: 0 0 24px;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .capabilities-section {
+    padding: 135px 0;
+    background: var(--color-ink);
+  }
+
+  .capabilities-section .section-eyebrow {
+    color: #aeb9cc;
+  }
+
+  .capabilities-section .section-eyebrow::before {
+    background: #aeb9cc;
+  }
+
+  .capabilities-section h2 {
+    color: var(--color-white);
+  }
+
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 65px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .capability-card {
+    min-height: 250px;
+    padding: 30px;
+    background: var(--color-ink);
+  }
+
+  .capability-card .number {
+    color: #6d86ff;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.15em;
+  }
+
+  .capability-card h3 {
+    margin: 42px 0 12px;
+    color: var(--color-white);
+    font-size: 21px;
+    font-weight: 620;
+  }
+
+  .capability-card p {
+    margin: 0;
+    color: #aeb9cc;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .journey-copy {
+    max-width: 550px;
+    margin-top: 30px;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .journey-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .journey-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .journey-item > span {
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+  }
+
+  .journey-item h3 {
+    margin: 0 0 6px;
+    color: var(--color-ink);
+    font-size: 19px;
+    font-weight: 620;
+  }
+
+  .journey-item p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .cta-section {
+    padding: 105px 0;
+    background: var(--color-blue);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .cta-section .section-eyebrow {
+    color: var(--color-white);
+  }
+
+  .cta-section .section-eyebrow::before {
+    background: var(--color-white);
+  }
+
+  .cta-section h2 {
+    max-width: 800px;
+    color: var(--color-white);
+  }
+
+  .cta-section h2 span {
+    color: var(--color-white);
+    opacity: 0.72;
+  }
+
+  .cta-button {
+    flex-shrink: 0;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border-color: var(--color-white);
+  }
+
+  .cta-button:hover {
+    color: var(--color-white);
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  @media (max-width: 1050px) {
+    .hero-grid,
+    .intro-grid,
+    .journey-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .hero-visual {
+      min-height: 470px;
+    }
+
+    .capability-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      min-height: calc(100vh - 72px);
+    }
+
+    .hero-grid {
+      padding: 65px 0 75px;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 12vw, 62px);
+    }
+
+    .hero-visual {
+      min-height: 350px;
+    }
+
+    .customer-visual {
+      width: 108%;
+      margin-left: -4%;
+    }
+
+    .customer-center {
+      width: 120px;
+      height: 120px;
+    }
+
+    .customer-node {
+      width: 82px;
+      height: 82px;
+    }
+
+    .intro-section,
+    .capabilities-section,
+    .journey-section {
+      padding: 95px 0;
+    }
+
+    .capability-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .capability-card {
+      min-height: auto;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+    }
+  }
+</style>

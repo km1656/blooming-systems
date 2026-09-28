@@ -1,0 +1,654 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const capabilities = [
+  {
+    number: "01",
+    title: "Access Requests",
+    text: "Create structured processes for requesting access to applications, systems, roles, and entitlements.",
+  },
+  {
+    number: "02",
+    title: "Entitlement Management",
+    text: "Establish visibility and control over the permissions and entitlements associated with identities.",
+  },
+  {
+    number: "03",
+    title: "Access Certifications",
+    text: "Give managers and application owners repeatable processes for reviewing and validating access.",
+  },
+  {
+    number: "04",
+    title: "Lifecycle Governance",
+    text: "Connect identity lifecycle events with access decisions throughout the relationship with the organization.",
+  },
+  {
+    number: "05",
+    title: "Separation of Duties",
+    text: "Support governance requirements by identifying and controlling incompatible access combinations.",
+  },
+  {
+    number: "06",
+    title: "Audit & Reporting",
+    text: "Create visibility into identity, access, approvals, certifications, and governance activity.",
+  },
+];
+
+const lifecycle = [
+  {
+    number: "01",
+    title: "Request",
+    text: "Users or authorized stakeholders initiate an access request.",
+  },
+  {
+    number: "02",
+    title: "Evaluate",
+    text: "Policies, roles, entitlements, and governance requirements are evaluated.",
+  },
+  {
+    number: "03",
+    title: "Approve",
+    text: "Appropriate managers, owners, or control functions review the request.",
+  },
+  {
+    number: "04",
+    title: "Provision",
+    text: "Approved access is provisioned through the appropriate identity and application systems.",
+  },
+  {
+    number: "05",
+    title: "Review",
+    text: "Access is periodically reviewed and changed when business requirements change.",
+  },
+];
+---
+
+<Layout
+  title="Identity Governance | Blooming Systems Inc."
+  description="Identity governance solutions from Blooming Systems Inc. for access requests, entitlement management, certifications, lifecycle governance, separation of duties, and reporting."
+>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="section-eyebrow">IDENTITY GOVERNANCE</p>
+
+          <h1>
+            Know who has access,
+            <span>why, and when it should change.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Identity governance provides the framework for making consistent
+            decisions about access. We help organizations connect identity
+            lifecycle, access requests, approvals, certifications, and
+            governance controls.
+          </p>
+
+          <a href="/contact/" class="primary-link">
+            Talk to an IAM Expert
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="governance-visual">
+            <div class="governance-center">
+              <span>IDENTITY</span>
+              <strong>GOVERNANCE</strong>
+            </div>
+
+            <div class="governance-node governance-one">REQUEST</div>
+            <div class="governance-node governance-two">APPROVE</div>
+            <div class="governance-node governance-three">PROVISION</div>
+            <div class="governance-node governance-four">REVIEW</div>
+
+            <div class="governance-ring ring-one"></div>
+            <div class="governance-ring ring-two"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="container intro-grid">
+        <div>
+          <p class="section-eyebrow">THE CHALLENGE</p>
+
+          <h2>
+            Access governance starts with
+            <span>knowing what access exists.</span>
+          </h2>
+        </div>
+
+        <div class="intro-copy">
+          <p>
+            As organizations grow, access can become distributed across
+            applications, directories, infrastructure, SaaS platforms, and
+            business systems. Understanding who has access and whether that
+            access remains appropriate becomes increasingly difficult.
+          </p>
+
+          <p>
+            Identity governance creates repeatable processes and controls for
+            access decisions, lifecycle events, certifications, entitlements,
+            and governance reporting.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">CAPABILITIES</p>
+
+          <h2>
+            Turn access decisions into
+            <span>repeatable controls.</span>
+          </h2>
+        </div>
+
+        <div class="capability-grid">
+          {
+            capabilities.map((item) => (
+              <article class="capability-card">
+                <span class="number">{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="lifecycle-section">
+      <div class="container lifecycle-grid">
+        <div>
+          <p class="section-eyebrow">GOVERNANCE LIFECYCLE</p>
+
+          <h2>
+            Access moves through
+            <span>a controlled lifecycle.</span>
+          </h2>
+
+          <p class="lifecycle-copy">
+            Governance becomes more effective when access decisions follow
+            defined workflows from the initial request through approval,
+            provisioning, review, and eventual change or removal.
+          </p>
+
+          <a href="/services/identity-governance/" class="text-link">
+            Explore identity governance services
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="lifecycle-list">
+          {
+            lifecycle.map((item) => (
+              <div class="lifecycle-item">
+                <span>{item.number}</span>
+
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <div>
+          <p class="section-eyebrow">IDENTITY GOVERNANCE</p>
+
+          <h2>
+            Build a clearer framework
+            <span>for enterprise access.</span>
+          </h2>
+        </div>
+
+        <a href="/contact/" class="cta-button">
+          Talk to an IAM Expert
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .container {
+    width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+    margin: 0 auto;
+  }
+
+  .hero {
+    min-height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+    background: #eef4ff;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 85px 0;
+  }
+
+  .hero h1 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(47px, 5.2vw, 74px);
+    font-weight: 650;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  h1 span,
+  h2 span {
+    display: block;
+    color: var(--color-blue);
+  }
+
+  .hero-copy {
+    max-width: 570px;
+    margin: 32px 0 38px;
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .primary-link,
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 19px;
+    color: var(--color-white);
+    background: var(--color-ink);
+    border: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .primary-link:hover,
+  .cta-button:hover {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .hero-visual {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .governance-visual {
+    position: relative;
+    width: min(100%, 550px);
+    aspect-ratio: 1;
+  }
+
+  .governance-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(0, 49, 255, 0.17);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ring-one {
+    width: 54%;
+    height: 54%;
+  }
+
+  .ring-two {
+    width: 91%;
+    height: 91%;
+    border-color: rgba(0, 49, 255, 0.08);
+  }
+
+  .governance-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 155px;
+    height: 155px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: var(--color-white);
+    background: var(--color-ink);
+    border: 8px solid #dce7ff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 20px 45px rgba(7, 21, 47, 0.18);
+    text-align: center;
+  }
+
+  .governance-center span {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .governance-center strong {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 650;
+  }
+
+  .governance-node {
+    position: absolute;
+    z-index: 4;
+    width: 108px;
+    height: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border: 1px solid #ccd7eb;
+    border-radius: 50%;
+    box-shadow: 0 12px 30px rgba(7, 21, 47, 0.08);
+    font-size: 8px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+  }
+
+  .governance-one {
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .governance-two {
+    top: 31%;
+    right: 0;
+  }
+
+  .governance-three {
+    bottom: 7%;
+    right: 15%;
+  }
+
+  .governance-four {
+    bottom: 7%;
+    left: 15%;
+  }
+
+  .intro-section,
+  .lifecycle-section {
+    padding: 135px 0;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .intro-grid,
+  .lifecycle-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 620;
+    letter-spacing: -0.045em;
+    line-height: 1.04;
+  }
+
+  .intro-copy {
+    max-width: 650px;
+  }
+
+  .intro-copy p,
+  .lifecycle-copy {
+    margin: 0 0 24px;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .capabilities-section {
+    padding: 135px 0;
+    background: var(--color-ink);
+  }
+
+  .capabilities-section .section-eyebrow {
+    color: #aeb9cc;
+  }
+
+  .capabilities-section .section-eyebrow::before {
+    background: #aeb9cc;
+  }
+
+  .capabilities-section h2 {
+    color: var(--color-white);
+  }
+
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 65px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .capability-card {
+    min-height: 250px;
+    padding: 30px;
+    background: var(--color-ink);
+  }
+
+  .capability-card .number {
+    color: #6d86ff;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.15em;
+  }
+
+  .capability-card h3 {
+    margin: 42px 0 12px;
+    color: var(--color-white);
+    font-size: 21px;
+    font-weight: 620;
+  }
+
+  .capability-card p {
+    margin: 0;
+    color: #aeb9cc;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .lifecycle-copy {
+    max-width: 550px;
+    margin-top: 30px;
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .lifecycle-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .lifecycle-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lifecycle-item > span {
+    color: var(--color-blue);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+  }
+
+  .lifecycle-item h3 {
+    margin: 0 0 6px;
+    color: var(--color-ink);
+    font-size: 19px;
+    font-weight: 620;
+  }
+
+  .lifecycle-item p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .cta-section {
+    padding: 105px 0;
+    background: var(--color-blue);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .cta-section .section-eyebrow {
+    color: var(--color-white);
+  }
+
+  .cta-section .section-eyebrow::before {
+    background: var(--color-white);
+  }
+
+  .cta-section h2 {
+    max-width: 800px;
+    color: var(--color-white);
+  }
+
+  .cta-section h2 span {
+    color: var(--color-white);
+    opacity: 0.72;
+  }
+
+  .cta-button {
+    flex-shrink: 0;
+    color: var(--color-ink);
+    background: var(--color-white);
+    border-color: var(--color-white);
+  }
+
+  .cta-button:hover {
+    color: var(--color-white);
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+  }
+
+  @media (max-width: 1050px) {
+    .hero-grid,
+    .intro-grid,
+    .lifecycle-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .hero-visual {
+      min-height: 470px;
+    }
+
+    .capability-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      min-height: calc(100vh - 72px);
+    }
+
+    .hero-grid {
+      padding: 65px 0 75px;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 12vw, 62px);
+    }
+
+    .hero-visual {
+      min-height: 350px;
+    }
+
+    .governance-visual {
+      width: 108%;
+      margin-left: -4%;
+    }
+
+    .governance-center {
+      width: 120px;
+      height: 120px;
+    }
+
+    .governance-node {
+      width: 82px;
+      height: 82px;
+    }
+
+    .intro-section,
+    .capabilities-section,
+    .lifecycle-section {
+      padding: 95px 0;
+    }
+
+    .capability-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .capability-card {
+      min-height: auto;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+    }
+  }
+</style>
