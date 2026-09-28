@@ -1,0 +1,224 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="IAM Consulting | Blooming Systems Inc."
+  description="Blooming Systems Inc. provides identity and access management consulting to help organizations assess, design, modernize, and optimize enterprise identity environments."
+>
+  <main class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <p class="eyebrow">IDENTITY & ACCESS MANAGEMENT</p>
+
+        <div class="hero-grid">
+          <div>
+            <h1>
+              Build an identity
+              <span>foundation that scales.</span>
+            </h1>
+          </div>
+
+          <div class="hero-copy">
+            <p>
+              Identity sits at the intersection of security, access,
+              technology, and business operations. We help organizations
+              assess their current identity environment, define a practical
+              target architecture, and establish a roadmap for modernization.
+            </p>
+
+            <a href="/contact/" class="button">
+              Talk to us <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">THE IDENTITY FOUNDATION</p>
+          <h2>Identity is more than authentication.</h2>
+        </div>
+
+        <div class="prose">
+          <p>
+            Modern organizations operate across cloud platforms, SaaS
+            applications, on-premises infrastructure, directories, data
+            platforms, and legacy systems.
+          </p>
+
+          <p>
+            Users and machines need the right access across that environment
+            at the right time and under the right controls.
+          </p>
+
+          <p>
+            We help organizations bring structure to that complexity through
+            practical identity architecture and modernization strategies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">CONSULTING CAPABILITIES</p>
+          <h2>From identity strategy <span>to architecture.</span></h2>
+        </div>
+
+        <div class="capability-grid">
+          <article>
+            <span>01</span>
+            <h3>IAM Strategy & Roadmap</h3>
+            <p>
+              Define an identity strategy aligned with business requirements,
+              security objectives, technology direction, and organizational
+              priorities.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Identity Architecture</h3>
+            <p>
+              Assess the existing environment and design an architecture
+              connecting identity providers, directories, applications,
+              governance platforms, and access controls.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Platform Assessment</h3>
+            <p>
+              Evaluate identity platforms, integrations, configurations, and
+              operating models to identify gaps, dependencies, and
+              opportunities for improvement.
+            </p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Identity Modernization</h3>
+            <p>
+              Develop practical modernization paths from legacy directory and
+              authentication environments toward modern cloud and hybrid
+              identity architectures.
+            </p>
+          </article>
+
+          <article>
+            <span>05</span>
+            <h3>Governance Alignment</h3>
+            <p>
+              Connect identity architecture with access requests, entitlement
+              management, lifecycle processes, access reviews, and governance
+              controls.
+            </p>
+          </article>
+
+          <article>
+            <span>06</span>
+            <h3>Operating Model</h3>
+            <p>
+              Define the processes, responsibilities, controls, and operating
+              practices required to manage identity as an enterprise
+              capability.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="container">
+        <p class="eyebrow">HOW WE WORK</p>
+        <h2>Understand the environment. Define the direction. Build the path forward.</h2>
+
+        <div class="steps">
+          <article><strong>01</strong><h3>Assess</h3><p>Understand the current identity landscape, platforms, applications, integrations, lifecycle processes, and dependencies.</p></article>
+          <article><strong>02</strong><h3>Design</h3><p>Define the target identity architecture and relationships between authentication, authorization, governance, directories, and applications.</p></article>
+          <article><strong>03</strong><h3>Prioritize</h3><p>Identify initiatives and dependencies that provide a practical path toward the target state.</p></article>
+          <article><strong>04</strong><h3>Implement</h3><p>Translate architecture into practical implementation across platforms, integrations, workflows, and identity processes.</p></article>
+          <article><strong>05</strong><h3>Optimize</h3><p>Address operational gaps and evolve the identity architecture as requirements change.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="domains">
+      <div class="container">
+        <p class="eyebrow">IDENTITY DOMAINS</p>
+        <h2>Connect the pieces of the identity ecosystem.</h2>
+
+        <div class="domain-grid">
+          <article><h3>Workforce Identity</h3><p>Identity and access for employees, contractors, and workforce populations.</p></article>
+          <article><h3>Customer Identity</h3><p>Identity experiences and access models for customers, partners, and external users.</p></article>
+          <article><h3>Privileged Access</h3><p>Stronger controls around administrative identities and elevated access.</p></article>
+          <article><h3>Identity Governance</h3><p>Lifecycle management, access requests, entitlement governance, certification, and policy controls.</p></article>
+          <article><h3>Hybrid Identity</h3><p>Connecting cloud identity services with on-premises directories, applications, and legacy environments.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <p class="eyebrow">READY TO MOVE YOUR IDENTITY STRATEGY FORWARD?</p>
+        <h2>Let's build the next stage of your <span>identity environment.</span></h2>
+        <a href="/contact/" class="button">Start a conversation <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page { color: var(--color-text); }
+  .container { width: min(var(--container), calc(100% - (var(--gutter) * 2))); margin: 0 auto; }
+  .eyebrow { display:flex; align-items:center; gap:12px; margin:0 0 24px; color:var(--color-blue); font-size:10px; font-weight:700; letter-spacing:var(--tracking-label); }
+  .eyebrow::before { content:""; width:28px; height:1px; background:var(--color-blue); }
+  .service-hero { padding:180px 0 130px; background:#eef4ff; border-bottom:1px solid var(--color-border); }
+  .hero-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:100px; align-items:end; }
+  h1 { margin:0; color:var(--color-ink); font-size:clamp(52px,6vw,88px); line-height:.98; letter-spacing:-.055em; font-weight:650; }
+  h1 span,h2 span { display:block; color:var(--color-blue); }
+  .hero-copy { max-width:500px; font-size:17px; line-height:1.75; }
+  .button { display:inline-flex; gap:14px; align-items:center; margin-top:28px; padding:0 24px; min-height:52px; background:var(--color-blue); color:white; text-decoration:none; font-size:var(--text-sm); font-weight:650; }
+  .intro-section,.capabilities,.approach,.domains,.cta { padding:120px 0; }
+  .split { display:grid; grid-template-columns:.8fr 1.2fr; gap:100px; }
+  h2 { margin:0; color:var(--color-ink); font-size:clamp(38px,4vw,62px); line-height:1.05; letter-spacing:-.04em; font-weight:650; }
+  .prose { max-width:700px; font-size:17px; line-height:1.8; }
+  .prose p { margin:0 0 24px; }
+  .capabilities { background:var(--color-ink); color:white; }
+  .capabilities h2 { color:white; }
+  .capability-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:70px; background:rgba(255,255,255,.15); }
+  .capability-grid article { padding:38px; min-height:260px; background:var(--color-ink); }
+  .capability-grid span { color:var(--color-blue); font-size:11px; font-weight:700; }
+  .capability-grid h3 { margin:38px 0 15px; color:white; font-size:22px; }
+  .capability-grid p { margin:0; color:rgba(255,255,255,.68); line-height:1.7; font-size:14px; }
+  .approach { border-bottom:1px solid var(--color-border); }
+  .approach > .container > h2 { max-width:900px; }
+  .steps { display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-top:65px; }
+  .steps article { padding:30px; background:var(--color-surface); border:1px solid var(--color-border); }
+  .steps strong { color:var(--color-blue); font-size:11px; }
+  .steps h3 { color:var(--color-ink); margin:45px 0 14px; }
+  .steps p,.domain-grid p { margin:0; font-size:14px; line-height:1.7; }
+  .domains { background:#eef4ff; }
+  .domain-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; margin-top:60px; background:var(--color-border); }
+  .domain-grid article { padding:32px; background:white; }
+  .domain-grid h3 { margin:0 0 18px; color:var(--color-ink); }
+  .cta { background:var(--color-white); border-top:1px solid var(--color-border); }
+  .cta h2 { max-width:900px; }
+  @media(max-width:1000px) {
+    .hero-grid,.split { grid-template-columns:1fr; gap:45px; }
+    .capability-grid { grid-template-columns:repeat(2,1fr); }
+    .steps { grid-template-columns:repeat(2,1fr); }
+    .domain-grid { grid-template-columns:repeat(2,1fr); }
+  }
+  @media(max-width:640px) {
+    .service-hero { padding:130px 0 90px; }
+    .intro-section,.capabilities,.approach,.domains,.cta { padding:85px 0; }
+    .capability-grid,.steps,.domain-grid { grid-template-columns:1fr; }
+    h1 { font-size:clamp(46px,13vw,65px); }
+  }
+</style>

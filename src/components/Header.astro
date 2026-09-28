@@ -1,28 +1,161 @@
 ---
-const navItems = [
-  { label: "Services", href: "/services/" },
-  { label: "Solutions", href: "/solutions/" },
-  { label: "Technologies", href: "/technologies/" },
-  { label: "Industries", href: "/industries/" },
-  { label: "Insights", href: "/blog/" },
-
-];
 import Logo from "./Logo.astro";
 
+const services = [
+  { label: "IAM Consulting", href: "/services/iam-consulting/" },
+  {
+    label: "Implementation & Integration",
+    href: "/services/implementation-integration/",
+  },
+  {
+    label: "Identity Governance",
+    href: "/services/identity-governance/",
+  },
+  {
+    label: "Directory Services",
+    href: "/services/directory-services/",
+  },
+  {
+    label: "Cloud Identity",
+    href: "/services/cloud-identity/",
+  },
+  {
+    label: "Platform Services",
+    href: "/services/platform-services/",
+  },
+];
+
+const solutions = [
+  {
+    label: "Workforce Identity",
+    href: "/solutions/workforce-identity/",
+  },
+  {
+    label: "Customer Identity",
+    href: "/solutions/customer-identity/",
+  },
+  {
+    label: "Privileged Access",
+    href: "/solutions/privileged-access/",
+  },
+  {
+    label: "Identity Governance",
+    href: "/solutions/identity-governance/",
+  },
+  {
+    label: "Hybrid Identity",
+    href: "/solutions/hybrid-identity/",
+  },
+];
+
+const primaryNav = [
+  { label: "Technologies", href: "/technologies/" },
+  { label: "Industries", href: "/industries/" },
+  { label: "About", href: "/about/" },
+  { label: "Case Studies", href: "/case-studies/" },
+  { label: "Insights", href: "/blog/" },
+];
 ---
 
 <header class="site-header">
   <div class="header-inner">
-   <Logo />
+    <Logo />
 
     <!-- Desktop navigation -->
     <nav class="desktop-nav" aria-label="Main navigation">
-      {navItems.map((item) => (
-        <a href={item.href}>{item.label}</a>
-      ))}
+      <!-- Services -->
+      <div class="nav-dropdown">
+        <button
+          class="nav-dropdown-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-haspopup="true"
+          data-dropdown-trigger
+        >
+          <span>Services</span>
+          <span class="chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="dropdown-menu dropdown-services" data-dropdown-menu>
+          <div class="dropdown-inner">
+            <div class="dropdown-heading">
+              <span class="dropdown-eyebrow">SERVICES</span>
+              <p>
+                Identity expertise across strategy, implementation,
+                governance, and operations.
+              </p>
+            </div>
+
+            <div class="dropdown-links">
+              {
+                services.map((item) => (
+                  <a href={item.href}>
+                    <span>{item.label}</span>
+                    <span class="dropdown-arrow" aria-hidden="true">↗</span>
+                  </a>
+                ))
+              }
+
+              <a href="/services/" class="dropdown-view-all">
+                <span>View all services</span>
+                <span class="dropdown-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solutions -->
+      <div class="nav-dropdown">
+        <button
+          class="nav-dropdown-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-haspopup="true"
+          data-dropdown-trigger
+        >
+          <span>Solutions</span>
+          <span class="chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="dropdown-menu dropdown-solutions" data-dropdown-menu>
+          <div class="dropdown-inner">
+            <div class="dropdown-heading">
+              <span class="dropdown-eyebrow">SOLUTIONS</span>
+              <p>
+                Identity solutions designed around how people, applications,
+                and privileged access work together.
+              </p>
+            </div>
+
+            <div class="dropdown-links">
+              {
+                solutions.map((item) => (
+                  <a href={item.href}>
+                    <span>{item.label}</span>
+                    <span class="dropdown-arrow" aria-hidden="true">↗</span>
+                  </a>
+                ))
+              }
+
+              <a href="/solutions/" class="dropdown-view-all">
+                <span>View all solutions</span>
+                <span class="dropdown-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary navigation -->
+      {
+        primaryNav.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))
+      }
     </nav>
 
-    <!-- CTA -->
+    <!-- Desktop CTA -->
     <a href="/contact/" class="header-cta">
       Talk to an IAM Expert
       <span aria-hidden="true">↗</span>
@@ -34,6 +167,7 @@ import Logo from "./Logo.astro";
       type="button"
       aria-label="Open navigation"
       aria-expanded="false"
+      aria-controls="mobile-navigation"
       data-menu-button
     >
       <span></span>
@@ -42,14 +176,75 @@ import Logo from "./Logo.astro";
   </div>
 
   <!-- Mobile navigation -->
-  <div class="mobile-nav" data-mobile-nav>
+  <div
+    class="mobile-nav"
+    id="mobile-navigation"
+    data-mobile-nav
+    aria-hidden="true"
+  >
     <nav aria-label="Mobile navigation">
-      {navItems.map((item) => (
-        <a href={item.href}>{item.label}</a>
-      ))}
+      <!-- Mobile Services -->
+      <div class="mobile-dropdown">
+        <button
+          class="mobile-dropdown-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-services"
+          data-mobile-dropdown-trigger
+        >
+          <span>Services</span>
+          <span class="mobile-chevron" aria-hidden="true"></span>
+        </button>
 
+        <div class="mobile-dropdown-content" id="mobile-services">
+          {
+            services.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))
+          }
+
+          <a href="/services/" class="mobile-view-all">
+            View all services <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Solutions -->
+      <div class="mobile-dropdown">
+        <button
+          class="mobile-dropdown-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-solutions"
+          data-mobile-dropdown-trigger
+        >
+          <span>Solutions</span>
+          <span class="mobile-chevron" aria-hidden="true"></span>
+        </button>
+
+        <div class="mobile-dropdown-content" id="mobile-solutions">
+          {
+            solutions.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))
+          }
+
+          <a href="/solutions/" class="mobile-view-all">
+            View all solutions <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Primary mobile navigation -->
+      {
+        primaryNav.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))
+      }
+
+      <!-- Mobile CTA -->
       <a href="/contact/" class="mobile-cta">
-        Talk to an IAM Expert
+        <span>Talk to an IAM Expert</span>
         <span aria-hidden="true">↗</span>
       </a>
     </nav>
@@ -57,25 +252,128 @@ import Logo from "./Logo.astro";
 </header>
 
 <script>
-  const button = document.querySelector("[data-menu-button]");
+  const menuButton = document.querySelector("[data-menu-button]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
 
-  button?.addEventListener("click", () => {
-    const isOpen = button.getAttribute("aria-expanded") === "true";
+  const closeMobileMenu = () => {
+    menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "Open navigation");
+    mobileNav?.classList.remove("is-open");
+    mobileNav?.setAttribute("aria-hidden", "true");
 
-    button.setAttribute("aria-expanded", String(!isOpen));
-    mobileNav?.classList.toggle("is-open", !isOpen);
+    document
+      .querySelectorAll("[data-mobile-dropdown-trigger]")
+      .forEach((trigger) => {
+        trigger.setAttribute("aria-expanded", "false");
+        trigger.parentElement?.classList.remove("is-open");
+      });
+  };
+
+  menuButton?.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      menuButton.setAttribute("aria-expanded", "true");
+      menuButton.setAttribute("aria-label", "Close navigation");
+      mobileNav?.classList.add("is-open");
+      mobileNav?.setAttribute("aria-hidden", "false");
+    }
+  });
+
+  // Desktop dropdowns
+  const dropdowns = document.querySelectorAll(".nav-dropdown");
+
+  dropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector("[data-dropdown-trigger]");
+
+    trigger?.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      const isOpen = dropdown.classList.contains("is-open");
+
+      dropdowns.forEach((item) => {
+        item.classList.remove("is-open");
+        item
+          .querySelector("[data-dropdown-trigger]")
+          ?.setAttribute("aria-expanded", "false");
+      });
+
+      if (!isOpen) {
+        dropdown.classList.add("is-open");
+        trigger.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  // Close desktop dropdowns when clicking outside
+  document.addEventListener("click", () => {
+    dropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("is-open");
+      dropdown
+        .querySelector("[data-dropdown-trigger]")
+        ?.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Mobile dropdowns
+  const mobileDropdowns = document.querySelectorAll(".mobile-dropdown");
+
+  mobileDropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector(
+      "[data-mobile-dropdown-trigger]"
+    );
+
+    trigger?.addEventListener("click", () => {
+      const isOpen = dropdown.classList.contains("is-open");
+
+      mobileDropdowns.forEach((item) => {
+        item.classList.remove("is-open");
+        item
+          .querySelector("[data-mobile-dropdown-trigger]")
+          ?.setAttribute("aria-expanded", "false");
+      });
+
+      if (!isOpen) {
+        dropdown.classList.add("is-open");
+        trigger.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  // Close mobile navigation after selecting a link
+  mobileNav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  // Escape closes menus
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    closeMobileMenu();
+
+    dropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("is-open");
+      dropdown
+        .querySelector("[data-dropdown-trigger]")
+        ?.setAttribute("aria-expanded", "false");
+    });
   });
 </script>
 
 <style>
   .site-header {
-    position: relative;
-    z-index: 50;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
     width: 100%;
-    background: var(--color-blue-200);
-    /* border-bottom: 1px solid var(--color-mute); */
-    backdrop-filter: blur(12px);
+    background: rgba(238, 244, 255, 0.94);
+    border-bottom: 1px solid rgba(7, 21, 47, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
   .header-inner {
@@ -85,86 +383,230 @@ import Logo from "./Logo.astro";
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    gap: 34px;
   }
 
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: #07152f;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-
-  .brand-mark {
-    width: 34px;
-    height: 40px;
-    display: block;
-    color: #0d63d8;
-  }
-
-  .brand-mark svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
-
-  .brand-name {
-    font-size: 18px;
-    font-weight: 750;
-    letter-spacing: 0.045em;
-  }
-
-  .brand-subtitle {
-    margin-top: 5px;
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    color: #697386;
-  }
+  /* --------------------------------
+     Desktop navigation
+     -------------------------------- */
 
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 27px;
     margin-left: auto;
   }
 
-  .desktop-nav a {
+  .desktop-nav > a,
+  .nav-dropdown-trigger {
     position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 0;
+
     color: #39445a;
-    font-size: 15px;
-    font-weight: 500;
+    background: transparent;
+    border: 0;
+
+    font-size: 14px;
+    font-weight: 550;
+    line-height: 1;
     text-decoration: none;
-    transition: color 160ms ease;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+      color 160ms ease,
+      opacity 160ms ease;
   }
 
-  .desktop-nav a:hover {
-    color: #0d63d8;
+  .desktop-nav > a:hover,
+  .nav-dropdown-trigger:hover,
+  .nav-dropdown.is-open .nav-dropdown-trigger {
+    color: var(--color-blue);
   }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown-trigger {
+    appearance: none;
+  }
+
+  .chevron,
+  .mobile-chevron {
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 160ms ease;
+  }
+
+  .nav-dropdown.is-open .chevron {
+    transform: rotate(225deg) translate(-1px, -1px);
+  }
+
+  /* --------------------------------
+     Desktop dropdown
+     -------------------------------- */
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+
+    width: 610px;
+
+    padding: 0;
+
+    background: var(--color-white);
+    border: 1px solid #dce1e8;
+    box-shadow:
+      0 18px 50px rgba(7, 21, 47, 0.12),
+      0 4px 12px rgba(7, 21, 47, 0.05);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -8px);
+
+    transition:
+      opacity 160ms ease,
+      visibility 160ms ease,
+      transform 160ms ease;
+
+    pointer-events: none;
+  }
+
+  .nav-dropdown.is-open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+  }
+
+  .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+
+    width: 11px;
+    height: 11px;
+
+    background: var(--color-white);
+    border-top: 1px solid #dce1e8;
+    border-left: 1px solid #dce1e8;
+
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .dropdown-inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 30px;
+
+    padding: 30px;
+  }
+
+  .dropdown-heading {
+    padding-right: 20px;
+  }
+
+  .dropdown-eyebrow {
+    display: block;
+    margin-bottom: 14px;
+
+    color: var(--color-blue);
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.16em;
+  }
+
+  .dropdown-heading p {
+    margin: 0;
+
+    color: #697386;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .dropdown-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 10px 0;
+
+    color: #07152f;
+    border-bottom: 1px solid #eceef2;
+
+    font-size: 13px;
+    font-weight: 550;
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      padding 160ms ease;
+  }
+
+  .dropdown-links a:first-child {
+    padding-top: 0;
+  }
+
+  .dropdown-links a:hover {
+    padding-left: 5px;
+    color: var(--color-blue);
+  }
+
+  .dropdown-links .dropdown-view-all {
+    margin-top: 8px;
+
+    border-bottom: 0;
+
+    color: var(--color-blue);
+    font-weight: 650;
+  }
+
+  .dropdown-arrow {
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.7;
+  }
+
+  /* --------------------------------
+     Header CTA
+     -------------------------------- */
 
   .header-cta {
     display: inline-flex;
     align-items: center;
     gap: 10px;
 
-    padding: 12px 18px;
-    border: 1px solid #07152f;
+    flex-shrink: 0;
+
+    padding: 12px 17px;
 
     color: #07152f;
     background: transparent;
+    border: 1px solid #07152f;
 
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1;
     text-decoration: none;
+    white-space: nowrap;
 
     transition:
       background 160ms ease,
@@ -173,54 +615,96 @@ import Logo from "./Logo.astro";
   }
 
   .header-cta span {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1;
   }
 
   .header-cta:hover {
-    color: white;
-    background: #0031FF;
-    border-color: #07152f;
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-color: var(--color-blue);
   }
+
+  /* --------------------------------
+     Mobile menu button
+     -------------------------------- */
 
   .menu-button {
     display: none;
-    width: 42px;
-    height: 42px;
+
+    width: 44px;
+    height: 44px;
+
+    margin-left: auto;
     padding: 0;
+
     border: 0;
     background: transparent;
+
     cursor: pointer;
   }
 
   .menu-button span {
     display: block;
+
     width: 22px;
     height: 1.5px;
-    margin: 6px auto;
+
+    margin: 5px auto;
+
     background: #07152f;
+
+    transition:
+      transform 180ms ease,
+      opacity 180ms ease;
   }
+
+  .menu-button[aria-expanded="true"] span:first-child {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .menu-button[aria-expanded="true"] span:last-child {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* --------------------------------
+     Mobile navigation
+     -------------------------------- */
 
   .mobile-nav {
     display: none;
   }
 
-  @media (max-width: 1050px) {
-    .desktop-nav {
-      gap: 20px;
-    }
+  /* --------------------------------
+     Tablet
+     -------------------------------- */
 
+  @media (max-width: 1180px) {
     .header-inner {
       width: min(100% - 40px, 1440px);
-      gap: 24px;
+      gap: 22px;
+    }
+
+    .desktop-nav {
+      gap: 19px;
+    }
+
+    .desktop-nav > a,
+    .nav-dropdown-trigger {
+      font-size: 13px;
     }
 
     .header-cta {
       padding: 11px 14px;
+      font-size: 11px;
     }
   }
 
-  @media (max-width: 860px) {
+  /* --------------------------------
+     Mobile
+     -------------------------------- */
+
+  @media (max-width: 960px) {
     .header-inner {
       height: 72px;
     }
@@ -236,42 +720,162 @@ import Logo from "./Logo.astro";
 
     .mobile-nav {
       display: block;
+
       max-height: 0;
       overflow: hidden;
+
+      background: var(--color-white);
       border-top: 0 solid #e7e9ed;
+
       transition:
-        max-height 240ms ease,
-        border-color 240ms ease;
+        max-height 260ms ease,
+        border-color 260ms ease;
     }
 
     .mobile-nav.is-open {
-      max-height: 500px;
+      max-height: calc(100vh - 72px);
+      overflow-y: auto;
       border-top-width: 1px;
     }
 
     .mobile-nav nav {
       display: flex;
       flex-direction: column;
-      padding: 12px 20px 24px;
+
+      padding: 8px 20px 24px;
     }
 
-    .mobile-nav a {
-      padding: 16px 0;
+    .mobile-nav nav > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-height: 54px;
+
       color: #07152f;
       border-bottom: 1px solid #eceef2;
+
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 550;
       text-decoration: none;
+
+      transition: color 160ms ease;
     }
 
-    .mobile-nav .mobile-cta {
+    .mobile-nav nav > a:hover {
+      color: var(--color-blue);
+    }
+
+    /* Mobile dropdown */
+
+    .mobile-dropdown {
+      border-bottom: 1px solid #eceef2;
+    }
+
+    .mobile-dropdown-trigger {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      margin-top: 12px;
-      padding: 15px 17px;
-      border: 1px solid #07152f;
+
+      width: 100%;
+      min-height: 54px;
+
+      padding: 0;
+
+      color: #07152f;
+      background: transparent;
+      border: 0;
+
+      font-size: 15px;
+      font-weight: 550;
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .mobile-dropdown-trigger:hover,
+    .mobile-dropdown.is-open .mobile-dropdown-trigger {
+      color: var(--color-blue);
+    }
+
+    .mobile-chevron {
+      margin-right: 4px;
+    }
+
+    .mobile-dropdown.is-open .mobile-chevron {
+      transform: rotate(225deg) translate(-1px, -1px);
+    }
+
+    .mobile-dropdown-content {
+      display: flex;
+      flex-direction: column;
+
+      max-height: 0;
+      overflow: hidden;
+
+      padding-left: 14px;
+
+      transition:
+        max-height 220ms ease,
+        padding-bottom 220ms ease;
+    }
+
+    .mobile-dropdown.is-open .mobile-dropdown-content {
+      max-height: 450px;
+      padding-bottom: 10px;
+    }
+
+    .mobile-dropdown-content a {
+      display: flex;
+      align-items: center;
+
+      min-height: 43px;
+
+      color: #536074;
+
+      font-size: 14px;
+      font-weight: 450;
+      text-decoration: none;
+
+      transition: color 160ms ease;
+    }
+
+    .mobile-dropdown-content a:hover {
+      color: var(--color-blue);
+    }
+
+    .mobile-dropdown-content .mobile-view-all {
+      gap: 8px;
+
+      color: var(--color-blue);
+      font-weight: 650;
+    }
+
+    /* Mobile CTA */
+
+    .mobile-cta {
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: 20px;
+      padding: 16px 17px;
+
+      color: var(--color-white) !important;
       background: #07152f;
-      color: white;
+      border: 1px solid #07152f !important;
+
+      font-size: 14px !important;
+      font-weight: 650 !important;
+
+      transition:
+        background 160ms ease,
+        border-color 160ms ease !important;
+    }
+
+    .mobile-cta:hover {
+      background: var(--color-blue);
+      border-color: var(--color-blue) !important;
     }
   }
 
@@ -280,17 +884,9 @@ import Logo from "./Logo.astro";
       width: calc(100% - 32px);
     }
 
-    .brand-name {
-      font-size: 16px;
-    }
-
-    .brand-subtitle {
-      font-size: 7px;
-    }
-
-    .brand-mark {
-      width: 29px;
-      height: 35px;
+    .mobile-nav nav {
+      padding-left: 16px;
+      padding-right: 16px;
     }
   }
 </style>

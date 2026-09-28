@@ -1,0 +1,95 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Directory Services | Blooming Systems Inc."
+  description="Blooming Systems Inc. provides directory services for organizations managing Active Directory, cloud directories, synchronization, identity integration, and hybrid directory environments."
+>
+  <main class="service-page">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">DIRECTORY SERVICES</p>
+        <div class="hero-grid">
+          <h1>
+            Make your directories
+            <span>work with your identity strategy.</span>
+          </h1>
+          <div class="hero-copy">
+            <p>
+              Directories remain a critical foundation for enterprise identity.
+              We help organizations manage, integrate, modernize, and operate
+              directory environments across hybrid technology estates.
+            </p>
+            <a href="/contact/" class="button">Discuss your environment <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">THE DIRECTORY LAYER</p>
+          <h2>Reliable identity starts with a reliable directory foundation.</h2>
+        </div>
+        <div class="prose">
+          <p>
+            Enterprise directories often sit between authoritative identity
+            sources, applications, authentication platforms, and users.
+          </p>
+          <p>
+            Changes to directory architecture can therefore affect the entire
+            identity ecosystem.
+          </p>
+          <p>
+            We help organizations establish directory environments that are
+            structured, integrated, and ready for modern identity services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="container">
+        <p class="eyebrow">DIRECTORY CAPABILITIES</p>
+        <h2>From directory architecture to <span>hybrid operations.</span></h2>
+
+        <div class="grid">
+          <article><strong>01</strong><h3>Active Directory</h3><p>Architecture, configuration, integration, and operational support for enterprise Active Directory environments.</p></article>
+          <article><strong>02</strong><h3>Cloud Directory</h3><p>Connect directory services with modern cloud identity and access platforms.</p></article>
+          <article><strong>03</strong><h3>Synchronization</h3><p>Design synchronization patterns between on-premises directories and cloud identity services.</p></article>
+          <article><strong>04</strong><h3>Directory Integration</h3><p>Connect directories with applications, identity providers, and enterprise platforms.</p></article>
+          <article><strong>05</strong><h3>Directory Modernization</h3><p>Assess legacy directory architectures and define practical modernization paths.</p></article>
+          <article><strong>06</strong><h3>Operational Services</h3><p>Establish repeatable practices for maintaining availability, consistency, and security.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">HYBRID IDENTITY</p>
+        <h2>Connect on-premises identity with <span>modern cloud services.</span></h2>
+
+        <div class="feature-grid">
+          <article><h3>Identity Synchronization</h3><p>Maintain appropriate identity relationships between directory environments and cloud identity services.</p></article>
+          <article><h3>Authentication Integration</h3><p>Connect directory identities to modern authentication and access management capabilities.</p></article>
+          <article><h3>Application Connectivity</h3><p>Support applications that depend on directory-based identity and access.</p></article>
+          <article><h3>Migration Planning</h3><p>Define practical paths for reducing legacy dependencies while maintaining business continuity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <p class="eyebrow">MODERNIZE THE DIRECTORY LAYER</p>
+        <h2>Build a directory foundation that supports <span>where identity is going.</span></h2>
+        <a href="/contact/" class="button">Start a conversation <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .service-page{color:var(--color-text)}.container{width:min(var(--container),calc(100% - (var(--gutter)*2)));margin:auto}.eyebrow{display:flex;gap:12px;align-items:center;margin:0 0 24px;color:var(--color-blue);font-size:10px;font-weight:700;letter-spacing:var(--tracking-label)}.eyebrow:before{content:"";width:28px;height:1px;background:var(--color-blue)}.hero{padding:180px 0 130px;background:#eef4ff;border-bottom:1px solid var(--color-border)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:100px;align-items:end}.hero h1{margin:0;color:var(--color-ink);font-size:clamp(52px,6vw,88px);line-height:.98;letter-spacing:-.055em;font-weight:650}.hero h1 span,h2 span{display:block;color:var(--color-blue)}.hero-copy{max-width:520px;font-size:17px;line-height:1.75}.button{display:inline-flex;gap:14px;align-items:center;min-height:52px;margin-top:28px;padding:0 24px;background:var(--color-blue);color:white;text-decoration:none;font-size:var(--text-sm);font-weight:650}.section{padding:120px 0}.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px}.split h2,h2{margin:0;color:var(--color-ink);font-size:clamp(38px,4vw,62px);line-height:1.05;letter-spacing:-.04em;font-weight:650}.prose{max-width:700px;font-size:17px;line-height:1.8}.dark-section{padding:120px 0;background:var(--color-ink)}.dark-section h2{color:white;max-width:900px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:65px;background:rgba(255,255,255,.15)}.grid article{padding:38px;min-height:250px;background:var(--color-ink)}.grid strong{color:var(--color-blue);font-size:11px}.grid h3{margin:40px 0 15px;color:white;font-size:22px}.grid p{margin:0;color:rgba(255,255,255,.68);font-size:14px;line-height:1.7}.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:60px}.feature-grid article{padding:35px;background:var(--color-surface);border:1px solid var(--color-border)}.feature-grid h3{margin:0 0 15px;color:var(--color-ink);font-size:21px}.feature-grid p{margin:0;line-height:1.7;font-size:14px}.cta{padding:120px 0;background:#eef4ff;border-top:1px solid var(--color-border)}.cta h2{max-width:950px}@media(max-width:1000px){.hero-grid,.split{grid-template-columns:1fr;gap:45px}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.hero{padding:130px 0 90px}.section,.dark-section,.cta{padding:85px 0}.grid,.feature-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(46px,13vw,65px)}}
+</style>
