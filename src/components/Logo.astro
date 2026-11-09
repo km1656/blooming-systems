@@ -1,8 +1,31 @@
 <a href="/" class="site-logo" aria-label="Blooming Systems Inc.">
   <img
-    src="/images/BloomingLogo.png"
+    src="/images/blooming_logo_v4.svg"
     alt="Blooming Systems Inc."
-    width="241"
+    width="227"
     height="80"
   />
 </a>
+
+<style>
+  .site-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .site-logo img {
+    display: block;
+    width: auto;
+    height: 48px;
+    max-height: 52px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 640px) {
+    .site-logo img {
+      height: 40px;
+    }
+  }
+</style>

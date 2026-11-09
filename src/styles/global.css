@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand */
-  --color-blue: #0031ff;
-  --color-teal: #0031ff;
+  /* Brand - Matching blooming_logo_v4 */
+  --color-blue: #2278cf;
+  --color-blue-hover: #1b66b3;
+  --color-navy: #0b2a6f;
+  --color-teal: #19c6b7;
+  --color-teal-hover: #15ab9e;
+  --color-cyan: #1bb7c2;
+
+  /* Accent & Shade Tokens */
+  --color-blue-800: #0b2a6f;
+  --color-blue-200: #dbe9f7;
+  --color-blue-50: #f0f6fc;
 
   /* Core */
-  --color-ink: #07152f;
+  --color-ink: #0b1b4d;
   --color-text: #536074;
   --color-muted: #697386;
 
