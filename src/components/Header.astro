@@ -181,6 +181,7 @@ const primaryNav = [
     id="mobile-navigation"
     data-mobile-nav
     aria-hidden="true"
+    inert
   >
     <nav aria-label="Mobile navigation">
       <!-- Mobile Services -->
@@ -260,6 +261,7 @@ const primaryNav = [
     menuButton?.setAttribute("aria-label", "Open navigation");
     mobileNav?.classList.remove("is-open");
     mobileNav?.setAttribute("aria-hidden", "true");
+    mobileNav?.setAttribute("inert", "");
 
     document
       .querySelectorAll("[data-mobile-dropdown-trigger]")
@@ -279,6 +281,7 @@ const primaryNav = [
       menuButton.setAttribute("aria-label", "Close navigation");
       mobileNav?.classList.add("is-open");
       mobileNav?.setAttribute("aria-hidden", "false");
+      mobileNav?.removeAttribute("inert");
     }
   });
 
