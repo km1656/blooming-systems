@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Favicon from "../components/Favicon.astro";
+import SchemaOrg from "../components/SchemaOrg.astro";
 
 interface Props {
   title?: string;
@@ -11,6 +12,8 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   type?: "website" | "article";
+  pageType?: "WebPage" | "AboutPage" | "ContactPage" | "ServicePage";
+  isHomepage?: boolean;
 }
 
 const {
@@ -20,6 +23,8 @@ const {
   ogImage = "/images/og-image.png",
   noindex = false,
   type = "website",
+  pageType = "WebPage",
+  isHomepage = false,
 } = Astro.props;
 
 const siteUrl = "https://www.bloomingsys.com";
@@ -71,6 +76,14 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
     <meta name="twitter:image" content={ogImageUrl} />
 
     <meta name="theme-color" content="#2278CF" />
+
+    <SchemaOrg
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+      pageType={pageType}
+      isHomepage={isHomepage}
+    />
 
     <!-- Google Analytics 4 -->
     {gaMeasurementId && (

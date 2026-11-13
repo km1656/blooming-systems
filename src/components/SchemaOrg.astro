@@ -1,0 +1,172 @@
+---
+/**
+ * Schema.org Structured Data Component
+ *
+ * Renders JSON-LD structured data for all pages:
+ *  - Organization  (every page — sitewide identity)
+ *  - WebSite       (every page — enables Sitelinks Search Box eligibility)
+ *  - WebPage       (per-page — title, description, canonical)
+ *  - BreadcrumbList (per-page, auto-generated from the URL path)
+ *  - LocalBusiness  (homepage only — rich contact snippet)
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl: string;
+  pageType?: "WebPage" | "AboutPage" | "ContactPage" | "ServicePage";
+  isHomepage?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  pageType = "WebPage",
+  isHomepage = false,
+} = Astro.props;
+
+const siteUrl  = "https://www.bloomingsys.com";
+const logoUrl  = `${siteUrl}/images/blooming_logo_v4.svg`;
+const orgName  = "Blooming Systems Inc.";
+const phone    = "+1-858-740-7673";
+const email    = "info@bloomingsys.com";
+
+// --- Breadcrumb auto-generation from URL path ---
+const pathname = Astro.url.pathname; // e.g. /services/iam-consulting/
+const segments = pathname.split("/").filter(Boolean); // ["services","iam-consulting"]
+const breadcrumbItems = [
+  { name: "Home", url: siteUrl },
+  ...segments.map((seg, i) => ({
+    name: seg
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" "),
+    url: `${siteUrl}/${segments.slice(0, i + 1).join("/")}/`,
+  })),
+];
+
+// --- Schema objects ---
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: orgName,
+  url: siteUrl,
+  logo: {
+    "@type": "ImageObject",
+    url: logoUrl,
+    width: 360,
+    height: 127,
+  },
+  sameAs: [],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: phone,
+    contactType: "customer service",
+    areaServed: "US",
+    availableLanguage: "English",
+  },
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: orgName,
+  publisher: { "@id": `${siteUrl}/#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteUrl}/?s={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": pageType,
+  "@id": `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: title,
+  description: description,
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  inLanguage: "en-US",
+};
+
+const breadcrumbSchema = breadcrumbItems.length > 1
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    }
+  : null;
+
+const localBusinessSchema = isHomepage
+  ? {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": `${siteUrl}/#localbusiness`,
+      name: orgName,
+      url: siteUrl,
+      logo: logoUrl,
+      image: logoUrl,
+      telephone: phone,
+      email: email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "21951 Purebred Lane",
+        addressLocality: "Escondido",
+        addressRegion: "CA",
+        postalCode: "92029",
+        addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 33.1192,
+        longitude: -117.0864,
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "United States",
+      },
+      description: "Blooming Systems Inc. helps organizations design, integrate, modernize, and operate enterprise identity and technology environments.",
+      knowsAbout: [
+        "Identity and Access Management",
+        "IAM Consulting",
+        "Single Sign-On",
+        "Multi-Factor Authentication",
+        "Identity Governance",
+        "Privileged Access Management",
+        "Directory Services",
+        "Cloud Identity",
+        "Enterprise Security",
+      ],
+      priceRange: "$$",
+    }
+  : null;
+
+// Collect all schemas to output
+const schemas = [
+  organizationSchema,
+  webSiteSchema,
+  webPageSchema,
+  breadcrumbSchema,
+  localBusinessSchema,
+].filter(Boolean);
+---
+
+{schemas.map((schema) => (
+  <script type="application/ld+json" set:html={JSON.stringify(schema, null, 0)} />
+))}
+
