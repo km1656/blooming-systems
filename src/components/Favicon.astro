@@ -1,6 +1,7 @@
 ---
 const icons = {
-  favicon: "/icons/favicon.ico",
+  favicon: "/favicon.ico",
+  google48: "/icons/favicon-48x48.png",
   small: "/icons/favicon-16x16.png",
   medium: "/icons/favicon-32x32.png",
   apple: "/icons/apple-touch-icon.png",
@@ -12,14 +13,14 @@ const icons = {
 <link
   rel="icon"
   href={icons.favicon}
-  sizes="32x32"
+  sizes="any"
 />
 
 <link
   rel="icon"
   type="image/png"
-  sizes="16x16"
-  href={icons.small}
+  sizes="48x48"
+  href={icons.google48}
 />
 
 <link
@@ -27,6 +28,13 @@ const icons = {
   type="image/png"
   sizes="32x32"
   href={icons.medium}
+/>
+
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href={icons.small}
 />
 
 <link
