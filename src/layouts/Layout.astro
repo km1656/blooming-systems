@@ -35,7 +35,6 @@ const canonicalUrl = canonical
 
 const ogImageUrl = new URL(ogImage, siteUrl).href;
 
-const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -85,26 +84,7 @@ const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
       isHomepage={isHomepage}
     />
 
-    <!-- Google Analytics 4 -->
-    {gaMeasurementId && (
-      <>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-        ></script>
-
-        <script is:inline define:vars={{ gaMeasurementId }}>
-          window.dataLayer = window.dataLayer || [];
-
-          function gtag() {
-            window.dataLayer.push(arguments);
-          }
-
-          gtag("js", new Date());
-          gtag("config", gaMeasurementId);
-        </script>
-      </>
-    )}
+    <script src="../scripts/analytics.ts"></script>
   </head>
 
   <body>

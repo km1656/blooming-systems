@@ -40,6 +40,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const TURNSTILE_VERIFY_URL =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const MAX_REQUEST_BYTES = 32 * 1024;
 
 function clean(value: FormDataEntryValue | null): string {
   return typeof value === "string" ? value.trim() : "";
@@ -63,6 +64,9 @@ function jsonResponse(
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "no-referrer",
+      "X-Frame-Options": "DENY",
     },
   });
 }
@@ -91,6 +95,7 @@ async function verifyTurnstile(
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body,
+    signal: AbortSignal.timeout(10_000),
   });
 
   if (!response.ok) {
@@ -115,13 +120,13 @@ async function verifyTurnstile(
   }
 
   // Verify that the token belongs to this website.
-  if (result.hostname && result.hostname !== "www.bloomingsys.com") {
+  if (result.hostname !== "www.bloomingsys.com") {
     console.warn("Unexpected Turnstile hostname:", result.hostname);
     return false;
   }
 
   // Verify that the token was issued for the contact form.
-  if (result.action && result.action !== "contact") {
+  if (result.action !== "contact") {
     console.warn("Unexpected Turnstile action:", result.action);
     return false;
   }
@@ -137,6 +142,34 @@ export const onRequestPost = async ({
   env: Env;
 }): Promise<Response> => {
   try {
+    const requestUrl = new URL(request.url);
+    const origin = request.headers.get("Origin");
+    if (!origin || origin !== requestUrl.origin) {
+      return jsonResponse({ success: false, message: "Forbidden." }, 403);
+    }
+
+    const contentType = request.headers.get("Content-Type") || "";
+    if (!contentType.toLowerCase().startsWith("multipart/form-data;")) {
+      return jsonResponse(
+        { success: false, message: "Unsupported request format." },
+        415
+      );
+    }
+
+    const contentLength = Number(request.headers.get("Content-Length"));
+    if (!Number.isFinite(contentLength) || contentLength <= 0) {
+      return jsonResponse(
+        { success: false, message: "Content-Length is required." },
+        411
+      );
+    }
+    if (contentLength > MAX_REQUEST_BYTES) {
+      return jsonResponse(
+        { success: false, message: "Request is too large." },
+        413
+      );
+    }
+
     if (!env.TURNSTILE_SECRET) {
       console.error("Missing TURNSTILE_SECRET");
 
@@ -469,11 +502,8 @@ export const onRequestPost = async ({
     );
 
     if (!resendResponse.ok) {
-      const errorText = await resendResponse.text();
-
       console.error("Resend API error:", {
         status: resendResponse.status,
-        response: errorText,
       });
 
       return jsonResponse(
@@ -502,13 +532,4 @@ export const onRequestPost = async ({
       500
     );
   }
-};
-
-export const onRequestOptions = async (): Promise<Response> => {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      Allow: "POST, OPTIONS",
-    },
-  });
 };
