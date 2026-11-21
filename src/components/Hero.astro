@@ -50,59 +50,12 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div class="visual-grid"></div>
-
-      <div class="shield">
-        <div class="shield-inner">
-          <svg
-            viewBox="0 0 160 190"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M80 7L148 31V84C148 130 122 164 80 183C38 164 12 130 12 84V31L80 7Z"
-              stroke="currentColor"
-              stroke-width="2"
-            />
-
-            <path
-              d="M48 91C48 69 62 51 80 51C98 51 112 69 112 91"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M39 91C39 63 57 40 80 40C103 40 121 63 121 91"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M57 91C57 76 67 64 80 64C93 64 103 76 103 91C103 116 94 135 80 149"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M68 91C68 82 73 75 80 75C87 75 92 82 92 91C92 108 88 120 80 130"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M80 91V105"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-          </svg>
-        </div>
-      </div>
-     
+      <img
+        class="hero-image"
+        src="/images/hero-identity-network.png"
+        alt=""
+        fetchpriority="high"
+      />
     </div>
   </div>
 </section>
@@ -289,120 +242,22 @@
     line-height: 1.4;
   }
 
-  /* Visual */
+  /* Hero image */
 
   .hero-visual {
     position: relative;
-
     height: min(680px, 75vh);
     min-height: 500px;
-  }
-
-  .visual-grid {
-    position: absolute;
-    inset: 0;
-
-    background-image:
-      linear-gradient(
-        var(--color-border) 1px,
-        transparent 1px
-      ),
-      linear-gradient(
-        90deg,
-        var(--color-border) 1px,
-        transparent 1px
-      );
-
-    background-size: 56px 56px;
-
-    mask-image: radial-gradient(
-      ellipse at center,
-      black 20%,
-      transparent 75%
-    );
-
-    opacity: 0.55;
-  }
-
-  .shield {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    width: min(380px, 60%);
-    aspect-ratio: 0.84;
-
-    transform: translate(-50%, -50%);
-
     display: grid;
     place-items: center;
-
-    color: var(--color-blue);
-
-    background:
-      linear-gradient(
-        145deg,
-        rgba(23, 105, 209, 0.08),
-        rgba(22, 166, 160, 0.035)
-      );
-
-    border: 1px solid rgba(23, 105, 209, 0.18);
-
-    clip-path: polygon(
-      50% 0%,
-      92% 15%,
-      92% 52%,
-      82% 73%,
-      67% 88%,
-      50% 100%,
-      33% 88%,
-      18% 73%,
-      8% 52%,
-      8% 15%
-    );
   }
 
-  .shield-inner {
-    width: 58%;
-    color: var(--color-blue);
-  }
-
-  .shield-inner svg {
+  .hero-image {
     display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .visual-label {
-    position: absolute;
-
-    color: var(--color-muted);
-
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-  }
-
-  .label-top {
-    top: 22%;
-    right: 4%;
-
-    display: flex;
-    align-items: center;
-    gap: 9px;
-  }
-
-  .label-top span {
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-    background: var(--color-teal);
-  }
-
-  .label-bottom {
-    bottom: 20%;
-    left: 3%;
+    width: min(112%, 680px);
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 28px 42px rgba(21, 78, 144, 0.14));
   }
 
   @media (max-width: 1000px) {
@@ -468,16 +323,5 @@
       height: 400px;
     }
 
-    .shield {
-      width: 280px;
-    }
-
-    .label-top {
-      right: 0;
-    }
-
-    .label-bottom {
-      left: 0;
-    }
   }
 </style>
